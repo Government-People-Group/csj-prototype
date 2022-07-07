@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Prototype your service using GOV.UK Prototype Kit
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        <ul class="govuk-list govuk-list--bullet govuk-heading-s">
+          <li>
+            <a href="/search">Search front page</a>
+          </li>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/search-v2">Search with overseas link</a>
+            </li>
+            <li>
+              <a href="/search-v3">Search with overseas hint text</a>
+            </li>
+            <li>
+              <a href="/search-v4">Search with advanced drop down</a>
+            </li>
+            <li>
+              <a href="/search-v5">Search with advanced link</a>
+            </li>
+            </ul>
+          <li>
+            <a href="/search-results">Search results</a>
+          </li>
+          <li>
+            <a href="/search">Set up a job alert</a>
+          </li>
+          </p>
+
+      <h2 class="govuk-heading-m">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
+        </li>
+        <li>
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
