@@ -22,7 +22,7 @@
 {% endset %}
 
 {% set whereHTML %}
-<p class="govuk-body-s">Enter a town, postcode or region</p>
+<p class="govuk-body-s">Enter a town, postcode, region or overseas</p>
 {% endset %}
 
 <!-- What -->
@@ -266,24 +266,6 @@ value: "permanent",
 text: "Permanent"
 }
 ]
-}) }}
-{{ govukCheckboxes({
-  idPrefix: "overseas",
-  name: "overseas",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Overseas",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "overseas",
-      text: "Show overseas jobs"
-    }
-  ]
 }) }}
 {{ govukButton({
   text: "Update results"
