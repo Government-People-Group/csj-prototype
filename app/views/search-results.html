@@ -1,10 +1,364 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search results – {{ serviceName }} – GOV.UK Prototype Kit
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing">
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-l">
+        68 Search results
+      </h1>
+<!-- start search form -->
+<div class="govuk-grid-column-full csr-top-search-panel govuk-!-margin-0 govuk-!-padding-0 govuk-!-display-block">
+<form method="post" action="">
+  <div class="csr-top-search-panel">
+
+{% set whatHTML %}
+<p class="govuk-body-s">Enter job title, skill or keywords</p>
+{% endset %}
+
+{% set whereHTML %}
+<p class="govuk-body-s">Enter a town, postcode or region</p>
+{% endset %}
+
+<!-- What -->
+
+<div class="govuk-grid-column-one-third govuk-!-margin-0 govuk-!-padding-0">
+
+  {{ govukInput({
+          label: {
+            text: "What",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            html: whatHTML
+          },
+          classes: "govuk-input--width-12",
+          id: "what",
+          name: "what"
+        }) }}
+
+      </div>
 
 
+        <!-- Where -->
+
+<div class="govuk-grid-column-one-third">
+    {{ govukInput({
+          label: {
+            text: "Where",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            html: whereHTML
+          },
+          classes: "govuk-input--width-12",
+          id: "where",
+          name: "where"
+        }) }}
+</div>
+
+<div class="govuk-grid-column-one-third csr-portal-button govuk-!-margin-0">
+<div class="csr-top-panel-button-column">
+  <div style="vertical-align: bottom;">
+    <div>
+      <button class="govuk-button govuk-!-margin-0" style="vertical-align: bottom; width: 220px;" data-module="govuk-button">
+  Search
+</button>
+</div></div></div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-third csr-side-search-panel govuk-!-margin-0" style="padding-right: 0px;">
+
+<h2 class="govuk-heading-s">Filter search</h2>
+
+<div class="govuk-grid-column-one-half">
+       {{ govukSelect({
+  id: "search-distance",
+  name: "search-distance",
+  label: {
+    text: "Search distance"
+  },
+  items: [
+    {
+      value: "1",
+      text: "1"
+    },
+    {
+      value: "10",
+      text: "10",
+      selected: true
+    },
+    {
+      value: "100",
+      text: "100"
+    },
+    {
+      value: "600",
+      text: "600"
+    }
+  ]
+}) }}
+</div>
+<div class="govuk-grid-column-one-half">
+{{ govukSelect({
+id: "search-units",
+name: "search-units",
+label: {
+text: "Search units",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "miles",
+text: "miles",
+selected: true
+},
+{
+value: "kilometres",
+text: "kilometres"
+}
+]
+}) }}
+</div>
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+id: "job-role",
+name: "job-role",
+label: {
+text: "Job role",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "accountant",
+text: "Accountant"
+},
+{
+value: "administrator",
+text: "Administrator"
+}
+]
+}) }}
+
+{{ govukSelect({
+id: "organisation",
+name: "organisation",
+label: {
+text: "Organisation",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "hmrc",
+text: "HM Revenue and Customs"
+},
+{
+value: "cabinet-office",
+text: "Cabinet office"
+}
+]
+}) }}
+
+{{ govukSelect({
+id: "minimum-salary",
+name: "minimum-salary",
+label: {
+text: "Minimum salary",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "no-min",
+text: "No minimum"
+},
+{
+value: "15000",
+text: "£15,000"
+}
+]
+}) }}
+
+
+{{ govukSelect({
+id: "maximum-salary",
+name: "maximum-salary",
+label: {
+text: "Maximum salary",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "no-max",
+text: "No maximum"
+},
+{
+value: "55000",
+text: "£55,000"
+}
+]
+}) }}
+
+
+{{ govukSelect({
+id: "job-grade",
+name: "job-grade",
+label: {
+text: "Job grade",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "admin-assistant",
+text: "Administrative assistant"
+},
+{
+value: "admin-officer",
+text: "Administrative officer"
+}
+]
+}) }}
+
+
+{{ govukSelect({
+id: "work-pattern",
+name: "work-pattern",
+label: {
+text: "Working pattern",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "full-time",
+text: "Full-time"
+},
+{
+value: "part-time",
+text: "Part-time"
+}
+]
+}) }}
+
+{{ govukSelect({
+id: "contract-type",
+name: "contract-type",
+label: {
+text: "Contract type",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "fixed-term",
+text: "Fixed term"
+},
+{
+value: "permanent",
+text: "Permanent"
+}
+]
+}) }}
+
+</div>
+</div>
+
+<div class="govuk-grid-column-two-thirds" style="padding-left: 40px;">
+
+
+       {{ govukSelect({
+         id: "sort",
+         name: "sort",
+         label: {
+           text: "Order by"
+         },
+         items: [
+           {
+             value: "closing-date",
+             text: "Closing date"
+           },
+           {
+             value: "distance",
+             text: "Distance",
+             selected: true
+           },
+           {
+             value: "most-recent",
+             text: "Most recent"
+           },
+           {
+             value: "salary-low-high",
+             text: "Salary low to high"
+           },
+           {
+             value: "salary-high-low",
+             text: "Salary high to low"
+           }
+         ]
+       }) }}
+
+       {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+       {{ govukPagination({
+         previous: {
+           href: "#"
+         },
+         next: {
+           href: "#"
+         },
+         items: [
+           {
+             number: 1,
+             href: "#"
+           },
+           {
+             number: 2,
+             current: true,
+             href: "#"
+           },
+           {
+             number: 3,
+             href: "#"
+           }
+         ]
+       }) }}
+
+       <p> <a href="#" class="govuk-link" style="font-size: 20px;">Digital Service Manager</a></p>
+
+       <p class="govuk-body" style="margin-bottom: 0px; ">HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Croydon Regional Centre- 1 Ruskin Square, Croydon, CR0 2WF, Stratford Regional Centre- 14 Westfield Avenue, Stratford, London E20 1HZ, Belfast Regional Centre- Erskine House, 20-32 Chichester Street, Belfast, ... see the job advert for full location information</p>
+
+<p class="govuk-body" style="margin-top: 0px;">Salary : £52,598 to £66,712</p>
+<p class="govuk-body" style="margin-top: 0px;">Distance : within 0.1 miles</p>
+<p class="govuk-body" style="margin-top: 0px;">Closes : 11:55 pm on Thursday 7th July 2022</p>
+<p class="govuk-body" style="margin-top: 0px;">Reference : 217449</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+       <p> <a href="#" class="govuk-link" style="font-size: 20px;">Digital Service Manager</a></p>
+
+       <p class="govuk-body" style="margin-bottom: 0px; ">HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Croydon Regional Centre- 1 Ruskin Square, Croydon, CR0 2WF, Stratford Regional Centre- 14 Westfield Avenue, Stratford, London E20 1HZ, Belfast Regional Centre- Erskine House, 20-32 Chichester Street, Belfast, ... see the job advert for full location information</p>
+
+<p class="govuk-body" style="margin-top: 0px;">Salary : £52,598 to £66,712</p>
+<p class="govuk-body" style="margin-top: 0px;">Distance : within 0.1 miles</p>
+<p class="govuk-body" style="margin-top: 0px;">Closes : 11:55 pm on Thursday 7th July 2022</p>
+<p class="govuk-body" style="margin-top: 0px;">Reference : 217449</p>
+
+</div>
+</div>
+</div>
+
+</main>
+</div>
 {% endblock %}
