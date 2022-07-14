@@ -8289,3 +8289,7 @@ x:-moz-any-link {
 .autocomplete__menu {
   font-family: "GDS Transport", arial, sans-serif;
 }
+
+.govuk-button-blue {
+  background: #1d70b8;
+}
