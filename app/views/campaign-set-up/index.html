@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        CS Jobs - campaign set up prototype
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <h2 class="govuk-heading-l">Task-list</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="task-list">Start page</a>
+          </li>
+          <li><a href="job-entry">Job entry form</a>
+          </li>
+          </ul>
+          <h2 class="govuk-heading-l">Job library</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="job-library">Start page</a>
+              </li>
+              </ul>
+
+
+    </div>
+  </div>
+
+{% endblock %}

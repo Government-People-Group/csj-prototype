@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Enter a job role</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{{ govukInput({
+  label: {
+    text: "What is the job title?"
+  },
+  classes: "govuk-input--width-20",
+  id: "job-title",
+  name: "job-title",
+  value: "designer"
+}) }}
+</div>
+  <div class="govuk-grid-column-one-third">
+    <form action="job-library-2">
+    {{ govukButton({
+      text: "Enter"
+    }) }}
+    </form>
+    </div>
+    </div>
+{% set otherHTML %}
+{{ govukInput({
+  id: "other-job-role",
+  name: "other-job-role",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter full job title"
+  }
+}) }}
+{% endset %}
+    {{ govukRadios({
+      idPrefix: "select-role",
+      name: "select-role",
+      fieldset: {
+        legend: {
+          text: "Select the job role",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "content-designer",
+          text: "Content designer"
+        },
+        {
+          value: "graphic-designer",
+          text: "Graphic designer"
+        },
+        {
+          value: "interaction-designer",
+          text: "Interaction designer"
+        },
+        {
+          value: "service-designer",
+          text: "Service designer"
+        },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+      ]
+    }) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+{% endblock %}

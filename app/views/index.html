@@ -4,7 +4,8 @@
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
 {% endblock %}
-
+{% block beforeContent %}
+{% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -24,7 +25,8 @@
           <h2 class="govuk-heading-l">Transformation</h2>
           <p>
             {{ govukButton({
-              text: "Campaign set up"
+              text: "Campaign set up",
+              href: "/campaign-set-up/index"
             }) }}
               </p>
 
