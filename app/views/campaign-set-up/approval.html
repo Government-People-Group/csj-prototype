@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "sign-in",
+  name: "sign-in",
+  fieldset: {
+    legend: {
+      text: "Has there been financial approval for this vacancy?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "The advert can only go live once approval has been confirmed"
+  },
+  items: [
+    {
+      value: "government-gateway",
+      text: "Yes"
+    },
+    {
+      value: "government-gateway",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "approval-upload"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

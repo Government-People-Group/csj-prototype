@@ -37,7 +37,8 @@
   },
   classes: "govuk-input--width-20",
   id: "department-name",
-  name: "department-name"
+  name: "department-name",
+  value: "Cabinet office"
 }) }}
 
 {{ govukInput({
@@ -61,6 +62,9 @@
 {{ govukInput({
   label: {
     text: "What is the job type?"
+  },
+  hint: {
+    text: "Select all that apply"
   },
   classes: "govuk-input--width-20",
   id: "job-type",
@@ -87,5 +91,5 @@
   text: "Continue",
   href: "/job-description"
 }) }}
-<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 {% endblock %}

@@ -43,6 +43,72 @@
   name: "job-title"
 }) }}
 
+{{ govukSelect({
+
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Select the grade of the role",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "published",
+      text: "AA"
+    },
+    {
+      value: "updated",
+      text: "AO"
+    },
+    {
+      value: "views",
+      text: "EO"
+    },
+    {
+      value: "comments",
+      text: "HEO"
+    }
+  ]
+}) }}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter the department"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Is this role for Home Office?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "email",
+      text: "Yes"
+    },
+    {
+      value: "phone",
+      text: "No",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
 {{ govukDateInput({
   id: "passport-issued",
   namePrefix: "passport-issued",
@@ -54,7 +120,7 @@
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    html: "For example, 27 3 2007. This should be at least one week from today"
   }
 }) }}
 
@@ -69,7 +135,7 @@
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    text: "This should be two weeks after the go live date"
   }
 }) }}
 
