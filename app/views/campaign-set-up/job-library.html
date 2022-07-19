@@ -41,6 +41,8 @@
   name: "job-title"
 }) }}
 </div>
+<div class="csj-top-panel-button-column">
+  <div style="vertical-align: top;">
   <div class="govuk-grid-column-one-third">
     <form action="job-library-2">
     {{ govukButton({
@@ -49,10 +51,13 @@
     </form>
     </div>
     </div>
+    </div>
+    </div>
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  disabled: true
 }) }}
 <p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
 {% endblock %}

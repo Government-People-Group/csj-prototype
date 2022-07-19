@@ -42,12 +42,16 @@
   value: "designer"
 }) }}
 </div>
+<div class="csj-top-panel-button-column">
+  <div style="vertical-align: top;">
   <div class="govuk-grid-column-one-third">
     <form action="job-library-2">
     {{ govukButton({
       text: "Enter"
     }) }}
     </form>
+    </div>
+    </div>
     </div>
     </div>
 {% set otherHTML %}
@@ -91,7 +95,7 @@
       value: "other",
       text: "Other",
       conditional: {
-        html: otherHtml
+        html: otherHTML
       }
     }
       ]
