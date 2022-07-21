@@ -29,18 +29,20 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-l"></h1>
+
     {{ govukRadios({
       idPrefix: "updates",
       name: "updates",
       fieldset: {
         legend: {
-          text: "Does this require only a base BPSS security check?",
-          isPageHeading: true,
+          text: "Would you like anyone else to receive updates on the vacancy?",
+          isPageHeading: false,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        text: "A higher security clearance will take longer to hire"
+        text: "This is in addition to the post creator, main contact, and panel members"
       },
       items: [
         {
@@ -54,10 +56,26 @@
       ]
     }) }}
 
+<div id="conditional">
+    {{ govukInput({
+      label: {
+        text: "Enter the email address for updates",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another email</a>
+    </p>
+
+</div>
 
 {{ govukButton({
   text: "Continue",
-  href: "pre-sift-questions"
+  href: "reserved-status"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

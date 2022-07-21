@@ -29,29 +29,68 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Contact details</h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    <h1 class="govuk-heading-l"></h1>
 
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Who can the candidate contact if they have questions?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "This information will be shown on the advert"
+      },
+      items: [
+        {
+          value: "me",
+          text: "Me"
+        },
+        {
+          value: "someone-else",
+          text: "Someone else"
+        }
+      ]
+    }) }}
+
+<div id="conditional">
+    {{ govukInput({
+      label: {
+        text: "What is the contact's name?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is the contact's email address?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is the contact's phone number? (optional)",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+</div>
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "contact-details-2"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

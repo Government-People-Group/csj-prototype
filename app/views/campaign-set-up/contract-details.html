@@ -30,28 +30,97 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Contract details / salary details</h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
 
-
+    {{ govukInput({
+      label: {
+        text: "Contract type",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+    {{ govukCheckboxes({
+      idPrefix: "negotiable",
+      name: "negotiable",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "negotiable",
+          text: "Check the box if this is negotiable"
+        }
+      ]
+    }) }}
+    {{ govukInput({
+      label: {
+        text: "Working pattern",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+    {{ govukCheckboxes({
+      idPrefix: "negotiable",
+      name: "negotiable",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "negotiable",
+          text: "Check the box if this is negotiable"
+        }
+      ]
+    }) }}
+    {{ govukInput({
+  id: "cost",
+  name: "cost",
+  label: {
+    text: "What is the minimum salary?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false,
+  value: "23,456"
+}) }}
+{{ govukCheckboxes({
+  idPrefix: "negotiable",
+  name: "negotiable",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "negotiable",
+      text: "Check the box if this is negotiable"
+    }
+  ]
+}) }}
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "contact-details"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
