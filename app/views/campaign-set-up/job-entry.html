@@ -17,7 +17,7 @@
     <a href="/search">Home</a>
     </li>
     <li class="content">
-      <a href="">Sign out</a>
+      <a href="">Save and sign out</a>
       </li>
       <li class="content">
         <a href="">Cymraeg</a>
@@ -31,37 +31,25 @@
 
 <h1 class="govuk-heading-l">Job information</h1>
 
-{{ govukInput({
-  label: {
-    text: "What is the name of the department?"
-  },
-  classes: "govuk-input--width-20",
-  id: "department-name",
-  name: "department-name",
-  value: "Cabinet office"
-}) }}
 
 {{ govukInput({
   label: {
-    text: "What is the business area?"
+    text: "What is the business area?",
+    classes: "govuk-label--m"
+  },
+  hint: {
+    text: "Business area is..."
   },
   classes: "govuk-input--width-20",
   id: "business-area",
   name: "business-area"
 }) }}
 
-{{ govukTextarea({
-  name: "business-area-detail",
-  id: "business-area-detail",
-  classes: "govuk-input--width-two-thirds",
-  label: {
-    text: "Can you provide more detail about the business area? (optional)"
-  }
-}) }}
 
 {{ govukInput({
   label: {
-    text: "What is the job type?"
+    text: "What is the job type?",
+    classes: "govuk-label--m"
   },
   hint: {
     text: "Select all that apply"
@@ -70,26 +58,18 @@
   id: "job-type",
   name: "job-type"
 }) }}
-{{ govukInput({
-  label: {
-    text: "Which profession is this job?"
-  },
-  classes: "govuk-input--width-20",
-  id: "job-profession",
-  name: "job-profession"
-}) }}
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
 
-{{ govukInput({
-  label: {
-    text: "How many posts are available?"
-  },
-  classes: "govuk-input--width-2",
-  id: "post-number",
-  name: "post-number"
-}) }}
+        <div id="profession" class="autocomplete-wrapper"></div>
+      </div>
+
 {{ govukButton({
   text: "Continue",
-  href: "/job-description"
+  href: "about-the-role"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/profession.js"></script>
 {% endblock %}

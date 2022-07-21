@@ -29,30 +29,30 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Online tests
+    <h1 class="govuk-heading-l">Add links to the advert
     </h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+
+    {{ govukInput({
+      label: {
+        text: "Add a link",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "This could be to a video or department specific website"
+      },
+      classes: "govuk-input--width-20",
+      id: "job-profession",
+      name: "job-profession"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another link</a>
+    </p>
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "approach"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

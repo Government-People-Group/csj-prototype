@@ -36,3 +36,6 @@ var dept = [
   "HM Land Registry"
   "HM Revenue & Customs"
   ]
+  var element = document.querySelector('#dept')
+  var id = 'autocomplete-default'
+  accessibleAutocomplete({element: element, id: id, source: dept})

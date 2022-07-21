@@ -29,30 +29,38 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Online tests
+    <h1 class="govuk-heading-l">About the role
     </h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    {{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "What are you looking for in a candidate?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  hint: {
+    text: "Include the essential criteria."
+  }
+}) }}
+
+{{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+text: "What would a standard day look like in the role?",
+classes: "govuk-label--m",
+isPageHeading: false
+},
+hint: {
+text: "Include common tasks and expectations."
+}
+}) }}
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "additional-info"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

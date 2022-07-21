@@ -17,7 +17,7 @@
     <a href="/search">Home</a>
     </li>
     <li class="content">
-      <a href="">Sign out</a>
+      <a href="">Save and sign out</a>
       </li>
       <li class="content">
         <a href="">Cymraeg</a>
@@ -41,6 +41,43 @@
   classes: "govuk-input--width-20",
   id: "job-title",
   name: "job-title"
+}) }}
+{% set deptHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter the department"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Is this role for Home Office?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: deptHtml
+      }
+    }
+  ]
 }) }}
 
 {{ govukSelect({
@@ -71,79 +108,59 @@
   ]
 }) }}
 
-{% set phoneHtml %}
-{{ govukInput({
-  id: "contact-by-phone",
-  name: "contact-by-phone",
-  type: "tel",
-  autocomplete: "tel",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Enter the department"
-  }
-}) }}
-{% endset -%}
+
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
   fieldset: {
     legend: {
-      text: "Is this role for Home Office?",
+      text: "How long should the advert be live?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    text: "Most vacancies are live for 2 weeks"
+  },
   items: [
     {
-      value: "email",
-      text: "Yes"
+      value: "1",
+      text: "1 week"
     },
     {
-      value: "phone",
-      text: "No",
-      conditional: {
-        html: phoneHtml
-      }
+      value: "2",
+      text: "2 weeks",
+      checked: true
+    },
+    {
+      value: "3",
+      text: "3 weeks"
+    },
+    {
+      value: "4",
+      text: "4 weeks"
     }
   ]
 }) }}
 
-{{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "passport-issued",
-  fieldset: {
-    legend: {
-      text: "When will the advert go live?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
+{{ govukInput({
+  label: {
+    text: "How many posts are available?",
+    isPageHeading: false,
+    classes: "govuk-label--m"
   },
-  hint: {
-    html: "For example, 27 3 2007. This should be at least one week from today"
-  }
+  classes: "govuk-input--width-3",
+  id: "posts",
+  name: "posts"
 }) }}
-
-{{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "passport-issued",
-  fieldset: {
-    legend: {
-      text: "When will the advert close?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "This should be two weeks after the go live date"
-  }
-}) }}
-
-
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "job-entry"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
