@@ -29,36 +29,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "changed-name",
-      name: "changed-name",
-      fieldset: {
-        legend: {
-          text: "Is a reserve list required?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {
-        text: "A reserve list is a pool of candidates that can be held for 12 months."
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
+    <h1 class="govuk-heading-l">Where is the role based?</h1>
 
+  
 
 {{ govukButton({
   text: "Continue",
-  href: "locations"
+  href: "contract-details"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

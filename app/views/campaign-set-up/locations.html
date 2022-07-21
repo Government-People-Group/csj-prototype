@@ -30,28 +30,63 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Where is the role based?</h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
 
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+    {{ govukRadios({
+      idPrefix: "uk",
+      name: "uk",
+      fieldset: {
+        legend: {
+          text: "Is the role based in the UK?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: ukHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+<div id="conditional">
+  {{ govukRadios({
+    idPrefix: "location-count",
+    name: "location-count",
+    fieldset: {
+      legend: {
+        text: "Is the role based in a single location?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No, the role is available in multiple locations"
+      }
+    ]
+  }) }}
+  </div>
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "contract-details"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
