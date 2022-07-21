@@ -29,12 +29,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-l">Enter a job role</h1>
+<h1 class="govuk-heading-l">Find a job role</h1>
+<div class="govuk-form-group govuk-input--width-30" value="Digital, data and technology">
+        <label for="autocomplete-default" class="govuk-label--m" value="Digital, data and technology">Which profession is this role?</label>
+
+        <div id="profession" class="autocomplete-wrapper" value="Digital, data and technology"></div>
+      </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 {{ govukInput({
   label: {
-    text: "What is the job title?"
+    text: "What is the job title?",
+    classes: "govuk-label--m"
   },
   classes: "govuk-input--width-20",
   id: "job-title",
@@ -106,4 +112,6 @@
   text: "Continue"
 }) }}
 <p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/profession.js"></script>
 {% endblock %}

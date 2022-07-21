@@ -31,6 +31,7 @@
 
     <h1 class="govuk-heading-l">About the role
     </h1>
+    <p>This information will be part of the advert</p>
     {{ govukTextarea({
   name: "more-detail",
   id: "more-detail",
@@ -57,6 +58,18 @@ text: "Include common tasks and expectations."
 }
 }) }}
 
+{{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+text: "What does the team do?",
+classes: "govuk-label--m",
+isPageHeading: false
+},
+hint: {
+text: "Explain how the role would fit in."
+}
+}) }}
 
 {{ govukButton({
   text: "Continue",
