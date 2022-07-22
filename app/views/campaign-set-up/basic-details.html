@@ -40,7 +40,8 @@
   },
   classes: "govuk-input--width-20",
   id: "job-title",
-  name: "job-title"
+  name: "job-title",
+  value: "Senior Interaction designer"
 }) }}
 {% set deptHtml %}
 {{ govukInput({
@@ -68,7 +69,8 @@
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      checked: true
     },
     {
       value: "no",
@@ -103,7 +105,16 @@
     },
     {
       value: "comments",
-      text: "HEO"
+      text: "HEO",
+      selected: true
+    },
+    {
+      value: "comments",
+      text: "SEO"
+    },
+    {
+      value: "comments",
+      text: "Grade 7"
     }
   ]
 }) }}

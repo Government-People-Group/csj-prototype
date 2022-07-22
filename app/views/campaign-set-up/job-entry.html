@@ -31,6 +31,11 @@
 
 <h1 class="govuk-heading-l">Job information</h1>
 
+{% set jobTypeHtml %}
+<strong class="govuk-tag govuk-tag--grey">
+  Inactive
+</strong>
+{% endset %}
 
 {{ govukInput({
   label: {
@@ -58,10 +63,24 @@
   id: "job-type",
   name: "job-type"
 }) }}
+{{govukTag({
+          text: "Analytical X",
+          classes: "govuk-tag--grey"
+        })}}
+        {{govukTag({
+          text: "Customer insight X",
+          classes: "govuk-tag--grey"
+        })}}
+        {{govukTag({
+          text: "Digital X",
+          classes: "govuk-tag--grey"
+        })}}
+
+<br></br><br></br>
 <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
 
-        <div id="profession" class="autocomplete-wrapper"></div>
+        <div id="profession" class="autocomplete-wrapper" value="Digital, data, and technology"></div>
       </div>
 
 {{ govukButton({
