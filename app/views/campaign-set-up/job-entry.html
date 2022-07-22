@@ -83,6 +83,19 @@
         <div id="profession" class="autocomplete-wrapper" value="Digital, data, and technology"></div>
       </div>
 
+      {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+      text: "What does the team do?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+      },
+      hint: {
+      text: "Explain how the role would fit in."
+      }
+      }) }}
+      
 {{ govukButton({
   text: "Continue",
   href: "success-profiles"

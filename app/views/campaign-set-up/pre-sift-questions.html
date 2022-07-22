@@ -31,8 +31,37 @@
 
     <h1 class="govuk-heading-l">Pre-qualifying questions</h1>
 
+  <p>These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
 
+  {% set changeHtml %}
+  <a href="">Change</a>
+  {% endset %}
+  {{ govukTable({
+    caption: "We recommend these questions based on the role",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    rows: [
+      
+      [
+        {
+          text: "Do you have practical experience of creating and validating dynamic prototypes for testing?"
+        },
+        {
+          html: changeHtml
+        }
+      ],
+      [
+        {
+          text: "Are you able to work from the office 3 days a week?"
+        },
+        {
+          html: changeHtml
+        }
+      ]
+    ]
+  }) }}
 
+<p><a href="#">Add another question</a></p>
 {{ govukButton({
   text: "Continue",
   href: "additional-information"
