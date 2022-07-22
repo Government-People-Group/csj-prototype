@@ -28,15 +28,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<h1 class="govuk-heading-l">Check the recommended security clearance</h1>
+    <div class="govuk-panel security-panel">
+              <div class="govuk-panel__body">
+                Based on the information provided the role will need<br><strong>Base BPSS security clearance</strong>
+              </div>
+            </div>
     {{ govukRadios({
       idPrefix: "updates",
       name: "updates",
       fieldset: {
         legend: {
-          text: "Does this require only a base BPSS security check?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          text: "Is the recommended security clearance correct?",
+          isPageHeading: flase,
+          classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
@@ -57,7 +62,7 @@
 
 {{ govukButton({
   text: "Continue",
-  href: "pre-sift-questions"
+  href: "interviews"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
