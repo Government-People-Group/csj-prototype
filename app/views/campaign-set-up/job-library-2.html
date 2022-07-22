@@ -30,11 +30,17 @@
   <div class="govuk-grid-column-two-thirds">
 
 <h1 class="govuk-heading-l">Find a job role</h1>
-<div class="govuk-form-group govuk-input--width-30" value="Digital, data and technology">
-        <label for="autocomplete-default" class="govuk-label--m" value="Digital, data and technology">Which profession is this role?</label>
-
-        <div id="profession" class="autocomplete-wrapper" value="Digital, data and technology"></div>
-      </div>
+{{ govukInput({
+  label: {
+    text: "Which profession is this role?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  classes: "govuk-input--width-20",
+  id: "event-name",
+  name: "event-name",
+  value: "Digital, data and technology"
+}) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 {{ govukInput({

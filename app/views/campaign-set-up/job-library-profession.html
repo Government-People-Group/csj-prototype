@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Find a job role</h1>
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
+
+        <div id="profession" class="autocomplete-wrapper"></div>
+      </div>
+
+      <div class="govuk-form-group govuk-input--width-30">
+              <label for="autocomplete-default" class="govuk-label--m">What area is this role?</label>
+
+              <div id="area" class="autocomplete-wrapper"></div>
+            </div>
+
+
+
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "job-library-profession-2"
+}) }}
+
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/profession.js"></script>
+<script src="/public/javascripts/area.js"></script>
+{% endblock %}
