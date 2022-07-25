@@ -29,13 +29,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Success profiles
+    <h1 class="govuk-heading-l">The following success profiles are recommended for this job role:
     </h1>
     {% set changeHtml %}
     <a href="">Change</a>
     {% endset %}
     {{ govukTable({
-      caption: "The following success profiles are recommended for this job role:",
+      caption: "Behaviours",
       captionClasses: "govuk-table__caption--m",
       firstCellIsHeader: false,
       rows: [
@@ -66,6 +66,21 @@
       ]
     }) }}
 
+    {{ govukTable({
+      caption: "Technical",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      rows: [
+        [
+          {
+            text: "Not required"
+          },
+          {
+            html: changeHtml
+          }
+        ]
+      ]
+    }) }}
 
 
 
