@@ -30,25 +30,73 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Interviews</h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+{% set panelHTML %}
+<p>The panel needs to meet the <a href="">inclusion and diversity requirements</a>.</p>
+{% endset %}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "panel-selected",
+      name: "panel-selected",
+      fieldset: {
+        legend: {
+          text: "Have you selected a panel for the sift and interview?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: panelHTML
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+<div id="conditional-panel-members">
+{% call govukFieldset({
+  legend: {
+    text: "What are the email addresses of the other panel members?",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: false
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Panel member 1 email'
+    },
+    id: "address-line-1",
+    name: "address-line-1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Panel member 2 email'
+    },
+    id: "address-line-2",
+    name: "address-line-2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Panel member 3 email"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "address-town"
+  }) }}
+
+{% endcall %}
+</div>
 
 {{ govukButton({
   text: "Continue"
