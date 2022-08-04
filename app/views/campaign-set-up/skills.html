@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+
+<h1 class='govuk-heading-l'>Enter the skills and level required in the role</h1>
+<p>Enter up to 5 skills</p>
+
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Skill 1</label>
+
+        <div id="skill" class="autocomplete-wrapper"></div>
+      </div>
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Skill 2</label>
+
+        <div id="skill2" class="autocomplete-wrapper"></div>
+      </div>
+
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Skill 3</label>
+
+        <div id="skill3" class="autocomplete-wrapper"></div>
+      </div>
+
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Skill 4 (optional)</label>
+
+        <div id="skill4" class="autocomplete-wrapper"></div>
+      </div>
+
+                        <div class="govuk-form-group govuk-input--width-30">
+                                <label for="autocomplete-default" class="govuk-label--m">Skill 5 (optional)</label>
+
+                                <div id="skill5" class="autocomplete-wrapper"></div>
+                              </div>
+
+{{ govukButton({
+  text: "Continue",
+  href: "job-library-profession-2"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/skill.js"></script>
+<script src="/public/javascripts/skill2.js"></script>
+<script src="/public/javascripts/skill3.js"></script>
+<script src="/public/javascripts/skill4.js"></script>
+<script src="/public/javascripts/skill5.js"></script>
+{% endblock %}

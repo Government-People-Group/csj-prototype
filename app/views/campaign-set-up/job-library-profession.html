@@ -23,6 +23,10 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
@@ -31,13 +35,20 @@
 
 <h1 class="govuk-heading-l">Find a job role</h1>
 <div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
+        <label for="autocomplete-default" class="govuk-label--m">What is the primary profession of the role?</label>
 
         <div id="profession" class="autocomplete-wrapper"></div>
       </div>
 
       <div class="govuk-form-group govuk-input--width-30">
-              <label for="autocomplete-default" class="govuk-label--m">What area is this role?</label>
+              <label for="autocomplete-default" class="govuk-label--m">What is the secondary profession of the role? (optional)</label>
+
+              <div id="profession2" class="autocomplete-wrapper"></div>
+            </div>
+
+
+      <div class="govuk-form-group govuk-input--width-30">
+              <label for="autocomplete-default" class="govuk-label--m">What function is the role based?</label>
 
               <div id="area" class="autocomplete-wrapper"></div>
             </div>
@@ -56,5 +67,6 @@
 <p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
 <script src="/public/javascripts/accessible-autocomplete.js"></script>
 <script src="/public/javascripts/profession.js"></script>
+<script src="/public/javascripts/profession2.js"></script>
 <script src="/public/javascripts/area.js"></script>
 {% endblock %}

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Civil Service job search
+      </h1>
+
+<p class="csr-page-subtitle">Find jobs in the Civil Service and central government organisations</p>
+<!-- start search form -->
+<div class="govuk-grid-column-full csr-top-search-panel govuk-!-margin-0">
+<form method="post" action="">
+  <div class="csr-top-search-panel">
+
+{% set whatHTML %}
+<p class="govuk-body-s">Enter job title, skill or keywords</p>
+{% endset %}
+
+{% set whereHTML %}
+<p class="govuk-body-s">Enter a town, postcode, region</p>
+{% endset %}
+
+<!-- What -->
+
+<div class="govuk-grid-column-one-third govuk-!-margin-0 govuk-!-padding-0">
+
+  {{ govukInput({
+          label: {
+            text: "What",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            html: whatHTML
+          },
+          classes: "govuk-input--width-12",
+          id: "what",
+          name: "what"
+        }) }}
+      </div>
+
+
+        <!-- Where -->
+
+<div class="govuk-grid-column-one-third">
+    {{ govukInput({
+          label: {
+            text: "Where",
+            classes: "govuk-label--m",
+            style: "font-colour: #ffffff"
+          },
+          hint: {
+            html: whereHTML
+          },
+          classes: "govuk-input--width-12",
+          id: "where",
+          name: "where"
+        }) }}
+</div>
+
+<div class="govuk-grid-column-one-third csr-portal-button govuk-!-margin-0">
+<div class="csr-top-panel-button-column">
+  <div style="vertical-align: bottom;">
+    <div>
+      <button class="govuk-button govuk-!-margin-0" style="vertical-align: bottom; width: 220px; colour: #0b0c0c;" data-module="govuk-button">
+  Search
+</button>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="govuk-grid-column-one-third csr-portal-button govuk-!-margin-0">
+<div class="csr-top-panel-button-column-2">
+  <div style="vertical-align: bottom;">
+    <div>
+      <button class="govuk-button govuk-!-margin-0 govuk-button--secondary" style="vertical-align: bottom; width: 220px;" data-module="govuk-button">
+  Advanced search
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

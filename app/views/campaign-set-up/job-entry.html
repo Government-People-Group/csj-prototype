@@ -23,6 +23,10 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "basic-details"
+        }) }}
         {% endblock %}
 {% block content %}
 
@@ -42,18 +46,16 @@
     text: "What is the business area?",
     classes: "govuk-label--m"
   },
-  hint: {
-    text: "Business area is..."
-  },
   classes: "govuk-input--width-20",
   id: "business-area",
-  name: "business-area"
+  name: "business-area",
+  value: "Product"
 }) }}
 
 
 {{ govukInput({
   label: {
-    text: "What is the job type?",
+    text: "What skills are needed for the role?",
     classes: "govuk-label--m"
   },
   hint: {
@@ -93,9 +95,11 @@
       },
       hint: {
       text: "Explain how the role would fit in."
-      }
+      },
+      value: "this information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
+
       }) }}
-      
+
 {{ govukButton({
   text: "Continue",
   href: "success-profiles"

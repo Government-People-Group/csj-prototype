@@ -23,6 +23,10 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "success-profiles"
+        }) }}
         {% endblock %}
 {% block content %}
 
@@ -31,6 +35,18 @@
 
     <h1 class="govuk-heading-l">About the role
     </h1>
+
+    {% set roleHTML %}
+    As a Senior UX / UI Designer you will be responsible for the design in a project team, and thus for a central part of our mission: to develop digital solutions that focus on the needs of the citizens.
+
+<ul class="govuk-list govuk-list--bullet">
+<li>You are responsible for the design in all phases of the development process, from discovery to rollout and further enhancement.</li>
+  <li>You support and encourage other designers in the team.</li>
+  <li>You design user research and conduct interviews to understand the needs of citizens and administrators, identify actionable insights, and develop actionable concepts.</li>
+  <li>You validate new product features through user tests, A/B tests or other empirical methods.</li>
+  <li>You present approach, basic concepts and design decisions to stakeholders, the team and the community.</li>
+  <li>You develop and iterate on a style guide and individual design elements of the product. </li>
+{% endset %}
     <p>This information will be part of the advert</p>
     {{ govukTextarea({
   name: "more-detail",
@@ -42,6 +58,9 @@
   },
   hint: {
     text: "Include the essential criteria."
+  },
+  value: {
+    html: roleHTML
   }
 }) }}
 

@@ -23,6 +23,10 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
@@ -44,31 +48,27 @@
   items: [
     {
       value: "associate",
-      text: "Associate"
+      text: "Associate (estimated grade AO or equivalent)"
     },
     {
       value: "junior",
-      text: "Junior"
+      text: "Junior (estimated grade EO or equivalent)"
     },
     {
       value: "mid",
-      text: "Mid-level"
+      text: "Mid-level (estimated grade HEO or equivalent)"
     },
     {
       value: "senior",
-      text: "Senior"
+      text: "Senior (estimated grade SEO or equivalent)"
     },
     {
       value: "lead",
-      text: "Lead"
+      text: "Lead (estimated grade G7 or equivalent)"
     },
     {
       value: "head",
-      text: "Head"
-    },
-    {
-      value: "researcher",
-      text: "User researcher"
+      text: "Head (estimated grade G6 or equivalent)"
     }
   ]
 }) }}

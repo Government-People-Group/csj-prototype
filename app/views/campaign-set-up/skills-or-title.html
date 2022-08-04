@@ -33,28 +33,42 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <form action="" method="post">
-<h1 class="govuk-heading-l">Reserve candidates found</h1>
 
-<p>There are <b>13</b> candidates in the reserve list that match the job title <b>Senior Interaction designer</b>.
+<h1 class="govuk-heading-l">Tell us about the role</h1>
+
+<p>This service will generate a reserve list and recommendations for the job advert.</p>
 
 {{ govukRadios({
-  idPrefix: "reserve",
-  name: "reserve",
+  idPrefix: "role",
+  name: "role",
   fieldset: {
     legend: {
-      text: "Would you like to review the pre-qualified candidates?",
+      text: "What do you know about the role you want to hire?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    text: "If you do not know the job title, you'll be able to select from a list of recommendations."
+  },
   items: [
-    {
-      value: "yes",
-      text: "Yes"
+  {
+    value: "title",
+    text: "Job title"
     },
     {
-      value: "no",
-      text: "No, I want to advertise this role"
+      value: "profession",
+      text: "Profession and function",
+      hint: {
+        text: "You'll be given job title recommendations based on the profession and function."
+      }
+      },
+    {
+      value: "skill",
+      text: "Skills required",
+      hint: {
+        text: "You'll be given job title recommendations based on the skills needed in the role."
+      }
     }
   ]
 }) }}
