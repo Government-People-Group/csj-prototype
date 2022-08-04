@@ -32,43 +32,56 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form method="post">
-{% set mandatoryHTML %}
-This will be at the beginning of the application form.</br>
-Candidates can see whether they meet the essential requirements for the job.
-{% endset %}
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "criteria",
-      name: "criteria",
-      fieldset: {
-        legend: {
-          text: "Do you have any essential requirements for this role?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {
-        html: mandatoryHTML
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
+
+    <h1 class="govuk-heading-l">The following behaviours are recommended for this job role:
+    </h1>
+    <p>You should have a maximum of 4 behaviours.</p>
+    <p>Each behviour statement will be 250 words.</p>
+    {% set changeHtml %}
+    <a href="">Change</a>
+    {% endset %}
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      rows: [
+        [
+          {
+            text: "Changing and improving"
+          },
+          {
+            html: changeHtml
+          }
+        ],
+        [
+          {
+            text: "Working together"
+          },
+          {
+            html: changeHtml
+          }
+        ],
+        [
+          {
+            text: "Communicating and influencing"
+          },
+          {
+            html: changeHtml
+          }
+        ]
       ]
     }) }}
 
+<p><a href="">Add another behaviour</a></p>
+
+
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "success-profiles-technical"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-</form>
+
 </div>
 </div>
 {% endblock %}

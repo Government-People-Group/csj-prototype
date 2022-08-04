@@ -71,4 +71,23 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
         break
       }
       })
+
+      router.get('/success-profiles', function (req, res) {
+        var criteria = criteria
+          res.render('success-profiles', {
+            criteria: criteria
+          })
+        })
+        router.post('/campaign-set-up/success-profiles', function (req, res) {
+          var criteria = req.session.data['criteria']
+
+          switch (criteria) {
+            case 'yes':
+            res.redirect('success-profiles-criteria')
+            break
+          case 'no':
+            res.redirect('online-tests')
+            break
+          }
+          })
 module.exports = router

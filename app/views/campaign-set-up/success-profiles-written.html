@@ -32,43 +32,37 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form method="post">
-{% set mandatoryHTML %}
-This will be at the beginning of the application form.</br>
-Candidates can see whether they meet the essential requirements for the job.
-{% endset %}
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "criteria",
-      name: "criteria",
+    {{ govukCheckboxes({
+      idPrefix: "written",
+      name: "written",
       fieldset: {
         legend: {
-          text: "Do you have any essential requirements for this role?",
+          text: "What written evidence will you sift against?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
-      hint: {
-        html: mandatoryHTML
-      },
       items: [
         {
-          value: "yes",
-          text: "Yes"
+          value: "experience",
+          text: "Experience"
         },
         {
-          value: "no",
-          text: "No"
+          value: "behaviours",
+          text: "Behaviours"
+        },
+        {
+          value: "technical",
+          text: "Technical skills"
         }
       ]
     }) }}
-
-
-{{ govukButton({
-  text: "Continue"
-}) }}
+    {{ govukButton({
+      text: "Continue",
+      href: "success-profiles-interview"
+    }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-</form>
+
 </div>
 </div>
 {% endblock %}

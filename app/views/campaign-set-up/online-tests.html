@@ -32,31 +32,82 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% set otherHtml %}
+    {{ govukInput({
+      id: "other",
+      name: "other",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Enter the test you require. This will be confirmed by OTAP."
+      }
+    }) }}
+    {% endset -%}
 
-    <h1 class="govuk-heading-l">Online tests
-    </h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "tests",
+      name: "tests",
+      fieldset: {
+        legend: {
+          text: "Do you require online tests?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
 
+<div id="conditional">
 
+{{ govukCheckboxes({
+  idPrefix: "testselect",
+  name: "testselect",
+  fieldset: {
+    legend: {
+      text: "Which online tests do you require?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select up to 3 tests."
+  },
+  items: [
+    {
+      value: "verbal",
+      text: "Verbal ability"
+    },
+    {
+      value: "numerical",
+      text: "Numerical ability"
+    },
+    {
+      value: "behaviours",
+      text: "Behaviours (CSJT)"
+    }
+    ,
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+  ]
+}) }}
+</div>
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "success-profiles-written"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
