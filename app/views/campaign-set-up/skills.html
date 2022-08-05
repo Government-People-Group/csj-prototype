@@ -36,36 +36,186 @@
 
 <h1 class='govuk-heading-l'>Enter the skills and level required in the role</h1>
 <p>Enter up to 5 skills</p>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label--m">Skill 1</label>
 
         <div id="skill" class="autocomplete-wrapper"></div>
       </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {{ govukSelect({
+  id: "proficiency",
+  name: "proficiency",
+  label: {
+    text: "Proficiency"
+  },
+  items: [
+  {
+    value: "awareness",
+    text: "Awareness"
+  },
+  {
+      value: "working",
+      text: "Working"
+    },
+    {
+      value: "practitioner",
+      text: "Practitioner"
+    },
+    {
+      value: "expert",
+      text: "Expert"
+    }
+  ]
+}) }}
+</div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label--m">Skill 2</label>
 
         <div id="skill2" class="autocomplete-wrapper"></div>
       </div>
-
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukSelect({
+id: "proficiency",
+name: "proficiency",
+label: {
+  text: "Proficiency"
+},
+items: [
+{
+  value: "awareness",
+  text: "Awareness"
+},
+{
+    value: "working",
+    text: "Working"
+  },
+  {
+    value: "practitioner",
+    text: "Practitioner"
+  },
+  {
+    value: "expert",
+    text: "Expert"
+  }
+]
+}) }}
+</div>
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label--m">Skill 3</label>
 
         <div id="skill3" class="autocomplete-wrapper"></div>
       </div>
-
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukSelect({
+id: "proficiency",
+name: "proficiency",
+label: {
+  text: "Proficiency"
+},
+items: [
+{
+  value: "awareness",
+  text: "Awareness"
+},
+{
+    value: "working",
+    text: "Working"
+  },
+  {
+    value: "practitioner",
+    text: "Practitioner"
+  },
+  {
+    value: "expert",
+    text: "Expert"
+  }
+]
+}) }}
+</div>
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label--m">Skill 4 (optional)</label>
 
         <div id="skill4" class="autocomplete-wrapper"></div>
       </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukSelect({
+id: "proficiency",
+name: "proficiency",
+label: {
+  text: "Proficiency"
+},
+items: [
+{
+  value: "awareness",
+  text: "Awareness"
+},
+{
+    value: "working",
+    text: "Working"
+  },
+  {
+    value: "practitioner",
+    text: "Practitioner"
+  },
+  {
+    value: "expert",
+    text: "Expert"
+  }
+]
+}) }}
+</div>
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Skill 5 (optional)</label>
 
-                        <div class="govuk-form-group govuk-input--width-30">
-                                <label for="autocomplete-default" class="govuk-label--m">Skill 5 (optional)</label>
-
-                                <div id="skill5" class="autocomplete-wrapper"></div>
-                              </div>
-
+        <div id="skill5" class="autocomplete-wrapper"></div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukSelect({
+id: "proficiency",
+name: "proficiency",
+label: {
+  text: "Proficiency"
+},
+items: [
+{
+  value: "awareness",
+  text: "Awareness"
+},
+{
+    value: "working",
+    text: "Working"
+  },
+  {
+    value: "practitioner",
+    text: "Practitioner"
+  },
+  {
+    value: "expert",
+    text: "Expert"
+  }
+]
+}) }}
+</div>
+</div>
 {{ govukButton({
   text: "Continue",
   href: "job-library-profession-2"
