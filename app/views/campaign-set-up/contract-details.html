@@ -35,42 +35,89 @@
 
     <h1 class="govuk-heading-l">Contract details / salary details</h1>
 
-    {{ govukInput({
-      label: {
-        text: "Contract type",
-        classes: "govuk-label--m",
-        isPageHeading: false
+    {{ govukSelect({
+    id: "contract",
+    name: "contract",
+    label: {
+      text: "Contract type"
+    },
+    items: [
+      {
+        value: "apprenticeship",
+        text: "Apprenticeship"
       },
-      id: "event-name",
-      name: "event-name"
-    }) }}
-    {{ govukCheckboxes({
-      idPrefix: "negotiable",
-      name: "negotiable",
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
+      {
+        value: "assisted",
+        text: "Assisted transfter"
       },
-      items: [
-        {
-          value: "negotiable",
-          text: "Check the box if this is negotiable"
-        }
-      ]
-    }) }}
-    {{ govukInput({
-      label: {
-        text: "Working pattern",
-        classes: "govuk-label--m",
-        isPageHeading: false
+      {
+        value: "fixed",
+        text: "Fixed term"
       },
-      id: "event-name",
-      name: "event-name"
-    }) }}
+      {
+        value: "internship",
+        text: "Internship"
+      },
+      {
+        value: "loan",
+        text: "Loan"
+      },
+      {
+        value: "overseas",
+        text: "Overseas"
+      },
+      {
+        value: "permanent",
+        text: "Permanent"
+      },
+      {
+        value: "temporary",
+        text: "Temporary"
+      }
+    ]
+  }) }}
+  {{ govukSelect({
+  id: "working-pattern",
+  name: "working-pattern",
+  label: {
+    text: "Working pattern"
+  },
+  items: [
+    {
+      value: "annualised",
+      text: "Annualised hours"
+    },
+    {
+      value: "compressed",
+      text: "Compressed hours"
+    },
+    {
+      value: "flexible working",
+      text: "Flexible working"
+    },
+    {
+      value: "fulltime",
+      text: "Full-time"
+    },
+    {
+      value: "homeworking",
+      text: "Homeworking"
+    },
+    {
+      value: "jobshare",
+      text: "Job share"
+    },
+    {
+      value: "permanent",
+      text: "Permanent"
+    },
+    {
+      value: "temporary",
+      text: "Temporary"
+    }
+  ]
+  }) }}
+
     {{ govukCheckboxes({
       idPrefix: "negotiable",
       name: "negotiable",
@@ -122,9 +169,54 @@
     }
   ]
 }) }}
+
+{% set otherHTML %}
+{{ govukTextarea({
+  name: "other",
+  id: "other",
+  label: {
+    text: "Tell us about the additional allowances",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  hint: {
+    text: "You may be contacted to provide more details, including approval."
+  }
+}) }}
+{% endset %}
+
+    {{ govukRadios({
+      idPrefix: "allowances",
+      name: "allowances",
+      fieldset: {
+        legend: {
+          text: "Are there additional allowances connected to this role?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+      {
+        value: "yes",
+        text: "Yes",
+        conditional: {
+          html: otherHTML
+        }
+      },
+      {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
 {{ govukButton({
   text: "Continue",
-  href: "contact-details"
+  href: "benefits"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

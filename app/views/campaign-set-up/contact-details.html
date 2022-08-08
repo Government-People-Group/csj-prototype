@@ -63,7 +63,7 @@
 <div id="conditional">
     {{ govukInput({
       label: {
-        text: "What is the contact's name?",
+        text: "What is the main contact's name?",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -73,7 +73,7 @@
 
     {{ govukInput({
       label: {
-        text: "What is the contact's email address?",
+        text: "What is the main contact's email address?",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -83,7 +83,7 @@
 
     {{ govukInput({
       label: {
-        text: "What is the contact's phone number? (optional)",
+        text: "What is the main contact's phone number? (optional)",
         classes: "govuk-label--m",
         isPageHeading: false
       },
@@ -95,6 +95,11 @@
 {{ govukButton({
   text: "Continue",
   href: "contact-details-2"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

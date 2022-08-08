@@ -25,7 +25,7 @@
         </ul>
         {{ govukBackLink({
           text: "Back",
-          href: "about-the-role"
+          href: "javascript:history.go(-1)"
         }) }}
         {% endblock %}
 {% block content %}
@@ -33,42 +33,50 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Pre-qualifying questions</h1>
-
-  <p>These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
-
-  {% set changeHtml %}
-  <a href="">Change</a>
-  {% endset %}
-  {{ govukTable({
-    caption: "We recommend these questions based on the role",
-    captionClasses: "govuk-table__caption--m",
-    firstCellIsHeader: false,
-    rows: [
-
-      [
-        {
-          text: "Do you have practical experience of creating and validating dynamic prototypes for testing?"
-        },
-        {
-          html: changeHtml
-        }
-      ],
-      [
-        {
-          text: "Are you able to work from the office 3 days a week?"
-        },
-        {
-          html: changeHtml
-        }
+    <h1 class="govuk-heading-l">These are the standard civil service benefits:
+    </h1>
+    {% set changeHtml %}
+    <a href="">Change</a>
+    {% endset %}
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      rows: [
+        [
+          {
+            text: "Learning and development tailored to your role"
+          },
+          {
+            html: changeHtml
+          }
+        ],
+        [
+          {
+            text: "An environment with flexible working options"
+          },
+          {
+            html: changeHtml
+          }
+        ],
+        [
+          {
+            text: "A Civil Service pension"
+          },
+          {
+            html: changeHtml
+          }
+        ]
       ]
-    ]
-  }) }}
+    }) }}
 
-<p><a href="#">Add another question</a></p>
+<p><a href="">Add another benefit</a></p>
+
+
+
 {{ govukButton({
   text: "Continue",
-  href: "additional-info"
+  href: "contact-details"
 }) }}
 {{ govukButton({
   text: "Preview advert",

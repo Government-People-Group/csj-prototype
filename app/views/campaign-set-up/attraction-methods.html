@@ -33,30 +33,69 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Where do you want to advertise the vacancy?
-    </h1>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+{% set otherHTML %}
+{{ govukTextarea({
+  name: "other",
+  id: "other",
+  label: {
+    text: "Tell us where else you'd like to advertise the role",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  hint: {
+    text: "You may be contacted to provide more details, including approval."
+  }
+}) }}
+{% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "attraction",
+      name: "attraction",
+      fieldset: {
+        legend: {
+          text: "Where do you want to advertise the vacancy?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+      {
+        value: "csjobs",
+        text: "Civil Service Jobs"
+      },
+      {
+          value: "linkedin",
+          text: "LinkedIn"
+        },
+        {
+          value: "indeed",
+          text: "Indeed"
+        },
+        {
+          value: "monster",
+          text: "Monster Jobs"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: otherHTML
+          }
+        }
+      ]
+    }) }}
 
 
 {{ govukButton({
   text: "Continue"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
