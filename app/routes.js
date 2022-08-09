@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+// Job library entry
+
 router.get('/skills-or-title', function (req, res) {
   var level = level
   var jobTitle = jobTitle
@@ -71,6 +72,15 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
         break
       }
       })
+
+      // Task list
+
+      router.get('/task-list', function (req, res) {
+          res.render('task-list', {
+          })
+        })
+
+        // Assessment methods
 
       router.get('/success-profiles', function (req, res) {
         var criteria = criteria
