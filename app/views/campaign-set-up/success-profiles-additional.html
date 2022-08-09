@@ -33,33 +33,49 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">The following technical skills are recommended for this job role:
-    </h1>
-    {% set changeHtml %}
-    <a href="">Change</a>
-    {% endset %}
+{% set assessmentHTML %}
+{{ govukTextarea({
+  name: "assessment-needs",
+  id: "assessment-needs",
+  label: {
+    text: "What additional assessments are required?",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  }
+}) }}
+{% endset %}
 
-    {{ govukTable({
-      caption: "",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      rows: [
-        [
-          {
-            text: "Experience using the GOVUK prototype kit"
-          },
-          {
-            html: changeHtml
-          }
-        ]
-      ]
-    }) }}
-
-<p><a href="">Add another technical skill</a></p>
+    {{ govukRadios({
+  idPrefix: "additional-assessments",
+  name: "additional-assessments",
+  fieldset: {
+    legend: {
+      text: "Are there any additional assessment requirements",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You will be contacted about additional assessments separately."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: assessmentHTML
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "success-profiles-experience"
+  href: "success-profiles-cya"
 }) }}
 {{ govukButton({
   text: "Preview advert",
