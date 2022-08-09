@@ -51,7 +51,11 @@
                 Basic details
               </a>
             </span>
+            {% if req.session.data['posts'] !== '' %}
             <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -65,17 +69,50 @@
           </li>
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Advert set up
+              <span class="app-task-list__section-number">2. </span> Contract information
             </h2>
             <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="success-profiles" aria-describedby="eligibility-status">
-                    Success profiles
-                  </a>
-                </span>
-                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="locations" aria-describedby="list-convictions-status">
+                      Locations</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="contract-details" aria-describedby="list-convictions-status">
+                      Contract details</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="benefits" aria-describedby="list-convictions-status">
+                      Benefits</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="contact-details" aria-describedby="list-convictions-status">
+                      Contact details</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="reserved-status" aria-describedby="list-convictions-status">
+                      Reserved status, checking, and vetting</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
+                  </li>
+                </ul>
+                </li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Advert set up
+            </h2>
+            <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="about-the-role" aria-describedby="read-declaration-status">
@@ -87,7 +124,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="pre-sift-questions" aria-describedby="read-declaration-status">
-                    Pre-qualifying questions
+                    Eliminating criteria
                   </a>
                 </span>
                 <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
@@ -105,7 +142,7 @@
 
   <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Recruitment methods
+      <span class="app-task-list__section-number">4. </span> Recruitment channels
     </h2>
     <ul class="app-task-list__items">
           <li class="app-task-list__item">
@@ -132,54 +169,29 @@
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
           </li>
-          <li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="attraction-methods" aria-describedby="list-convictions-status">
+              Attraction methods
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
+          </li>
           </ul>
           </li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">4. </span> Contract information
-    </h2>
-    <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="locations" aria-describedby="list-convictions-status">
-              Locations</a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="contract-details" aria-describedby="list-convictions-status">
-              Contract details</a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="benefits" aria-describedby="list-convictions-status">
-              Benefits</a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="contact-details" aria-describedby="list-convictions-status">
-              Contact details</a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="reserved-status" aria-describedby="list-convictions-status">
-              Reserved status, checking, and vetting</a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
-          </li>
-        </ul>
-        </li>
+
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Sifting and selection methods
           </h2>
           <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="success-profiles" aria-describedby="eligibility-status">
+                  Success profiles
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="interviews" aria-describedby="list-convictions-status">
@@ -187,28 +199,13 @@
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
           </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="online-tests" aria-describedby="list-convictions-status">
-              Online tests
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Optional</strong>
-          </li>
         </ul>
         </li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Review and manage
           </h2>
           <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="attraction-methods" aria-describedby="list-convictions-status">
-                Attraction methods
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started yet</strong>
-            </li>
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="review-advert" aria-describedby="list-convictions-status">

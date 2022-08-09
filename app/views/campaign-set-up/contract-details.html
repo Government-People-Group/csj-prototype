@@ -209,6 +209,37 @@
         }
       ]
     }) }}
+
+    {{ govukRadios({
+      idPrefix: "advert-time",
+      name: "advert-time",
+      fieldset: {
+        legend: {
+          text: "How long should the advert be live?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Most vacancies are live for 2 weeks"
+      },
+      items: [
+        {
+          value: "2",
+          text: "2 weeks",
+          checked: true
+        },
+        {
+          value: "3",
+          text: "3 weeks"
+        },
+        {
+          value: "4",
+          text: "4 weeks"
+        }
+      ]
+    }) }}
+    
 {{ govukButton({
   text: "Continue",
   href: "benefits"

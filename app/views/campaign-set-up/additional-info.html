@@ -33,16 +33,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Add links to the advert
-    </h1>
-<p>Links will be visible to candidates</p>
     {{ govukInput({
       label: {
-        text: "Add a link",
-        classes: "govuk-label--m"
+        text: "Add supporting information to the advert",
+        classes: "govuk-label--l",
+        isPageHeading: true
       },
       hint: {
-        text: "This could be to a video or department specific website"
+        text: "This could be a link to a video or department specific website. This will be visible to candidates."
       },
       classes: "govuk-input--width-20",
       id: "job-profession",
@@ -51,7 +49,7 @@
     }) }}
 
     <p class="govuk-body">
-      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another link</a>
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add more information</a>
     </p>
 
 
