@@ -22,7 +22,7 @@
 {% endset %}
 
 {% set whereHTML %}
-<p class="govuk-body-s">Enter a town, postcode, region or overseas</p>
+<p class="govuk-body-s">Enter a town, postcode or region</p>
 {% endset %}
 
 <!-- What -->
@@ -129,6 +129,30 @@ value: "kilometres",
 text: "kilometres"
 }
 ]
+}) }}
+</div>
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+  id: "overseas",
+  name: "overseas",
+  label: {
+    text: "Show overseas jobs?"
+  },
+  items: [
+    {
+      value: "no",
+      text: "No overseas"
+    },
+    {
+      value: "including",
+      text: "Including overseas",
+      selected: true
+    },
+    {
+      value: "only",
+      text: "Only overseas"
+    }
+  ]
 }) }}
 </div>
 <div class="govuk-grid-column-full">
