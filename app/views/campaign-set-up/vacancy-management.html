@@ -34,29 +34,40 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Vacancy management</h1>
-    <p>Peer review / QA before posting</p>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    {{ govukInput({
+      label: {
+        text: "Who will review the job advert?",
+        isPageHeading: false,
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-20",
+      id: "reviewer",
+      name: "reviewer"
+    }) }}
+
+{{ govukCheckboxes({
+      idPrefix: "negotiable",
+      name: "negotiable",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "approval1",
+          text: "This person needs to approve the advert"
+        }
+      ]
+    }) }}
+
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Sumbit"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
