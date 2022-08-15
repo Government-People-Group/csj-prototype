@@ -32,40 +32,35 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form method="post">
-{% set mandatoryHTML %}
-This will be at the beginning of the application form.</br>
-Candidates can see whether they meet the essential criteria for the job.
-{% endset %}
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "criteria",
-      name: "criteria",
-      fieldset: {
-        legend: {
-          text: "Do you have any essential criteria for this role?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {
-        html: mandatoryHTML
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
+<h1 class="govuk-heading-l">What will you assess on the CV?</h1>
 
+  {{ govukInput({
+    label: {
+      text: "Experience 1"
+    },
+    id: "experience1",
+    name: "experience1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Experience 2"
+    },
+    id: "experience2 (optional)",
+    name: "experience2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Experience 3 (optional)"
+    },
+    id: "experience3",
+    name: "experience3"
+  }) }}
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "statement"
 }) }}
 {{ govukButton({
   text: "Preview advert",
@@ -73,7 +68,7 @@ Candidates can see whether they meet the essential criteria for the job.
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-</form>
+
 </div>
 </div>
 {% endblock %}

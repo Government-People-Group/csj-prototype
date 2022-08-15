@@ -32,40 +32,75 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form method="post">
-{% set mandatoryHTML %}
-This will be at the beginning of the application form.</br>
-Candidates can see whether they meet the essential criteria for the job.
+{% set hintHTML %}
+Select all that apply.
+<br></br>
+{{ govukDetails({
+  summaryText: "More about online testing",
+  html: '<a href="">Read the online testing guidance</a> to find out what tests available and recommended for this job role.'
+}) }}
 {% endset %}
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "criteria",
-      name: "criteria",
+
+{% set otherHTML %}
+{{ govukInput({
+  label: {
+    text: "Tell us the additional assessment method"
+  },
+  id: "other",
+  name: "other"
+}) }}
+{% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "assessments",
+      name: "assessments",
       fieldset: {
         legend: {
-          text: "Do you have any essential criteria for this role?",
+          text: "How will you assess the candidate?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        html: mandatoryHTML
+        html: hintHTML
       },
       items: [
         {
-          value: "yes",
-          text: "Yes"
+          value: "cv",
+          text: "CV"
         },
         {
-          value: "no",
-          text: "No"
+          value: "statement",
+          text: "Supporting statement"
+        },
+        {
+          value: "test",
+          text: "Online test"
+        },
+        {
+          value: "portfolio",
+          text: "Design portfolio"
+        },
+        {
+          value: "interview",
+          text: "Interview"
+        },
+        {
+          value: "presentation",
+          text: "Presentation"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: otherHTML
+          }
         }
       ]
     }) }}
-
-
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "cv"
 }) }}
 {{ govukButton({
   text: "Preview advert",
@@ -73,7 +108,7 @@ Candidates can see whether they meet the essential criteria for the job.
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-</form>
+
 </div>
 </div>
 {% endblock %}

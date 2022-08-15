@@ -32,40 +32,54 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form method="post">
-{% set mandatoryHTML %}
-This will be at the beginning of the application form.</br>
-Candidates can see whether they meet the essential criteria for the job.
-{% endset %}
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "criteria",
-      name: "criteria",
-      fieldset: {
-        legend: {
-          text: "Do you have any essential criteria for this role?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
+{{ govukCheckboxes({
+  idPrefix: "behaviours",
+  name: "behaviours",
+  fieldset: {
+    legend: {
+      text: "What criteria will you assess via online tests?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select up to 3."
+  },
+  items: [
+    {
+      value: "verbal",
+      text: "Verbal skills"
+    },
+    {
+      value: "numerical",
+      text: "Numeracy skills"
       },
-      hint: {
-        html: mandatoryHTML
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
+      {
+        value: "judgement",
+        text: "Judgement skills"
         },
         {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
-
+          value: "management",
+          text: "Management judgement skills"
+          },
+          {
+            value: "strengths",
+            text: "Strengths"
+            },
+            {
+              value: "customer-service",
+              text: "Customer service skills"
+              },
+              {
+                value: "casework",
+                text: "Casework skills"
+                }
+  ]
+}) }}
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  href: "technical"
 }) }}
 {{ govukButton({
   text: "Preview advert",
@@ -73,7 +87,7 @@ Candidates can see whether they meet the essential criteria for the job.
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-</form>
+
 </div>
 </div>
 {% endblock %}

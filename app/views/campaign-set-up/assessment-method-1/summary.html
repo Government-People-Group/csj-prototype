@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">What is your job criteria?</h1>
+
+    <h2 class="govuk-heading-m">At sift</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Essential criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>experience creating GOV.UK prototypes</li>
+            <li>knowledge of design principles</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="success-profiles-criteria">
+            Change
+            <span class="govuk-visually-hidden"> essential criteria</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Online tests
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Behavioural test (CSJT)</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="online-tests">
+            Change
+            <span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Behaviours
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Changing and improving</li>
+            <li>Working together</li>
+            <li>Communicating and influencing</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="success-profiles-1">
+            Change
+            <span class="govuk-visually-hidden"> behaviours</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Technical skills
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Experience creating prototypes using Node.JS</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="success-profiles-technical">
+            Change
+            <span class="govuk-visually-hidden"> contact details</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">At interview</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Behaviours
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Changing and improving</li>
+            <li>Working together</li>
+            <li>Communicating and influencing</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="success-profiles-1">
+            Change
+            <span class="govuk-visually-hidden"> behaviours</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Strengths
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Analytical</li>
+            <li>Problem solver</li>
+            <li>Service focussed</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="success-profiles-strengths">
+            Change
+            <span class="govuk-visually-hidden"> strengths</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+{{ govukButton({
+  text: "Continue",
+  href: "about-the-role"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}
