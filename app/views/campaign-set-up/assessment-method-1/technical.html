@@ -32,29 +32,48 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<h1 class="govuk-heading-l">What technical skills will you assess?</h1>
 
-  {{ govukInput({
-    label: {
-      text: "Technical skill 1"
-    },
-    id: "technical skill 1",
-    name: "technical skill 1"
-  }) }}
-  {{ govukInput({
-    label: {
-      text: "Technical skill 2 (optional)"
-    },
-    id: "technical skill 2",
-    name: "technical skill 2"
-  }) }}
-  {{ govukInput({
-      label: {
-        text: "Technical skill 3 (optional)"
-      },
-      id: "technical skill 3",
-      name: "technical skill 3"
-    }) }}
+{{ govukCheckboxes({
+idPrefix: "cv",
+name: "cv",
+fieldset: {
+  legend: {
+    text: "What technical skills will you assess?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "techAssess1",
+    text: data['technical1']
+  },
+  {
+    value: "techAssess2",
+    text: data['technical2']
+  },
+  {
+    value: "techAssess3",
+    text: data['technical3']
+  },
+  {
+    value: "techAssess4",
+    text: data['technical4']
+  },
+  {
+    value: "techAssess5",
+    text: data['technical5']
+  },
+  {
+    value: "techAssess6",
+    text: data['technical6']
+  }
+]
+}) }}
+
 {{ govukButton({
   text: "Continue",
   href: "interview"

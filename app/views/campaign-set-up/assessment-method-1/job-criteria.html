@@ -32,46 +32,220 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="">
 <h1 class="govuk-heading-l">What is the job criteria?</h1>
 {{ govukDetails({
   summaryText: "Help with job criteria",
-  html: '<a href="">Read the selection methods guidance</a> to find out what they are and how to use them.'
+  html: '<a href="https://www.gov.uk/government/publications/success-profiles">Read the selection methods guidance</a> to find out what they are and how to use them.'
 }) }}
-  {{ govukInput({
-    label: {
-      text: "Communication"
+
+{% call govukFieldset({
+  legend: {
+    text: "Essential criteria",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: false
+  }
+}) %}
+<p>For example, comfortable around dogs</p>
+{{ govukInput({
+  label: {
+    text: "Experience 1"
+  },
+  id: "experience1",
+  name: "experience1"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Experience 2"
+  },
+  id: "experience2 (optional)",
+  name: "experience2"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Experience 3 (optional)"
+  },
+  id: "experience3",
+  name: "experience3"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Experience 4 (optional)"
+  },
+  id: "experience4",
+  name: "experience4"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Experience 5 (optional)"
+  },
+  id: "experience5",
+  name: "experience5"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Experience 6 (optional)"
+  },
+  id: "experience6",
+  name: "experience6"
+}) }}
+{% endcall %}
+
+{% call govukFieldset({
+  legend: {
+    text: "Technical skills and qualifications",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: false
+  }
+}) %}
+
+<p>For example, Canine First Aid diploma</p>
+{{ govukInput({
+  label: {
+    text: "Technical skill 1"
+  },
+  id: "technical1",
+  name: "technical1"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Technical skill 2"
+  },
+  id: "technical2 (optional)",
+  name: "technical2"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Technical skill 3 (optional)"
+  },
+  id: "technical3",
+  name: "technical3"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Technical skill 4 (optional)"
+  },
+  id: "technical4",
+  name: "technical4"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Technical skill 5 (optional)"
+  },
+  id: "technical5",
+  name: "technical5"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Technical skill 6 (optional)"
+  },
+  id: "technical6",
+  name: "technical6"
+}) }}
+
+{% endcall %}
+
+{{ govukCheckboxes({
+  idPrefix: "behaviours",
+  name: "behaviours",
+  fieldset: {
+    legend: {
+      text: "Behaviours",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select up to 4. Candidates will provide up to 250 words per behaviour. You will select interview behaviours later."
+  },
+  items: [
+    {
+      value: "big-picture",
+      text: "Seeing the big picture",
+      hint: {
+        text: "Understand how your role fits with and supports organisational objectives.
+Recognise the wider Civil Service priorities and ensure work is in the
+national interest."
+      }
     },
-    id: "communication",
-    name: "communication"
-  }) }}
-  {{ govukInput({
-    label: {
-      text: "Design skills"
-    },
-    id: "design",
-    name: "design"
-  }) }}
-  {{ govukInput({
-    label: {
-      text: "Experience with..."
-    },
-    id: "experience with",
-    name: "experience with"
-  }) }}
-  {{ govukInput({
-    label: {
-      text: "Behaviour: Changing and improving"
-    },
-    id: "behaviour1",
-    name: "behaviour1"
-  }) }}
-  {{ govukInput({
-    label: {
-      text: "Technical skills"
-    },
-    id: "technical",
-    name: "technical"
-  }) }}
+    {
+      value: "changing",
+      text: "Changing and Improving",
+      hint: {
+        text: "Seek out opportunities to create effective change and suggest innovative ideas for
+improvement. Review ways of working, including seeking and providing feedback."
+      }
+      },
+      {
+        value: "decisions",
+        text: "Making Effective Decisions",
+        hint: {
+          text: "Use evidence and knowledge to support accurate, expert decisions and advice.
+Carefully consider alternative options, implications and risks of decisions."
+        }
+        },
+        {
+          value: "leadership",
+          text: "Leadership",
+          hint: {
+            text: "Show pride and passion for public service. Create and engage others in delivering
+a shared vision. Value difference, diversity and inclusion, ensuring fairness and
+opportunity for all. "
+          }
+          },
+          {
+            value: "communication",
+            text: "Communicating and Influencing",
+            hint: {
+              text: "Communicate purpose and direction with clarity, integrity and enthusiasm.
+Respect the needs, responses and opinions of others. "
+            }
+            },
+            {
+              value: "working",
+              text: "Working Together",
+              hint: {
+                text: "Form effective partnerships and relationships with people both internally and
+externally, from a range of diverse backgrounds, sharing information, resources
+and support. "
+              }
+              },
+              {
+                value: "developing",
+                text: "Developing Self and Others",
+                hint: {
+                  text: "Focus on continuous learning and development for self, others and the
+organisation as a whole. "
+                }
+                },
+                {
+                  value: "service",
+                  text: "Managing a quality service",
+                  hint: {
+                    text: "Deliver service objectives with professional excellence, expertise and efficiency,
+taking account of diverse customer needs. "
+                  }
+                  },
+                {
+                  value: "pace",
+                  text: "Delivering at pace",
+                  hint: {
+                    text: "Take responsibility for delivering timely and quality results with focus and drive. "
+                  }
+                  }
+  ]
+}) }}
+
 {{ govukButton({
   text: "Continue",
   href: "assess"
@@ -82,7 +256,7 @@
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-
+</form>
 </div>
 </div>
 {% endblock %}

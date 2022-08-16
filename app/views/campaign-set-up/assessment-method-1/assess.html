@@ -32,12 +32,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form action="" method="post">
 {% set hintHTML %}
 Select all that apply.
 <br></br>
 {{ govukDetails({
   summaryText: "More about online testing",
-  html: '<a href="">Read the online testing guidance</a> to find out what tests available and recommended for this job role.'
+  html: '<a href="https://www.gov.uk/guidance/civil-service-online-tests">Read the online testing guidance</a> to find out what tests available and recommended for this job role.'
 }) }}
 {% endset %}
 
@@ -99,8 +100,7 @@ Select all that apply.
       ]
     }) }}
 {{ govukButton({
-  text: "Continue",
-  href: "cv"
+  text: "Continue"
 }) }}
 {{ govukButton({
   text: "Preview advert",
@@ -108,7 +108,7 @@ Select all that apply.
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-
+</form>
 </div>
 </div>
 {% endblock %}
