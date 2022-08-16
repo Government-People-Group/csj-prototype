@@ -104,7 +104,13 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
           })
 
 // assessment methods V3
-
+router.get('/campaign-set-up/assessment-method-1/job-criteria', function (req, res) {
+    res.render('campaign-set-up/assessment-method-1/job-criteria', {
+    })
+  })
+  router.post('/campaign-set-up/assessment-method-1/job-criteria', function (req, res) {
+      res.redirect('assess')
+})
 router.get('/campaign-set-up/assessment-method-1/assess', function (req, res) {
 
     res.render('campaign-set-up/assessment-method-1/assess', {
