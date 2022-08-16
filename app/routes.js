@@ -109,15 +109,26 @@ router.get('/campaign-set-up/assessment-method-1/job-criteria', function (req, r
     })
   })
   router.post('/campaign-set-up/assessment-method-1/job-criteria', function (req, res) {
+    var behaviours = {}
       res.redirect('assess')
 })
+
 router.get('/campaign-set-up/assessment-method-1/assess', function (req, res) {
-
     res.render('campaign-set-up/assessment-method-1/assess', {
-
     })
   })
   router.post('/campaign-set-up/assessment-method-1/assess', function (req, res) {
       res.redirect('cv')
 })
+router.get('/campaign-set-up/assessment-method-1/statement', function (req, res) {
+  var behaviours = {}
+    res.render('campaign-set-up/assessment-method-1/statement', {
+      behaviours: behaviours
+    })
+  })
+  router.post('/campaign-set-up/assessment-method-1/statement', function (req, res) {
+      res.redirect('cv')
+})
+
+
 module.exports = router
