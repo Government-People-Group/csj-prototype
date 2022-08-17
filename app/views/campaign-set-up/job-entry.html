@@ -52,14 +52,16 @@
   value: "Product"
 }) }}
 
-
-
-<br></br><br></br>
-<div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
-
-        <div id="profession" class="autocomplete-wrapper" value="Digital, data, and technology"></div>
-      </div>
+{{ govukInput({
+  label: {
+    text: "Which profession is this role?",
+    classes: "govuk-label--m"
+  },
+  classes: "govuk-input--width-20",
+  id: "business-area",
+  name: "business-area",
+  value: "Digital, Data and Technology"
+}) }}
 
       {{ govukTextarea({
       name: "more-detail",

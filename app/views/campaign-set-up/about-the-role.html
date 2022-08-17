@@ -37,44 +37,34 @@
     </h1>
 
     {% set roleHTML %}
-    As a Senior UX / UI Designer you will be responsible for the design in a project team, and thus for a central part of our mission: to develop digital solutions that focus on the needs of the citizens.
-
-<ul class="govuk-list govuk-list--bullet">
-<li>You are responsible for the design in all phases of the development process, from discovery to rollout and further enhancement.</li>
-  <li>You support and encourage other designers in the team.</li>
-  <li>You design user research and conduct interviews to understand the needs of citizens and administrators, identify actionable insights, and develop actionable concepts.</li>
-  <li>You validate new product features through user tests, A/B tests or other empirical methods.</li>
-  <li>You present approach, basic concepts and design decisions to stakeholders, the team and the community.</li>
-  <li>You develop and iterate on a style guide and individual design elements of the product. </li>
+This information would be prepopulated based on the job title. You can change this information and format it, including bullet points and underlining text.
 {% endset %}
     <p>This information will be part of the advert</p>
-    {{ govukTextarea({
+    {{ govukCharacterCount({
   name: "more-detail",
   id: "more-detail",
+  maxlength: 200,
   label: {
     text: "What are you looking for in a candidate?",
     classes: "govuk-label--m",
     isPageHeading: false
   },
-  hint: {
-    text: "Include the essential criteria."
-  },
-  value: {
-    html: roleHTML
-  }
+  value: roleHTML
 }) }}
 
-{{ govukTextarea({
+{{ govukCharacterCount({
 name: "more-detail",
 id: "more-detail",
+maxlength: 200,
 label: {
-text: "What would a standard day look like in the role?",
+text: "What are the responsibilities of the role?",
 classes: "govuk-label--m",
 isPageHeading: false
 },
 hint: {
 text: "Include common tasks and expectations."
-}
+},
+value: "This information would be prepopulated based on the job title. You can change this information and format it, including bullet points and underlining text."
 }) }}
 
 

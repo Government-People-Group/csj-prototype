@@ -68,46 +68,79 @@
 
 <div id="conditional">
 
-{{ govukCheckboxes({
-  idPrefix: "testselect",
-  name: "testselect",
-  fieldset: {
-    legend: {
-      text: "Which online tests do you require?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Select up to 3 tests."
-  },
-  items: [
-    {
-      value: "verbal",
-      text: "Verbal ability"
-    },
-    {
-      value: "numerical",
-      text: "Numerical ability"
-    },
-    {
-      value: "behaviours",
-      text: "Behaviours (CSJT)"
-    }
-    ,
-    {
-      value: "other",
-      text: "Other",
-      conditional: {
-        html: otherHtml
+  {{ govukCheckboxes({
+    idPrefix: "tests",
+    name: "tests",
+    fieldset: {
+      legend: {
+        text: "Which online tests do you require?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
       }
-    }
-  ]
-}) }}
+    },
+    hint: {
+      text: "Select up to 3."
+    },
+    items: [
+      {
+        value: "verbal",
+        text: "Verbal skills",
+        hint: {
+          text: "This test measures the ability to identify relevant information and draw logical conclusions from written information."
+        }
+      },
+      {
+        value: "numerical",
+        text: "Numeracy skills",
+        hint: {
+          text: "This test measures the ability to perform calculations, and evaluate and interpret numerical information to solve problems."
+        }
+        },
+        {
+          value: "judgement",
+          text: "Judgement skills",
+          hint: {
+            text: "This test measures the ability to demonstrate judgement and decision-making regarding specific Civil Service Behaviours, which have been selected as important for success in your chosen job.
+
+  "
+          }
+          },
+          {
+            value: "management",
+            text: "Management judgement skills",
+            hint: {
+              text: "This test measures the ability to demonstrate judgement and decision-making regarding day to day management of others. The aspects of behaviour measured have been selected as important for line management success in your chosen job.
+
+  "
+            }
+            },
+            {
+              value: "strengths",
+              text: "Strengths",
+              hint: {
+                text: "The Civil Service Work Strengths Test is an online test of strengths - what you do regularly, what you do well and what motivates you."
+              }
+              },
+              {
+                value: "customer-service",
+                text: "Customer service skills",
+                hint: {
+                  text: "The Customer Service Skills Test is an online test of skills and abilities in relation to customer service roles, and provides a realistic preview of what is typically involved in such roles in the Civil Service."
+                }
+                },
+                {
+                  value: "casework",
+                  text: "Casework skills",
+                  hint: {
+                    text: "The Casework Skills Test is an online test of skills and abilities in relation to caseworking roles, and provides a realistic preview of what is typically involved in such roles in the Civil Service."
+                  }
+                  }
+    ]
+  }) }}
 </div>
 {{ govukButton({
   text: "Continue",
-  href: "success-profiles-written"
+  href: "/campaign-set-up/assessment-method/success-profiles-written"
 }) }}
 {{ govukButton({
   text: "Preview advert",

@@ -35,7 +35,19 @@
 
     <h1 class="govuk-heading-l">Where is the role based?</h1>
 
+    <div class="govuk-form-group govuk-input--width-30">
+            <label for="autocomplete-default" class="govuk-label--m">Location 1</label>
 
+            <div id="locations" class="autocomplete-wrapper"></div>
+          </div>
+
+          <div class="govuk-form-group govuk-input--width-30">
+                  <label for="autocomplete-default" class="govuk-label--m">Location 2</label>
+
+                  <div id="locations2" class="autocomplete-wrapper"></div>
+                </div>
+
+<p><a href="">Add another location</a></p>
 
 {{ govukButton({
   text: "Continue",
@@ -50,4 +62,7 @@
 
 </div>
 </div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/locations.js"></script>
+<script src="/public/javascripts/locations2.js"></script>
 {% endblock %}

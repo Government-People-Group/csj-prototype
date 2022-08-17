@@ -32,34 +32,41 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">The following technical skills are recommended for this job role:
-    </h1>
-    {% set changeHtml %}
-    <a href="">Change</a>
-    {% endset %}
-
-    {{ govukTable({
-      caption: "",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      rows: [
-        [
-          {
-            text: "Experience using the GOVUK prototype kit"
-          },
-          {
-            html: changeHtml
-          }
-        ]
+<form method="post">
+{% set mandatoryHTML %}
+This will be at the beginning of the application form.</br>
+Candidates can see whether they meet the essential criteria for the job.
+{% endset %}
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "criteria",
+      name: "criteria",
+      fieldset: {
+        legend: {
+          text: "Do you have any essential criteria for this role?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html: mandatoryHTML
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
       ]
     }) }}
 
-<p><a href="">Add another technical skill</a></p>
 
 {{ govukButton({
   text: "Continue",
-  href: "success-profiles-strengths"
+  href: "success-profiles-criteria"
 }) }}
 {{ govukButton({
   text: "Preview advert",
@@ -67,7 +74,7 @@
   href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
-
+</form>
 </div>
 </div>
 {% endblock %}
