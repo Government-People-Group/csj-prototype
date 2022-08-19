@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set hintHTML %}
+    Select up to 3.
+    <br></br>
+    {{ govukDetails({
+      summaryText: "More about online testing",
+      html: '<a href="https://www.gov.uk/guidance/civil-service-online-tests">Read the online testing guidance</a> to find out what tests available and recommended for this job role.'
+    }) }}
+    {% endset %}
+
+    {% set whyHTML %}
+{{ govukInput({
+  label: {
+    text: "Why do you not want to use an online test?",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  id: "why-test",
+  name: "why-test"
+}) }}
+{% endset %}
+
+{{ govukCheckboxes({
+  idPrefix: "tests",
+  name: "tests",
+  fieldset: {
+    legend: {
+      text: "What online tests do you require?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    html: hintHTML
+  },
+  items: [
+    {
+      value: "verbal",
+      text: "Verbal skills",
+      hint: {
+        text: "This test measures the ability to identify relevant information and draw logical conclusions from written information."
+      }
+    },
+    {
+      value: "numerical",
+      text: "Numeracy skills",
+      hint: {
+        text: "This test measures the ability to perform calculations, and evaluate and interpret numerical information to solve problems."
+      }
+      },
+      {
+        value: "judgement",
+        text: "Judgement skills",
+        hint: {
+          text: "This test measures the ability to demonstrate judgement and decision-making regarding specific Civil Service Behaviours, which have been selected as important for success in your chosen job.
+
+"
+        }
+        },
+        {
+          value: "management",
+          text: "Management judgement skills",
+          hint: {
+            text: "This test measures the ability to demonstrate judgement and decision-making regarding day to day management of others. The aspects of behaviour measured have been selected as important for line management success in your chosen job.
+
+"
+          }
+          },
+          {
+            value: "strengths",
+            text: "Strengths",
+            hint: {
+              text: "The Civil Service Work Strengths Test is an online test of strengths - what you do regularly, what you do well and what motivates you."
+            }
+            },
+            {
+              value: "customer-service",
+              text: "Customer service skills",
+              hint: {
+                text: "The Customer Service Skills Test is an online test of skills and abilities in relation to customer service roles, and provides a realistic preview of what is typically involved in such roles in the Civil Service."
+              }
+              },
+              {
+                value: "casework",
+                text: "Casework skills",
+                hint: {
+                  text: "The Casework Skills Test is an online test of skills and abilities in relation to caseworking roles, and provides a realistic preview of what is typically involved in such roles in the Civil Service."
+                }
+                },
+                {
+                  divider: "or"
+                },
+                {
+                  value: "none",
+                  text: "I don't require an online test",
+                  conditional: {
+                    html: whyHTML
+                  }
+                  }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "sift-evidence"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

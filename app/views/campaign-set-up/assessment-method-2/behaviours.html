@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{{ govukCheckboxes({
+  idPrefix: "assessBehaviours",
+  name: "assessBehaviours",
+  fieldset: {
+    legend: {
+      text: "What behaviours will you assess?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select up to 4. Recommended behaviours are selected."
+  },
+    items: [
+      {
+        value: "big-picture",
+        text: "Seeing the big picture",
+        checked: true,
+        hint: {
+          text: "Understand how your role fits with and supports organisational objectives.
+  Recognise the wider Civil Service priorities and ensure work is in the
+  national interest."
+        }
+      },
+      {
+        value: "changing",
+        text: "Changing and Improving",
+        checked: true,
+        hint: {
+          text: "Seek out opportunities to create effective change and suggest innovative ideas for
+  improvement. Review ways of working, including seeking and providing feedback."
+        }
+        },
+        {
+          value: "decisions",
+          text: "Making Effective Decisions",
+          hint: {
+            text: "Use evidence and knowledge to support accurate, expert decisions and advice.
+  Carefully consider alternative options, implications and risks of decisions."
+          }
+          },
+          {
+            value: "leadership",
+            text: "Leadership",
+            hint: {
+              text: "Show pride and passion for public service. Create and engage others in delivering
+  a shared vision. Value difference, diversity and inclusion, ensuring fairness and
+  opportunity for all. "
+            }
+            },
+            {
+              value: "communication",
+              text: "Communicating and Influencing",
+              hint: {
+                text: "Communicate purpose and direction with clarity, integrity and enthusiasm.
+  Respect the needs, responses and opinions of others. "
+              }
+              },
+              {
+                value: "working",
+                text: "Working Together",
+                hint: {
+                  text: "Form effective partnerships and relationships with people both internally and
+  externally, from a range of diverse backgrounds, sharing information, resources
+  and support. "
+                }
+                },
+                {
+                  value: "developing",
+                  text: "Developing Self and Others",
+                  hint: {
+                    text: "Focus on continuous learning and development for self, others and the
+  organisation as a whole. "
+                  }
+                  },
+                  {
+                    value: "service",
+                    text: "Managing a quality service",
+                    checked: true,
+                    hint: {
+                      text: "Deliver service objectives with professional excellence, expertise and efficiency,
+  taking account of diverse customer needs. "
+                    }
+                    },
+                  {
+                    value: "pace",
+                    text: "Delivering at pace",
+                    hint: {
+                      text: "Take responsibility for delivering timely and quality results with focus and drive. "
+                    }
+                    }
+    ]
+  }) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "sift-or-interview"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

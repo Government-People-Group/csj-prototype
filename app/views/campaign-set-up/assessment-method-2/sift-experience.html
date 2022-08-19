@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">What criteria are you looking for at sift?</h1>
+
+    {% call govukFieldset({
+      legend: {
+        text: "Essential criteria",
+        classes: "govuk-fieldset__legend--m",
+        isPageHeading: false
+      }
+    }) %}
+
+    <p>For example, Comfortable around dogs</p>
+    {{ govukInput({
+      label: {
+        text: "Essential criteria 1"
+      },
+      id: "essential1",
+      name: "essential1"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Essential criteria 2 (optional)"
+      },
+      id: "essential2",
+      name: "essential2"
+    }) }}
+
+    <p><a href="">Add another essential criteria</a></p>
+    {% endcall %}
+
+    {% call govukFieldset({
+      legend: {
+        text: "Experience",
+        classes: "govuk-fieldset__legend--m",
+        isPageHeading: false
+      }
+    }) %}
+
+    <p>For example, Two years experience with dog walking</p>
+    {{ govukInput({
+      label: {
+        text: "Experience 1"
+      },
+      id: "experience1",
+      name: "experience1"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Experience 2 (optional)"
+      },
+      id: "experience2",
+      name: "experience2"
+    }) }}
+
+    <p><a href="">Add another experience</a></p>
+    {% endcall %}
+
+    {% call govukFieldset({
+      legend: {
+        text: "Technical skills and qualifications",
+        classes: "govuk-fieldset__legend--m",
+        isPageHeading: false
+      }
+    }) %}
+
+    <p>For example, Canine First Aid diploma</p>
+    {{ govukInput({
+      label: {
+        text: "Technical skill 1"
+      },
+      id: "technical1",
+      name: "technical1"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Technical skill 2 (optional)"
+      },
+      id: "technical2",
+      name: "technical2"
+    }) }}
+
+    <p><a href="">Add another technical skill</a></p>
+    {% endcall %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "interview-evidence"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}
