@@ -29,6 +29,11 @@ $govuk-assets-path: '/govuk/assets/';
     color: #6f777b;
     width: full;
 }
+.app-site-search__hint, .app-site-search__input, .app-site-search__option {
+    font-size: 29px;
+    font-size: 2.1875rem;
+    line-height: 1.7157894737;
+}
 
 .csr-top-search-panel {
   margin: 0;

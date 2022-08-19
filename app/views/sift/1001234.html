@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001234</span>
+<h1 class="govuk-heading-l">Administrative officer</h1>
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Candidate number",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      }
+    ]
+  ]
+}) }}
+
+
+</div>
+</div>
+
+{% endblock %}
