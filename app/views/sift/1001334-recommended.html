@@ -21,6 +21,12 @@
   classes: "govuk-tag--green"
 })}}
 {% endset %}
+{% set holdHTML %}
+{{govukTag({
+  text: "On hold",
+  classes: "govuk-tag--blue"
+})}}
+{% endset %}
 {% set scoreHTML %}
 {{govukTag({
   text: "Score",
@@ -148,7 +154,7 @@
         text: "30"
       },
       {
-        html: rejectHTML
+        html: holdHTML
       },
       {
         html: checkboxHTML
