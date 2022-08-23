@@ -7,8 +7,8 @@
 
 {% block content %}
 {{ govukBackLink({
-  text: "Back to all vacancies",
-  href: "all-vacancies"
+  text: "Back",
+  href: "javascript:history.go(-1)"
 }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -21,11 +21,11 @@
 <h2 class="govuk-heading-l"><a href="1001334-table">5 applications</a></h2>
 {{ govukButton({
   text: "View all applications",
-  href: ""
+  href: "1001334-all-applicants"
 }) }}
 </div>
 <div class="govuk-grid-column-one-third">
-  <h2 class="govuk-heading-l">0 sifted</h2>
+  <h2 class="govuk-heading-l"><a href="1001334-recommended">5 sifted</a></h2>
   {{ govukButton({
     text: "View advert",
     href: "review-advert",
@@ -40,7 +40,7 @@
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-m">Behaviours</h3>
         <ol class="govuk-list govuk-list--number">
-          <li><a href="1001334-score-bigger-picture">Seeing the bigger picture</a></li>
+          <li><a href="">Seeing the bigger picture</a></li>
           <li><a href="">Changing and improving</a></li>
           <li><a href="">Making effective decisions</a></li>
           <li><a href="">Leadership</a></li>

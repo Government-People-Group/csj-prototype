@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+
+{{ govukTable({
+  caption: "Applications",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Behaviour 1",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Behaviour 2",
+      classes: 'app-custom-class',
+      style: hidden
+    },
+    {
+      text: "Behaviour 3",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Experience 1",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Experience 2",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Experience 3",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Skill 1",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Skill 2",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Total",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a href''>Applicant 1</a>"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "32"
+      }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 2</a>"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "1"
+    },
+    {
+      text: "1"
+    },
+    {
+      text: "20"
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 3</a>"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "Not scored"
+    },
+    {
+      text: "28"
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 4</a>"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "2"
+    },
+    {
+      text: "30"
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 5</a>"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "5"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "5"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "5"
+    },
+    {
+      text: "35"
+    }
+    ]
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Recommended action",
+  href: "1001334-recommended"
+}) }}
+            </div>
+            </div>
+{% endblock %}

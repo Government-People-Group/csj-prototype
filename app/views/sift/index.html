@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        GOV.UK Prototype Kit
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        <ul class="govuk-list govuk-list--bullet govuk-heading-s">
+          <li>
+            <a href="all-vacancies">Sift version 1</a>
+          </li>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="all-vacancies">All vacancies</a>
+            </li>
+            <li>
+              <a href="1001334">1001334 - Lead delivery manager job (0 sifted)</a>
+            </li>
+            <li>
+              <a href="1001334-table">View all applicants</a>
+            </li>
+            <li>
+              <a href="1001334-score-bigger-picture">Score bigger picture</a>
+            </li>
+            <li>
+              <a href="1001334-recommended">View status recommendations</a>
+            </li>
+            <li>
+              <a href="1001334-sifted">View sifted vacancy</a>
+            </li>
+            </ul>
+          </p>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

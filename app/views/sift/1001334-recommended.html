@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+
+{% set interviewHTML %}
+{{govukTag({
+  text: "Interview",
+  classes: "govuk-tag--green"
+})}}
+{% endset %}
+{% set scoreHTML %}
+{{govukTag({
+  text: "Score",
+  classes: "govuk-tag--grey"
+})}}
+{% endset %}
+{% set rejectHTML %}
+{{govukTag({
+  text: "Reject",
+  classes: "govuk-tag--red"
+})}}
+{% endset %}
+{% set checkboxHTML %}
+{{ govukCheckboxes({
+  idPrefix: "proceed",
+  name: "proceed",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "confirm",
+      text: "Confirm recommendation"
+    }
+  ]
+}) }}
+{% endset %}
+
+{% set confirmHTML %}
+{{ govukCheckboxes({
+  idPrefix: "proceed",
+  name: "proceed",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "confirm",
+      text: "Confirm all",
+      classes: "govuk-heading-s"
+    }
+  ]
+}) }}
+{% endset %}
+
+{{ govukTable({
+  caption: "Applications",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Score",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Recommendation",
+      classes: 'app-custom-class',
+      style: hidden
+    },
+    {
+      html: confirmHTML,
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a href=''>Applicant 1</a>"
+      },
+      {
+        text: "32"
+      },
+      {
+        html: interviewHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],
+    [
+      {
+        html: "<a href=''>Applicant 2</a>"
+      },
+      {
+        text: "20"
+      },
+      {
+        html: rejectHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],[
+      {
+        html: "<a href=''>Applicant 3</a>"
+      },
+      {
+        text: "28"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],[
+      {
+        html: "<a href=''>Applicant 4</a>"
+      },
+      {
+        text: "30"
+      },
+      {
+        html: rejectHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],
+    [
+      {
+        html: "<a href=''>Applicant 5</a>"
+      },
+      {
+        text: "35"
+      },
+      {
+        html: interviewHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ]
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Submit recommendations",
+  href: "1001334-sifted"
+}) }}
+            </div>
+            </div>
+{% endblock %}
