@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<h1 class="govuk-heading-l">Applicant 1 CV</h1>
+<img src="anonymised-cv.png" width="500" height="600">
+</div>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+    {{ govukInput({
+    label: {
+      text: "Score out of 99",
+      isPageHeading: false,
+      classes: "govuk-label--m"
+    },
+    classes: "govuk-input--width-2",
+    id: "score",
+    name: "score"
+  }) }}
+
+</div>
+  <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+id: "reason",
+name: "reason",
+label: {
+text: "Reason",
+classes: "govuk-label--m"
+},
+items: [
+{
+  value: "example",
+  text: "Example"
+},
+{
+  value: "experience",
+  text: "Experience"
+},
+{
+  value: "relevance",
+  text: "Relevance to role"
+},
+{
+  value: "---",
+  text: "---",
+  selected: true
+}
+]
+}) }}
+</div>
+</div>
+
+{{ govukButton({
+  text: "Return to application",
+  href: "1001334-applicant-1"
+}) }}
+
+{% endblock %}
