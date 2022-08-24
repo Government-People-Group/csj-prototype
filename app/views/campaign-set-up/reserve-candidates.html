@@ -1,0 +1,294 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing">
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-l">
+        13 Search results
+      </h1>
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-third csr-side-search-panel govuk-!-margin-0" style="padding-right: 0px;">
+
+<h2 class="govuk-heading-s">Filter search</h2>
+
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+  id: "department",
+  name: "department",
+  label: {
+    text: "Department"
+  },
+  items: [
+  {
+    value: "all",
+    text: "All departments",
+    selected: true
+  },
+  {
+    value: "cabinetoffice",
+    text: "Cabinet office"
+  },
+  {
+    value: "dwp",
+    text: "Department for work and pensions"
+  },
+  {
+      value: "homeoffice",
+      text: "Home office"
+    }
+  ]
+}) }}
+</div>
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+id: "location",
+name: "location",
+label: {
+text: "Preferred location",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "cardiff",
+text: "Cardiff"
+},
+{
+value: "edingburgh",
+text: "Edinburgh"
+},
+{
+value: "leeds",
+text: "Leeds"
+},
+{
+value: "london",
+text: "London",
+selected: true
+}
+]
+}) }}
+
+{{ govukSelect({
+id: "behaviour",
+name: "behaviour",
+label: {
+text: "Behaviour",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "bigger-picture",
+text: "Seeing the bigger picture"
+},
+{
+value: "changing",
+text: "Changing and improving"
+},
+{
+value: "leadership",
+text: "Leadership"
+}
+]
+}) }}
+
+
+{{ govukSelect({
+id: "work-pattern",
+name: "work-pattern",
+label: {
+text: "Working pattern",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "full-time",
+text: "Full-time",
+selected: true
+},
+{
+value: "part-time",
+text: "Part-time"
+}
+]
+}) }}
+
+{{ govukButton({
+  text: "Update results"
+}) }}
+</div>
+
+</div>
+<div class="govuk-grid-column-two-thirds" style="padding-left: 40px;">
+
+
+       {{ govukSelect({
+         id: "sort",
+         name: "sort",
+         label: {
+           text: "Order by"
+         },
+         items: [
+           {
+             value: "score",
+             text: "Overall score"
+           },
+           {
+             value: "location",
+             text: "Location"
+           },
+           {
+             value: "time",
+             text: "Time on reserve list",
+             selected: true
+           }
+         ]
+       }) }}
+
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 1</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 2</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 3</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 4</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 5</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 6</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 7</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 8</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 9</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 10</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 11</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       
+
+</div>
+</div>
+</div>
+
+</main>
+</div>
+{% endblock %}
