@@ -8483,6 +8483,10 @@ x:-moz-any-link {
   background: #b1b4b6;
 }
 
+.answer-panel {
+  background: #DEE0E2;
+}
+
 .govuk-button--blue {
   background: #1d70b8;
 }

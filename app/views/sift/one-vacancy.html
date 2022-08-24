@@ -23,24 +23,20 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-{% set leadHTML %}
-    {{govukTag({
-              text: "Lead",
-              classes: "govuk-tag--blue"
-            })}}
-      {% endset %}
-      {% set panelHTML %}
-          {{govukTag({
-                    text: "Panel",
-                    classes: "govuk-tag--grey"
-                  })}}
-            {% endset %}
-            {% set recruiterHTML %}
-                {{govukTag({
-                          text: "Recruiter",
-                          classes: "govuk-tag--yellow"
-                        })}}
-                  {% endset %}
+    {% set leadHTML %}
+        {{govukTag({
+                  text: "Lead",
+                  classes: "govuk-tag--blue"
+                })}}
+          {% endset %}
+
+          {% set panelHTML %}
+              {{govukTag({
+                        text: "Panel",
+                        classes: "govuk-tag--grey"
+                      })}}
+                {% endset %}
+
     {% set draftHTML %}
 
     {{ govukTable({
@@ -59,10 +55,6 @@
         {
           text: "Date started",
           classes: 'app-custom-class'
-        },
-        {
-          text: "Responsibility",
-          classes: 'app-custom-class'
         }
       ],
       rows: [
@@ -75,9 +67,6 @@
         },
         {
           text: "18 Sept 2022"
-        },
-        {
-          html: leadHTML
         }
       ],
       [
@@ -89,9 +78,6 @@
           },
           {
             text: "1 Sept 2022"
-          },
-          {
-            html: panelHTML
           }
         ],
         [
@@ -103,9 +89,6 @@
           },
           {
             text: "9 Sept 2022"
-          },
-          {
-            html: panelHTML
           }
         ]
       ]
@@ -130,10 +113,6 @@
         {
           text: "Date started",
           classes: 'app-custom-class'
-        },
-        {
-          text: "Responsibility",
-          classes: 'app-custom-class'
         }
       ],
       rows: [
@@ -146,9 +125,6 @@
         },
         {
           text: "18 Sept 2022"
-        },
-        {
-          html: recruiterHTML
         }
       ],
       [
@@ -160,9 +136,6 @@
           },
           {
             text: "1 Sept 2022"
-          },
-          {
-            html: recruiterHTML
           }
         ],
         [
@@ -174,9 +147,6 @@
           },
           {
             text: "9 Sept 2022"
-          },
-          {
-            html: recruiterHTML
           }
         ]
       ]
@@ -205,10 +175,6 @@
     {
       text: "Completed applications",
       classes: 'app-custom-class'
-    },
-    {
-      text: "Responsibility",
-      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -224,9 +190,6 @@
     },
     {
       text: "2"
-    },
-    {
-      html: recruiterHTML
     }
   ],
   [
@@ -241,9 +204,6 @@
       },
       {
         text: "10"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -258,9 +218,6 @@
       },
       {
         text: "1"
-      },
-      {
-        html: recruiterHTML
       }
     ]
   ]
@@ -309,41 +266,7 @@
         text: "10"
       },
       {
-        html: panelHTML
-      }
-    ],
-    [
-      {
-        html: '<a href="">1001254</a>'
-      },
-      {
-        text: "Project planner"
-      },
-      {
-        text: "9 Sept 2022"
-      },
-      {
-        text: "1"
-      },
-      {
-        html: recruiterHTML
-      }
-    ],
-    [
-      {
-        html: '<a href="">1001334</a>'
-      },
-      {
-        text: "Lead delivery manager"
-      },
-      {
-        text: "18 Sept 2022"
-      },
-      {
-        text: "2"
-      },
-      {
-        html: recruiterHTML
+        html: leadHTML
       }
     ]
   ]
@@ -371,10 +294,6 @@
     {
       text: "Applicants",
       classes: 'app-custom-class'
-    },
-    {
-      text: "Responsibility",
-      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -390,9 +309,6 @@
       },
       {
         text: "10"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -407,9 +323,6 @@
       },
       {
         text: "1"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -424,9 +337,6 @@
       },
       {
         text: "2"
-      },
-      {
-        html: recruiterHTML
       }
     ]
   ]
@@ -454,10 +364,6 @@
     {
       text: "Applicants",
       classes: 'app-custom-class'
-    },
-    {
-      text: "Responsibility",
-      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -473,9 +379,6 @@
       },
       {
         text: "10"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -490,9 +393,6 @@
       },
       {
         text: "1"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -507,9 +407,6 @@
       },
       {
         text: "2"
-      },
-      {
-        html: recruiterHTML
       }
     ]
   ]
@@ -537,10 +434,6 @@
     {
       text: "Candidates",
       classes: 'app-custom-class'
-    },
-    {
-      text: "Responsibility",
-      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -556,9 +449,6 @@
       },
       {
         text: "10"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -573,9 +463,6 @@
       },
       {
         text: "1"
-      },
-      {
-        html: recruiterHTML
       }
     ],
     [
@@ -590,9 +477,6 @@
       },
       {
         text: "2"
-      },
-      {
-        html: panelHTML
       }
     ]
   ]
@@ -620,10 +504,6 @@
     {
       text: "Candidates",
       classes: 'app-custom-class'
-    },
-    {
-      text: "Responsibility",
-      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -639,9 +519,6 @@
       },
       {
         text: "10"
-      },
-      {
-        html: panelHTML
       }
     ],
     [
@@ -656,9 +533,6 @@
       },
       {
         text: "1"
-      },
-      {
-        html: leadHTML
       }
     ],
     [
@@ -673,84 +547,25 @@
       },
       {
         text: "2"
-      },
-      {
-        html: panelHTML
       }
     ]
   ]
 }) }}
 {% endset %}
 
-    <h1 class=govuk-heading-l>All vacancies (32)</h1>
+    <h1 class=govuk-heading-l>All vacancies (1)</h1>
 
     <input aria-expanded="false" aria-owns="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off" class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="input-autocomplete" placeholder="Search vacancies" type="text" role="combobox">
 <br></br>
     {{ govukAccordion({
       id: "accordion-default",
       items: [
-      {
-        heading: {
-          text: "Draft vacancies (3)"
-        },
-        content: {
-          html: draftHTML
-        }
-      },
-      {
-        heading: {
-          text: "Approval required (1)"
-        },
-        content: {
-          html: approvalHTML
-        }
-      },
         {
           heading: {
-            text: "Live vacancies (3)"
-          },
-          content: {
-            html: liveHTML
-          }
-        },
-        {
-          heading: {
-            text: "Awaiting sift (7)"
+            text: "Awaiting sift (1)"
           },
           content: {
             html: siftHTML
-          }
-        },
-          {
-          heading: {
-            text: "Awaiting interview (3)"
-          },
-          content: {
-            html: interviewHTML
-          }
-        },
-          {
-          heading: {
-            text: "Awaiting interview scoring (5)"
-          },
-          content: {
-            html: scoringHTML
-          }
-        },
-          {
-          heading: {
-            text: "Pre-employment checking (8)"
-          },
-          content: {
-            html: pecHTML
-          }
-        },
-          {
-          heading: {
-            text: "Onboarding (3)"
-          },
-          content: {
-            html: onboardingHTML
           }
         }
       ]
