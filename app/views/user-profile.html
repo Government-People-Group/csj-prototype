@@ -32,36 +32,32 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% set html %}
 
-      <p class="govuk-notification-banner__heading">
-        All panel members have submitted their scores for vacancy 1001334 - Lead Delivery Manager.
-        <a class="govuk-notification-banner__link" href="#">Review the scores</a>.
-      </p>
-    {% endset %}
-
-    {{ govukNotificationBanner({
-      html: html
-    }) }}
 
 <h1 class="govuk-heading-l">Welcome back, Jane Smith</h1>
 </div>
 </div>
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-one half">
+<div class="govuk-grid-column-one-third">
 <h2 class="govuk-heading-m"><a href="campaign-set-up/skills-or-title">Create a vacancy</a></h2>
 <h2 class="govuk-heading-m"><a href="sift/all-vacancies">View all vacancies and sift candidates</a></h2>
 <h2 class="govuk-heading-m"><a href="sift/interivews">Check upcoming interviews</a></h2>
 <h2 class="govuk-heading-m"><a href="profile-update">Update profile</a></h2>
 <h2 class="govuk-heading-m"><a href="campaign-set-up/step-by-step">Read guidance</a></h2>
 </div>
-<div class="govuk-grid-column-one half">
+<div class="govuk-grid-column-two-thirds">
+  <h3 class="govuk-heading-m">Notifications</h3>
+  <p>All panel members have submitted their scores for <a href="1001334-sifted">vacancy 1001334 - Lead Delivery Manager</a>.
+  <a href="#">Review the scores</a>.</p>
+  <p class="govuk-body-s">3 September 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p><a href="sift/1001234">Vacancy 1001234 - Administrative officer</a> is now live.</p>
+  <p class="govuk-body-s">23 August 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p>Approval for <a href="sift/1001234">vacancy 1001234 - Administrative officer</a> has been confirmed.</p>
+  <p class="govuk-body-s">22 August 2022</p>
 </div>
 </div>
 
-
-{{ govukButton({
-  text: "Continue"
-}) }}
 
 {% endblock %}
