@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% set trainingHTML %}
+<p><a href="">Check Civil Service Learning</a> to see if you are up to date with recruitment training.</p>
+{% endset %}
+
+<h1 class="govuk-heading-l">Profile information</h1>
+
+{{ govukInput({
+  label: {
+    text: "Your name"
+  },
+  id: "name",
+  name: "name",
+  value: "Jane Smith"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Your email"
+  },
+  id: "email",
+  name: "email",
+  value: "User@cabinetoffice.gov.uk"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Your phone number (optional)"
+  },
+  id: "phone",
+  name: "phone",
+  value: ""
+}) }}
+{{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+text: "What does your team do?"
+},
+hint: {
+text: "This information will be visible to candidates."
+},
+value: "this information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
+
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Linked websites for your vacancy"
+  },
+  hint: {
+    text: "This could be a link to a video or department specific website. This will be visible to candidates."
+  },
+  classes: "govuk-input--width-20",
+  id: "links",
+  name: "links",
+  value: "www.linkedin.com/cabinetoffice"
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "training",
+  name: "training",
+  fieldset: {
+    legend: {
+      text: "Have you completed recruitment training?"
+    }
+  },
+  hint: {
+    html: trainingHTML
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: true
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "panel",
+  name: "panel",
+  fieldset: {
+    legend: {
+      text: "Are you willing to be on the panel for other vacancies in your department?"
+    }
+  },
+  hint: {
+    text: "You will be asked if you're available before being added to a panel."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: true
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Save changes",
+  href: "user-profile"
+}) }}
+</div>
+</div>
+
+
+{% endblock %}

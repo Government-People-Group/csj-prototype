@@ -49,9 +49,9 @@
   classes: "govuk-tag--blue"
 })}}
 {% endset %}
-{% set scoreHTML %}
+{% set indefiniteHTML %}
 {{govukTag({
-  text: "Missing score",
+  text: "Panel consensus needed",
   classes: "govuk-tag--grey"
 })}}
 {% endset %}
@@ -104,8 +104,12 @@
 }) }}
 {% endset %}
 
+{% set consensusHTML %}
+<p><a href="">Arrange consensus meeting</a></p>
+{% endset %}
+
 {{ govukTable({
-  caption: "Applications",
+  caption: "",
   captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: false,
   head: [
@@ -114,11 +118,11 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Score",
+      text: "Average score",
       classes: 'app-custom-class'
     },
     {
-      text: "Recommendation",
+      text: "Panel consensus",
       classes: 'app-custom-class',
       style: hidden
     },
@@ -160,26 +164,26 @@
         html: "<a href=''>Applicant 3</a>"
       },
       {
-        text: "28"
+        text: "31"
       },
       {
-        html: scoreHTML
+        html: indefiniteHTML
       },
       {
-        html: checkboxHTML
+        html: consensusHTML
       }
     ],[
       {
         html: "<a href=''>Applicant 4</a>"
       },
       {
-        text: "30"
+        text: "33"
       },
       {
-        html: holdHTML
+        html: indefiniteHTML
       },
       {
-        html: checkboxHTML
+        html: consensusHTML
       }
     ],
     [
@@ -200,8 +204,8 @@
 }) }}
 
 {{ govukButton({
-  text: "Submit recommendations",
-  href: "1001334-sifted"
+  text: "Confirm recommendations",
+  href: "interview"
 }) }}
             </div>
             </div>
