@@ -336,18 +336,31 @@ value: "Candidate has taken multiple web accessibility courses"
 </div>
 </div>
 <div class="govuk-button-group">
-{{ govukButton({
-  text: "Invite to interview",
-  href: "1001334-interview"
-}) }}
-{{ govukButton({
-  text: "Reject application",
-  classes: "govuk-button--warning"
-}) }}
-{{ govukButton({
-  text: "Place on hold",
-  classes: "govuk-button--secondary"
-}) }}
+  {{ govukRadios({
+    idPrefix: "proceed",
+    name: "proceed",
+    fieldset: {
+      legend: {
+        text: "What do you want to do with the applicant?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "interview",
+        text: "Invite to interview"
+      },
+      {
+        value: "reject",
+        text: "Reject"
+      },
+      {
+        value: "hold",
+        text: "Place on hold"
+      }
+    ]
+  }) }}
 </div>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h2 class="govuk-heading-m">Applicant 4</h2>
@@ -642,22 +655,36 @@ id: "feedback",
 name: "feedback",
 value: "Candidate did an accessibility course, but not for web services"
 }) }}
+{{ govukRadios({
+  idPrefix: "proceed",
+  name: "proceed",
+  fieldset: {
+    legend: {
+      text: "What do you want to do with the applicant?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "interview",
+      text: "Invite to interview"
+    },
+    {
+      value: "reject",
+      text: "Reject"
+    },
+    {
+      value: "hold",
+      text: "Place on hold"
+    }
+  ]
+}) }}
+</div>
+</div>
 {{ govukButton({
-  text: "Invite to interview",
+  text: "Submit consensus",
   href: "1001334-interview"
 }) }}
-</br>
-{{ govukButton({
-  text: "Reject application",
-  classes: "govuk-button--warning"
-}) }}
-</br>
-{{ govukButton({
-  text: "Place on hold",
-  classes: "govuk-button--secondary"
-}) }}
-</div>
-</div>
-
 
 {% endblock %}
