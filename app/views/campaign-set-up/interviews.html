@@ -33,7 +33,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">Sifting and selection methods</span>
-    <h1 class="govuk-heading-l">Interviews</h1>
+    <h1 class="govuk-heading-l">Panel</h1>
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% set panelHTML %}
@@ -57,7 +57,8 @@
       items: [
         {
           value: "yes",
-          text: "Yes"
+          text: "Yes",
+          checked: true
         },
         {
           value: "no",
@@ -65,6 +66,31 @@
         }
       ]
     }) }}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "panel-selected",
+      name: "panel-selected",
+      fieldset: {
+        legend: {
+          text: "Is the panel the same for sift and interview?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          checked: true
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
 <div id="conditional-panel-members">
 {% call govukFieldset({
   legend: {
@@ -78,6 +104,7 @@
     label: {
       text: 'Panel member 1 email'
     },
+    classes: "govuk-!-width-two-thirds",
     id: "address-line-1",
     name: "address-line-1"
   }) }}
@@ -86,6 +113,7 @@
     label: {
       text: 'Panel member 2 email'
     },
+    classes: "govuk-!-width-two-thirds",
     id: "address-line-2",
     name: "address-line-2"
   }) }}

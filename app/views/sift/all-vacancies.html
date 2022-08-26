@@ -146,34 +146,6 @@
         }
       ],
       rows: [
-      [
-        {
-          html: '<a href="1001334">1001334</a>'
-        },
-        {
-          text: "Lead delivery manager"
-        },
-        {
-          text: "18 Sept 2022"
-        },
-        {
-          html: recruiterHTML
-        }
-      ],
-      [
-          {
-            html: '<a href="1001234">1001234</a>'
-          },
-          {
-            text: "Administrative officer"
-          },
-          {
-            text: "1 Sept 2022"
-          },
-          {
-            html: recruiterHTML
-          }
-        ],
         [
           {
             html: '<a href="">1001254</a>'
@@ -295,16 +267,26 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Applicants",
-      classes: 'app-custom-class'
-    },
-    {
       text: "Responsibility",
       classes: 'app-custom-class'
     }
   ],
   rows: [
-    [
+  [
+    {
+      html: '<a href="1001334">1001334</a>'
+    },
+    {
+      text: "Lead delivery manager"
+    },
+    {
+      text: "18 Sept 2022"
+    },
+    {
+      html: leadHTML
+    }
+  ],
+  [
       {
         html: '<a href="1001234">1001234</a>'
       },
@@ -313,9 +295,6 @@
       },
       {
         text: "1 Sept 2022"
-      },
-      {
-        text: "10"
       },
       {
         html: panelHTML
@@ -332,27 +311,7 @@
         text: "9 Sept 2022"
       },
       {
-        text: "1"
-      },
-      {
-        html: recruiterHTML
-      }
-    ],
-    [
-      {
-        html: '<a href="">1001334</a>'
-      },
-      {
-        text: "Lead delivery manager"
-      },
-      {
-        text: "18 Sept 2022"
-      },
-      {
-        text: "2"
-      },
-      {
-        html: recruiterHTML
+        html: panelHTML
       }
     ]
   ]
@@ -691,7 +650,7 @@
 }) }}
 {% endset %}
 
-    <h1 class=govuk-heading-l>All vacancies (32)</h1>
+    <h1 class=govuk-heading-l>All vacancies (22)</h1>
 
     <input aria-expanded="false" aria-owns="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off" class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="input-autocomplete" placeholder="Search vacancies" type="text" role="combobox">
 <br></br>
@@ -724,7 +683,7 @@
         },
         {
           heading: {
-            text: "Awaiting sift (7)"
+            text: "Awaiting sift (3)"
           },
           content: {
             html: siftHTML
@@ -740,7 +699,7 @@
         },
           {
           heading: {
-            text: "Awaiting interview scoring (5)"
+            text: "Awaiting interview scoring (3)"
           },
           content: {
             html: scoringHTML
@@ -748,7 +707,7 @@
         },
           {
           heading: {
-            text: "Pre-employment checking (8)"
+            text: "Pre-employment checking (3)"
           },
           content: {
             html: pecHTML

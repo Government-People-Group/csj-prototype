@@ -50,90 +50,66 @@
   name: "other"
 }) }}
 {% endset %}
-{{ govukCheckboxes({
-idPrefix: "waste",
-name: "waste",
+{{ govukRadios({
+idPrefix: "bigger-picture",
+name: "bigger-picture",
 fieldset: {
 legend: {
-text: "What behaviour questions will you ask the candidate at interview?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--l"
+html: "What <b>seeing the bigger picture</b> question will you ask the candidate at interview?",
+isPageHeading: false,
+classes: "govuk-fieldset__legend--m"
 }
 },
 hint: {
-text: "The following are recommended based on the criteria you selected at advert. Select up to 4 questions."
+text: "The following are recommended based on the criteria you selected at advert."
 },
 items: [
 {
 value: "bigger-picture1",
-html: "<p><b>Seeing the bigger picture</b> Describe a situation where you worked outside of the scope of your role."
+html: "Describe a situation where you worked outside of the scope of your role."
 },
 {
 value: "bigger-picture2",
-html: "<p><b>Seeing the bigger picture</b> Tell me about a time when you have collaborated with another department in order to deliver a positive outcome."
+html: "Tell me about a time when you have collaborated with another department in order to deliver a positive outcome."
 },
 {
 value: "bigger-picture3",
-html: "<p><b>Seeing the bigger picture</b> Give an example of an achievement which directly contributed to your department goals."
-},
-{
-value: "leadership1",
-html: "<p><b>Leadership</b> Describe a time when your leadership skills made a difference."
-},
-{
-value: "leadership2",
-html: "<p><b>Leadership</b> Describe a time you had to deal with a difficult stakeholder. How did you handle it and what was the outcome?"
-},
-{
-value: "leadership3",
-html: "<p><b>Leadership</b> Tell us about a time when you showed leadership. What did you learn from the experience?"
+html: "Give an example of an achievement which directly contributed to your department goals."
 }
 ]
 }) }}
-{{ govukCheckboxes({
-idPrefix: "skills",
-name: "skills",
+{{ govukRadios({
+idPrefix: "leadership",
+name: "leadership",
 fieldset: {
 legend: {
-text: "What skills and experience questions will you ask the candidate at interview?",
+html: "What <b>Leadership</b> question will you ask the candidate at interview?",
 isPageHeading: false,
-classes: "govuk-fieldset__legend--l"
+classes: "govuk-fieldset__legend--m"
 }
 },
 hint: {
-text: "The following are recommended based on the criteria you selected at advert. Select up to 4 questions."
+text: "The following are recommended based on the criteria you selected at advert."
 },
 items: [
 {
-value: "bigger-picture1",
-html: "<p><b>Seeing the bigger picture</b> Describe a situation where you worked outside of the scope of your role."
-},
-{
-value: "bigger-picture2",
-html: "<p><b>Seeing the bigger picture</b> Tell me about a time when you have collaborated with another department in order to deliver a positive outcome."
-},
-{
-value: "bigger-picture3",
-html: "<p><b>Seeing the bigger picture</b> Give an example of an achievement which directly contributed to your department goals."
-},
-{
 value: "leadership1",
-html: "<p><b>Leadership</b> Can you recall a time you identified ways to develop yourself?."
+html: "Describe a time when your leadership skills made a difference."
 },
 {
 value: "leadership2",
-html: "<p><b>Leadership</b> Tell me about a time when you made a mistake and learned from it."
+html: "Describe a time you had to deal with a difficult stakeholder. How did you handle it and what was the outcome?"
 },
 {
 value: "leadership3",
-html: "<p><b>Leadership</b> How do you know your outputs are up to standard?"
+html: "Tell us about a time when you showed leadership. What did you learn from the experience?"
 }
 ]
 }) }}
 
 
   {{ govukButton({
-    text: "Submit interview invites",
+    text: "View interview dashboard",
     href: "interviews"
   }) }}
             </div>
