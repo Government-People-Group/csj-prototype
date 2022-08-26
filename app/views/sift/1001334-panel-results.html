@@ -105,7 +105,10 @@
 {% endset %}
 
 {% set consensusHTML %}
-<p><a href="">Arrange consensus meeting</a></p>
+{{ govukDetails({
+  summaryText: "Arrange consensus meeting",
+  html: "<a href='mailto:fictionalpanel@cabonetoffice.gov.uk'>Contact the panel</a> to arrange a consenus meeting and <a href='1001334-consensus-meeting'>review the borderline applicants</a>."
+}) }}
 {% endset %}
 
 {{ govukTable({

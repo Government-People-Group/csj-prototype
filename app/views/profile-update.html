@@ -141,6 +141,30 @@ value: "this information is pulled from your profile. It tells the candidate abo
   ]
 }) }}
 
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "calendar",
+  name: "calendar",
+  fieldset: {
+    legend: {
+      text: "Allow your calendar to be synced with this service?"
+    }
+  },
+  hint: {
+    text: "This will enable interview slots to be automatically geneerated."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
 {{ govukButton({
   text: "Save changes",
   href: "user-profile"

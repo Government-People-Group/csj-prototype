@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<p>These applicants passed any <a href="1001335">pre-sift questions</a> and <a href="1001335-test">online tests</a>.</p>
+</div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+<h2 class="govuk-heading-l"><a href="1001334-table">5 applications</a></h2>
+<h2 class="govuk-heading-l"><a href="review-advert">View advert</a></h2>
+</div>
+<div class="govuk-grid-column-one-third">
+  <h2 class="govuk-heading-l"><a href="1001334-recommended">5 sifted</a></h2>
+<h2 class="govuk-heading-l"><a href="1001334-recommended">View my scores</a></h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-l"><a href="1001334-panel-results">Panel results</a></h2>
+<h2 class="govuk-heading-l"><a href="interview">Interview</a></h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p>Select a criteria below to sift one criteria at a time.</p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Behaviours</h3>
+        <ol class="govuk-list govuk-list--number">
+          <li><a href="">Seeing the bigger picture</a></li>
+          <li><a href="">Changing and improving</a></li>
+          <li><a href="">Making effective decisions</a></li>
+          <li><a href="">Leadership</a></li>
+        </ol>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-m">Experience</h3>
+          <ol class="govuk-list govuk-list--number">
+            <li><a href="">Experience working in user-centered design</a></li>
+            <li><a href="">Knowledge of design principals</a></li>
+          </ol>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m">Skills</h3>
+            <ol class="govuk-list govuk-list--number">
+            <li><a href="">Experience creating GOV.UK prototypes</a></li>
+            <li><a href="">Qualification in web accessibility</a></li>
+            </ol>
+            </div>
+            </div>
+{% endblock %}
