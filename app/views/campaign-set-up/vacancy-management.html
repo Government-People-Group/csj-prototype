@@ -34,7 +34,44 @@
   <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">Review and manage</span>
     <h1 class="govuk-heading-l">Vacancy management</h1>
-    {{ govukInput({
+    {{ govukRadios({
+      idPrefix: "advert-time",
+      name: "advert-time",
+      fieldset: {
+        legend: {
+          text: "How long should the advert be live?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Most vacancies are live for 2 weeks"
+      },
+      items: [
+        {
+          value: "2",
+          text: "2 weeks",
+          checked: true
+        },
+        {
+          value: "3",
+          text: "3 weeks"
+        },
+        {
+          value: "4",
+          text: "4 weeks"
+        },
+        {
+          value: "rolling",
+          text: "Rolling recruitment",
+          hint: {
+            text: "This advert will stay live until the posts have been filled."
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukInput({
       label: {
         text: "Who will review the job advert?",
         isPageHeading: false,
