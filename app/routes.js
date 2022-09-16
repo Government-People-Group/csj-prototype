@@ -52,6 +52,33 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
         res.redirect('reserves-found')
       })
 
+      router.get('/templates', function (req, res) {
+        var template = req.session.data['template']
+          res.render('templates', {
+            level: level,
+            jobTitle: jobTitle
+          })
+        })
+        router.post('/campaign-set-up/templates', function (req, res) {
+          var template = req.session.data['template']
+
+          switch (template) {
+          case 'cswide':
+            res.redirect('cswide-template')
+            break
+          case 'dept':
+            res.redirect('dept-template')
+            break
+          case 'copy':
+            res.redirect('copy-template')
+            break
+          case 'no':
+            res.redirect('task-list-blank')
+            break
+          }
+          })
+
+
   router.get('/reserves-found', function (req, res) {
     var level = level
     var jobTitle = jobTitle
@@ -72,6 +99,27 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
         break
       }
       })
+
+      router.get('/reserves-found-1', function (req, res) {
+        var level = level
+        var jobTitle = jobTitle
+          res.render('reserves-found-1', {
+            level: level,
+            jobTitle: jobTitle
+          })
+        })
+        router.post('/campaign-set-up/reserves-found-1', function (req, res) {
+          var reserve = req.session.data['reserve']
+
+          switch (reserve) {
+            case 'yes':
+            res.redirect('reserve-candidates')
+            break
+          case 'no':
+            res.redirect('vacancy-management')
+            break
+          }
+          })
 
       // Task list
 

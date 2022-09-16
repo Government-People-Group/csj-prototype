@@ -33,49 +33,45 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <form action="" method="post">
-<h1 class="govuk-heading-l">Find a job role</h1>
+<h1 class="govuk-heading-l">Job vacancy templates</h1>
+
+<p>There are <b>13</b> candidates in the reserve list that match the job title <b>Senior Interaction designer</b>.
 
 {{ govukRadios({
-  idPrefix: "level",
-  name: "level",
+  idPrefix: "template",
+  name: "template",
   fieldset: {
     legend: {
-      text: "Select the seniority of the role",
-      isPageHeading: true,
+      text: "Would you like to use an existing template for this job vacancy?",
+      isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    text: "Template have been "
+  }
   items: [
     {
-      value: "associate",
-      text: "Associate (estimated grade AO or equivalent)"
+      value: "cswide",
+      text: "Yes, a civil service template"
     },
     {
-      value: "junior",
-      text: "Junior (estimated grade EO or equivalent)"
+      value: "dept",
+      text: "Yes, a department specific template"
     },
     {
-      value: "mid",
-      text: "Mid-level (estimated grade HEO or equivalent)"
+      value: "copy",
+      text: "Yes, I want to copy a previous advert"
     },
     {
-      value: "senior",
-      text: "Senior (estimated grade SEO or equivalent)"
-    },
-    {
-      value: "lead",
-      text: "Lead (estimated grade G7 or equivalent)"
-    },
-    {
-      value: "head",
-      text: "Head (estimated grade G6 or equivalent)"
+      value: "no",
+      text: "No, I don't want to use a template"
     }
   ]
 }) }}
 
 {{ govukButton({
-  text: "Continue",
-  href: "templates"
+  text: "Continue"
 }) }}
 </form>
 </div>
