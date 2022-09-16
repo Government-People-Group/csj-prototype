@@ -64,7 +64,7 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
 
           switch (template) {
           case 'cswide':
-            res.redirect('cswide-template')
+            res.redirect('task-list')
             break
           case 'dept':
             res.redirect('dept-template')
