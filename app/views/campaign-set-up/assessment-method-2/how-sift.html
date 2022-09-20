@@ -30,6 +30,21 @@
         {% endblock %}
 {% block content %}
 
+{% set otherHTML %}
+{{ govukInput({
+  label: {
+    text: "What other methods do you want to use at sift?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  hint: {
+    text: "For example, a design portfolio."
+  },
+  id: "other-method",
+  name: "other-method"
+}) }}
+{% endset %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Assessment methods</span>
@@ -38,7 +53,7 @@
     name: "sift",
     fieldset: {
       legend: {
-        text: "What will you assess at sift?",
+        text: "How will you assess at sift?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -48,27 +63,23 @@
     },
     items: [
       {
-        value: data['experience1'],
-        text: data['experience1']
+        text: "CV"
       },
       {
-        value: data['experience2'],
-        text: data['experience2']
+        text: "Personal statement"
       },
       {
-        value: data['technical1'],
-        text: data['technical1']
-      },
-      {
-        value: data['technical2'],
-        text: data['technical2']
+        text: "Other",
+        conditional {
+          html: otherHTML
+        }
       }
     ]
     }) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "how-sift"
+  href: "interview-evidence"
 }) }}
 {{ govukButton({
   text: "Preview advert",
