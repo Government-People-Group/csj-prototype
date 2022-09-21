@@ -38,7 +38,7 @@
     name: "sift",
     fieldset: {
       legend: {
-        text: "What will you assess at sift?",
+        text: "What essential criteria will you assess at sift?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -49,26 +49,26 @@
     items: [
       {
         value: data['experience1'],
-        text: data['experience1']
+        text: "Experience of handling projects and priorities in an agile, fast paced environment"
       },
       {
         value: data['experience2'],
-        text: data['experience2']
+        text: "Demonstrable and practical experience of applying user centred design and testing methodologies, including designing responsive and accessible user interfaces for a variety of different services"
       },
       {
         value: data['technical1'],
-        text: data['technical1']
+        text: "Experience designing for different screen sizes and input methods (e.g. touch, mouse and keystroke)"
       },
       {
         value: data['technical2'],
-        text: data['technical2']
+        text: "Experience of engaging with members of multi-disciplinary teams in the design process"
       }
     ]
     }) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "how-sift"
+  href: "sift-skills"
 }) }}
 {{ govukButton({
   text: "Preview advert",

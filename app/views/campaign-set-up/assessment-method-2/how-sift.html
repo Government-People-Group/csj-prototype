@@ -69,8 +69,11 @@
         text: "Personal statement"
       },
       {
+        text: "Portfolio"
+      },
+      {
         text: "Other",
-        conditional {
+        conditional: {
           html: otherHTML
         }
       }
@@ -79,7 +82,7 @@
 
 {{ govukButton({
   text: "Continue",
-  href: "interview-evidence"
+  href: "interview-experience"
 }) }}
 {{ govukButton({
   text: "Preview advert",

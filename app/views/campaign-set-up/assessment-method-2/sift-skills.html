@@ -32,23 +32,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-l">Assessment methods</span>
-    {% set otherHTML %}
-    {{ govukInput({
-      label: {
-        text: "Tell us the additional assessment method"
-      },
-      id: "other",
-      name: "other"
-    }) }}
-    {% endset %}
-
-  {{ govukCheckboxes({
-    idPrefix: "assessments",
-    name: "assessments",
+    <span class="govuk-caption-l">Assessment methods</span>
+    {{ govukCheckboxes({
+    idPrefix: "sift",
+    name: "sift",
     fieldset: {
       legend: {
-        text: "What will you assess at interview?",
+        text: "What skills and qualifications will you assess at sift?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -57,38 +47,16 @@
       text: "Select all that apply."
     },
     items: [
-    {
-      value: "activity",
-      text: "Activity",
-      hint: {
-        text: "for example, a presentation."
-      }
-    },
-    {
-        value: "async",
-        text: "Asynchronous interviews",
-        hint: {
-          text: "Asychronous interview is when an applicant is guided through a series of interview questions and records their answers in their own time."
-        }
-      },
-
       {
-        value: "strengths",
-        text: "Strengths"
-      },
-      {
-        value: "other",
-        text: "Other",
-        conditional: {
-          html: otherHTML
-        }
+        value: data['experience1'],
+        text: "Experience using the GOV.UK prototype kit"
       }
     ]
-  }) }}
+    }) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "strengths-change"
+  href: "how-sift"
 }) }}
 {{ govukButton({
   text: "Preview advert",
