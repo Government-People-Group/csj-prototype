@@ -43,13 +43,42 @@
     }) }}
     {% endset %}
 
-  {{ govukCheckboxes({
+    {{ govukRadios({
+      idPrefix: "assessments",
+      name: "assessments",
+      fieldset: {
+        legend: {
+          text: "How will you interview?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "remotely",
+        text: "Remotely"
+      },
+      {
+        value: "person",
+        text: "In person"
+      },
+      {
+          value: "async",
+          text: "Asynchronously",
+          hint: {
+            text: "An asychronous interview is when an applicant is guided through a series of interview questions and records their answers in their own time."
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukCheckboxes({
     idPrefix: "assessments",
     name: "assessments",
     fieldset: {
       legend: {
         text: "What will you assess at interview?",
-        isPageHeading: true,
+        isPageHeading: false,
         classes: "govuk-fieldset__legend--l"
       }
     },
