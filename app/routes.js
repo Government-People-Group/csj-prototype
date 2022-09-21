@@ -123,9 +123,9 @@ router.get('/campaign-set-up/job-library-profession-2', function (req, res) {
 
       // Task list
 
-      router.get('/task-list', function (req, res) {
+      router.get('/campaign-set-up/task-list', function (req, res) {
         var basic = req.session.data['posts']
-          res.render('task-list', {
+          res.render('campaign-set-up/task-list-complete', {
             basic: basic
           })
         })

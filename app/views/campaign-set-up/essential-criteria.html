@@ -34,13 +34,12 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">About the role</span>
     <form method="post" action="">
-<h1 class="govuk-heading-l">What are the essential criterias and skills for the role?</h1>
 
 {% call govukFieldset({
   legend: {
-    text: "Essential criteria",
+    text: "What is the essential criteria needed for this role?",
     classes: "govuk-fieldset__legend--m",
-    isPageHeading: false
+    isPageHeading: true
   }
 }) %}
 <p>For example, comfortable around dogs</p>
@@ -49,7 +48,8 @@
     text: "Experience 1"
   },
   id: "experience1",
-  name: "experience1"
+  name: "experience1",
+  value: "Experience of handling projects and priorities in an agile, fast paced environment"
 }) }}
 
 {{ govukInput({
@@ -57,7 +57,8 @@
     text: "Experience 2"
   },
   id: "experience2 (optional)",
-  name: "experience2"
+  name: "experience2",
+  value: "Demonstrable and practical experience of applying user centred design and testing methodologies, including designing responsive and accessible user interfaces for a variety of different services"
 }) }}
 
 {{ govukInput({
@@ -65,7 +66,8 @@
     text: "Experience 3 (optional)"
   },
   id: "experience3",
-  name: "experience3"
+  name: "experience3",
+  value: "Experience designing for different screen sizes and input methods (e.g. touch, mouse and keystroke)"
 }) }}
 
 {{ govukInput({
@@ -73,88 +75,15 @@
     text: "Experience 4 (optional)"
   },
   id: "experience4",
-  name: "experience4"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Experience 5 (optional)"
-  },
-  id: "experience5",
-  name: "experience5"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Experience 6 (optional)"
-  },
-  id: "experience6",
-  name: "experience6"
-}) }}
-{% endcall %}
-
-{% call govukFieldset({
-  legend: {
-    text: "Technical skills and qualifications",
-    classes: "govuk-fieldset__legend--m",
-    isPageHeading: false
-  }
-}) %}
-
-<p>For example, Canine First Aid diploma</p>
-{{ govukInput({
-  label: {
-    text: "Technical skill 1"
-  },
-  id: "technical1",
-  name: "technical1"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Technical skill 2"
-  },
-  id: "technical2 (optional)",
-  name: "technical2"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Technical skill 3 (optional)"
-  },
-  id: "technical3",
-  name: "technical3"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Technical skill 4 (optional)"
-  },
-  id: "technical4",
-  name: "technical4"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Technical skill 5 (optional)"
-  },
-  id: "technical5",
-  name: "technical5"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Technical skill 6 (optional)"
-  },
-  id: "technical6",
-  name: "technical6"
+  name: "experience4",
+  value: "Experience of engaging with members of multi-disciplinary teams in the design process"
 }) }}
 
 {% endcall %}
-
+<p><a href="">Add another experience</a></p>
 {{ govukButton({
   text: "Continue",
-  href: "pre-sift-questions"
+  href: "tech-criteria"
 }) }}
 {{ govukButton({
   text: "Preview advert",
