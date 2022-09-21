@@ -35,9 +35,16 @@
 <span class="govuk-caption-l">Contract information</span>
     <h1 class="govuk-heading-l">Where is the role based?</h1>
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-    {% from "govuk/components/input/macro.njk" import govukInput %}
-
+    {% set numberHTML %}
+    {{ govukInput({
+  id: "number",
+  name: "number",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "How many locations?"
+  }
+}) }}
+{% endset %}
 
     {{ govukRadios({
       idPrefix: "uk",
@@ -82,7 +89,10 @@
       },
       {
         value: "no",
-        text: "No, the role is available in multiple locations"
+        text: "No, the role is available in multiple locations",
+        conditional: {
+          html: numberHTML
+        }
       }
     ]
   }) }}

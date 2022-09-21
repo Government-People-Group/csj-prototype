@@ -33,13 +33,36 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">Contract information</span>
-    <h1 class="govuk-heading-l">Contract details / salary details</h1>
+    <h1 class="govuk-heading-l">Contract details</h1>
 
-    {{ govukSelect({
+    {% set ftaHTML %}
+    {{ govukInput({
+    id: "fta",
+    name: "fta",
+    classes: "govuk-!-width-one-third",
+    label: {
+    text: "How long is the contract for?"
+    }
+    }) }}
+    {{ govukInput({
+    id: "reason",
+    name: "reason",
+    classes: "govuk-!-width-full",
+    label: {
+    text: "Why is this role fixed term?"
+    }
+    }) }}
+    {% endset %}
+
+    {{ govukRadios({
     id: "contract",
     name: "contract",
-    label: {
-      text: "Contract type"
+    fieldset: {
+      legend: {
+        text: "What is the contract for the role?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
     },
     items: [
       {
@@ -52,7 +75,10 @@
       },
       {
         value: "fixed",
-        text: "Fixed term"
+        text: "Fixed term",
+        conditional: {
+          html: ftaHTML
+        }
       },
       {
         value: "internship",
@@ -76,11 +102,18 @@
       }
     ]
   }) }}
-  {{ govukSelect({
+  {{ govukCheckboxes({
   id: "working-pattern",
   name: "working-pattern",
-  label: {
-    text: "Working pattern"
+  fieldset: {
+    legend: {
+      text: "What is the working pattern for the role?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
   },
   items: [
     {
@@ -136,83 +169,11 @@
         }
       ]
     }) }}
-    {{ govukInput({
-  id: "cost",
-  name: "cost",
-  label: {
-    text: "What is the minimum salary?",
-    classes: "govuk-label--m",
-    isPageHeading: false
-  },
-  prefix: {
-    text: "£"
-  },
-  classes: "govuk-input--width-5",
-  spellcheck: false,
-  value: "34,556"
-}) }}
-{{ govukCheckboxes({
-  idPrefix: "negotiable",
-  name: "negotiable",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "negotiable",
-      text: "Check the box if this is negotiable"
-    }
-  ]
-}) }}
 
-{% set otherHTML %}
-{{ govukTextarea({
-  name: "other",
-  id: "other",
-  label: {
-    text: "Tell us about the additional allowances",
-    classes: "govuk-label--s",
-    isPageHeading: false
-  },
-  hint: {
-    text: "You may be contacted to provide more details, including approval."
-  }
-}) }}
-{% endset %}
-
-    {{ govukRadios({
-      idPrefix: "allowances",
-      name: "allowances",
-      fieldset: {
-        legend: {
-          text: "Are there additional allowances connected to this role?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-      {
-        value: "yes",
-        text: "Yes",
-        conditional: {
-          html: otherHTML
-        }
-      },
-      {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "benefits"
+  href: "grades"
 }) }}
 {{ govukButton({
   text: "Preview advert",
