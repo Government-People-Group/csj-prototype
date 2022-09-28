@@ -3,7 +3,26 @@ const router = express.Router()
 
 // Job library entry
 
-router.get('/skills-or-title', function (req, res) {
+router.get('/job-title-known', function (req, res) {
+  var role = req.session.data['role']
+    res.render('skills-or-title', {
+      role: role
+    })
+  })
+  router.post('/campaign-set-up/skills-or-title', function (req, res) {
+    var role = req.session.data['role']
+
+    switch (role) {
+      case 'yes':
+      res.redirect('job-library')
+      break
+      case 'no':
+      res.redirect('skills-or-title')
+      break
+    }
+    })
+
+    router.get('/skills-or-title', function (req, res) {
   var level = level
   var jobTitle = jobTitle
     res.render('skills-or-title', {
