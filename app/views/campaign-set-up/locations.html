@@ -46,6 +46,31 @@
 }) }}
 {% endset %}
 
+{{ govukRadios({
+  idPrefix: "remote",
+  name: "remote",
+  fieldset: {
+    legend: {
+      text: "Is the role remote based?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "remote",
+      text: "Yes, remote only"
+    },
+    {
+      value: "hybrid",
+      text: "Hybrid, a blend of in-office and remote working"
+    },
+    {
+      value: "office",
+      text: "No, office based only"
+    }
+  ]
+}) }}
     {{ govukRadios({
       idPrefix: "uk",
       name: "uk",

@@ -41,7 +41,7 @@
       fieldset: {
         legend: {
           text: "Would you like anyone else to receive updates on the vacancy?",
-          isPageHeading: false,
+          isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
@@ -70,6 +70,32 @@
       id: "event-name",
       name: "event-name"
     }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "detail",
+          name: "detail",
+          fieldset: {
+            legend: {
+              text: "What updates would you like them to receive?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "This is in addition to the post creator, main contact, and panel members"
+          },
+          items: [
+            {
+              value: "all",
+              text: "All updates"
+            },
+            {
+              value: "end",
+              text: "Applications at close of advert only"
+            }
+          ]
+        }) }}
 
     <p class="govuk-body">
       <a href="#" class="govuk-link govuk-link--no-visited-state">Add another email</a>

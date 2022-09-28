@@ -13,36 +13,28 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-l">Sign in to your Civil Service Recruitment account</h1>
+<h1 class="govuk-heading-l">Check your email</h1>
+
+<p class="govuk-body">We’ve sent you an email with a security code.</p>
 
 {{ govukInput({
   label: {
-    text: "Email address",
-    classes: "govuk-label--m",
-    isPageHeading: false
+    text: "Security code"
   },
-  id: "email",
-  name: "email",
-  classes: "govuk-!-width-one-half"
+  id: "security-code",
+  name: "security-code",
+  type: "text",
+  autocomplete: "one-time-code",
+  classes: "govuk-input--width-4",
+  inputmode: "numeric"
 }) }}
 
-{{ govukInput({
-  label: {
-    text: "Password",
-    classes: "govuk-label--m",
-    isPageHeading: false
-  },
-  id: "password",
-  name: "password",
-  type: "password",
-  classes: "govuk-!-width-one-half"
-}) }}
-
+<p class="govuk-body"><a href="#" class="govuk-link">Not received an email?</a></p>
 
 
 {{ govukButton({
   text: "Continue",
-  href: "sign-in-mfa"
+  href: "/user-profile"
 }) }}
 <p><a href="#">Register a new account</a></p>
 <p><a href="#">Forgotten your password?</a></p>
