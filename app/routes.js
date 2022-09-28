@@ -9,7 +9,7 @@ router.get('/job-title-known', function (req, res) {
       role: role
     })
   })
-  router.post('/campaign-set-up/skills-or-title', function (req, res) {
+  router.post('/campaign-set-up/job-title-known', function (req, res) {
     var role = req.session.data['role']
 
     switch (role) {
