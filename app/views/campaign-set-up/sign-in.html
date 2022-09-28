@@ -6,7 +6,10 @@
 {% block beforeContent %}
 {% endblock %}
 {% block content %}
-
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -39,7 +42,7 @@
 
 {{ govukButton({
   text: "Continue",
-  href: "job-library-profession"
+  href: "sign-in-mfa"
 }) }}
 <p><a href="#">Register a new account</a></p>
 <p><a href="#">Forgotten your password?</a></p>

@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Assessment methods</span>
+    <h1 class="govuk-heading-l">Select strengths to interview:
+    </h1>
+    <p>The following strengths have been recommended based on the behaviours selected. Select up to 4 total.</p>
+    {% set changeHtml %}
+    <a href="">Change</a>
+    {% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "big-picture",
+      name: "big-picture",
+      fieldset: {
+        legend: {
+          text: "Big picture",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "challenger",
+          text: "Challenger",
+          hint: {
+            text: "You can bring a fresh perspective whatever the situation or context.
+You see other people’s views and can appreciate there are many
+different angles to consider."
+          }
+        },
+        {
+          value: "mission",
+          text: "Mission",
+          hint: {
+            text: "You pursue things which give you a sense of meaning and purpose,
+working towards a longer term goal."
+          }
+          },
+          {
+            value: "strategic",
+            text: "Strategic",
+            hint: {
+              text: "You look at the big picture and consider the wider factors and long
+  term implications of decisions. "
+            }
+            },
+          {
+            value: "visionary",
+            text: "Visionary",
+            hint: {
+              text: "You create and share a clear vision of the future."
+            }
+            }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "changing",
+      name: "changing",
+      fieldset: {
+        legend: {
+          text: "Changing and improving",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "adaptable",
+          text: "Adaptable",
+          hint: {
+            text: "You can adapt to variations in work or environment and your
+effectiveness isn’t impacted by change. You are flexible and versatile
+and act as an advocate for change."
+          }
+        },
+        {
+          value: "courageous",
+          text: "Courageous",
+          hint: {
+            text: "You are an innovator who tries new approaches and pushes yourself to
+work outside your comfort zone."
+          }
+          },
+          {
+            value: "change-agent",
+            text: "Change agent",
+            hint: {
+              text: "You are positive and inspirational in leading and supporting others
+through change."
+            }
+            },
+          {
+            value: "improver",
+            text: "Improver",
+            hint: {
+              text: "You look for better ways of doing things and enjoy coming up with new
+and original ideas."
+            }
+            },
+          {
+            value: "problem-solver",
+            text: "Problem solver",
+            hint: {
+              text: "You take a positive approach to tackling problems and find ways to
+identify suitable solutions."
+            }
+            },
+          {
+            value: "resilient",
+            text: "Resilient",
+            hint: {
+              text: "You have inner composure, recover quickly from setbacks and learn
+from them"
+            }
+            }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "decisions",
+      name: "decisions",
+      fieldset: {
+        legend: {
+          text: "Making effective decisions",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "analytical",
+          text: "Analytical",
+          hint: {
+            text: "You seek and analyse information to inform decisions based on the
+best available evidence."
+          }
+        },
+        {
+          value: "decisive",
+          text: "Decisive",
+          hint: {
+            text: "You use your judgement and take a considered approach to situations
+and tasks when making decisions."
+          }
+          },
+          {
+            value: "preventer",
+            text: "Preventer",
+            hint: {
+              text: "You think ahead to anticipate, identify and address any risks or
+problems before they occur."
+            }
+            },
+          {
+            value: "problem-solver",
+            text: "Problem solver",
+            hint: {
+              text: "You take a positive approach to tackling problems and find ways to
+identify suitable solutions."
+            }
+            }
+      ]
+    }) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "success-profiles-strengths"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

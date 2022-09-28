@@ -23,18 +23,54 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "reserve-list"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Contract information</span>
     <h1 class="govuk-heading-l">Where is the role based?</h1>
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-    {% from "govuk/components/input/macro.njk" import govukInput %}
+    {% set numberHTML %}
+    {{ govukInput({
+  id: "number",
+  name: "number",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "How many locations?"
+  }
+}) }}
+{% endset %}
 
-
+{{ govukRadios({
+  idPrefix: "remote",
+  name: "remote",
+  fieldset: {
+    legend: {
+      text: "Is the role remote based?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "remote",
+      text: "Yes, remote only"
+    },
+    {
+      value: "hybrid",
+      text: "Hybrid, a blend of in-office and remote working"
+    },
+    {
+      value: "office",
+      text: "No, office based only"
+    }
+  ]
+}) }}
     {{ govukRadios({
       idPrefix: "uk",
       name: "uk",
@@ -78,7 +114,10 @@
       },
       {
         value: "no",
-        text: "No, the role is available in multiple locations"
+        text: "No, the role is available in multiple locations",
+        conditional: {
+          html: numberHTML
+        }
       }
     ]
   }) }}
@@ -86,7 +125,12 @@
 
 {{ govukButton({
   text: "Continue",
-  href: "contract-details"
+  href: "locations-2"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

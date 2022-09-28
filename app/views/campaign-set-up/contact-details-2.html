@@ -23,12 +23,16 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "contact-details"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Contract information</span>
     <h1 class="govuk-heading-l"></h1>
 
     {{ govukRadios({
@@ -37,7 +41,7 @@
       fieldset: {
         legend: {
           text: "Would you like anyone else to receive updates on the vacancy?",
-          isPageHeading: false,
+          isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
@@ -67,6 +71,32 @@
       name: "event-name"
     }) }}
 
+
+        {{ govukRadios({
+          idPrefix: "detail",
+          name: "detail",
+          fieldset: {
+            legend: {
+              text: "What updates would you like them to receive?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "This is in addition to the post creator, main contact, and panel members"
+          },
+          items: [
+            {
+              value: "all",
+              text: "All updates"
+            },
+            {
+              value: "end",
+              text: "Applications at close of advert only"
+            }
+          ]
+        }) }}
+
     <p class="govuk-body">
       <a href="#" class="govuk-link govuk-link--no-visited-state">Add another email</a>
     </p>
@@ -76,6 +106,11 @@
 {{ govukButton({
   text: "Continue",
   href: "reserved-status"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

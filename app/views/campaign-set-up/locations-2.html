@@ -23,22 +23,63 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "locations"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Contract information</span>
     <h1 class="govuk-heading-l">Where is the role based?</h1>
 
-  
+    <div class="govuk-form-group govuk-input--width-30">
+            <label for="autocomplete-default" class="govuk-label--m">Location 1</label>
 
+            <div id="locations" class="autocomplete-wrapper"></div>
+          </div>
+
+          <div class="govuk-form-group govuk-input--width-30">
+                  <label for="autocomplete-default" class="govuk-label--m">Location 2</label>
+
+                  <div id="locations2" class="autocomplete-wrapper"></div>
+                </div>
+
+<p><a href="">Add another location</a></p>
+{{ govukCheckboxes({
+  idPrefix: "hidden",
+  name: "hidden",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "hidden",
+      text: "Check this box if you need the location addresses to be hidden"
+    }
+  ]
+}) }}
 {{ govukButton({
   text: "Continue",
   href: "contract-details"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 
 </div>
 </div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/locations.js"></script>
+<script src="/public/javascripts/locations2.js"></script>
 {% endblock %}

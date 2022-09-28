@@ -23,14 +23,20 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <form action="" method="post">
-<h1 class="govuk-heading-l">Find a job role</h1>
-
+<h1 class="govuk-heading-l">Recommended job titles</h1>
+{% set titledetailsHTML %}
+You can find out about job roles on the <a href="https://www.civil-service-careers.gov.uk/">Civil Service Careers</a> site.
+{% endset %}
 {% set otherHtml %}
 {{ govukInput({
   id: "other",
@@ -43,14 +49,17 @@
 {% endset %}
 
 {{ govukRadios({
-  idPrefix: "which-job-title",
-  name: "which-job-title",
+  idPrefix: "job-title",
+  name: "jobTitle",
   fieldset: {
     legend: {
       text: "Select a job title",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
+  },
+  hint: {
+    html: titledetailsHTML
   },
   items: [
     {
@@ -66,7 +75,7 @@
       text: "Graphic designer"
     },
     {
-      value: "interaction",
+      value: "interaction-designer",
       text: "Interaction designer"
     },
     {

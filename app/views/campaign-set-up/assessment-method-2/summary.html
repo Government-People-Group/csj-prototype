@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Assessment methods</span>
+    <h1 class="govuk-heading-xl">Check your assessment methods</h1>
+
+    <h2 class="govuk-heading-m">At sift</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Essential criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Experience of handling projects and priorities in an agile, fast paced environment</li>
+            <li>Demonstrable and practical experience of applying user centred design and testing methodologies, including designing responsive and accessible user interfaces for a variety of different services</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="sift-experience">
+            Change
+            <span class="govuk-visually-hidden"> essential criteria</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Technical skills
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Experience using the GOV.UK prototype kit</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="sift-experience">
+            Change
+            <span class="govuk-visually-hidden"> Technical</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Behaviours
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Seeing the bigger picture</li>
+            <li>Changing and improving</li>
+            <li>Making effective decisions</li>
+            <li>Leadership</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="sift-experience">
+            Change
+            <span class="govuk-visually-hidden"> behaviours</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Online tests
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Verbal skills</li>
+            <li>Customer service skills</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="online-tests">
+            Change
+            <span class="govuk-visually-hidden"> tests</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">At interview</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Essential criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Experience designing for different screen sizes and input methods (e.g. touch, mouse and keystroke)</li>
+            <li>Experience of engaging with members of multi-disciplinary teams in the design process</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="interview-experience">
+            Change
+            <span class="govuk-visually-hidden"> essential criteria</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Technical skills
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Experience using the GOV.UK prototype kit</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="interview-experience">
+            Change
+            <span class="govuk-visually-hidden"> Technical</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Behaviours
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Seeing the bigger picture</li>
+            <li>Leadership</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="interview-experience">
+            Change
+            <span class="govuk-visually-hidden"> behaviours</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Strengths
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Analytical</li>
+            <li>Challenger</li>
+            <li>Problem solver</li>
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="strengths-change">
+            Change
+            <span class="govuk-visually-hidden"> strengths</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+{{ govukButton({
+  text: "Continue",
+  href: "/campaign-set-up/approach"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "/campaign-set-up/review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

@@ -23,12 +23,16 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "approval"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Recruitment channels</span>
     {{ govukRadios({
       classes: "govuk-radios--inline",
       idPrefix: "changed-name",
@@ -58,7 +62,12 @@
 
 {{ govukButton({
   text: "Continue",
-  href: "locations"
+  href: "attraction-methods"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

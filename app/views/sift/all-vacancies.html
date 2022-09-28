@@ -1,0 +1,729 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+{% set leadHTML %}
+    {{govukTag({
+              text: "Lead",
+              classes: "govuk-tag--blue"
+            })}}
+      {% endset %}
+      {% set panelHTML %}
+          {{govukTag({
+                    text: "Panel",
+                    classes: "govuk-tag--grey"
+                  })}}
+            {% endset %}
+            {% set recruiterHTML %}
+                {{govukTag({
+                          text: "Recruiter",
+                          classes: "govuk-tag--yellow"
+                        })}}
+                  {% endset %}
+    {% set draftHTML %}
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Reference",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Job title",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Date started",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Responsibility",
+          classes: 'app-custom-class'
+        }
+      ],
+      rows: [
+      [
+        {
+          html: '<a href="1001334">1001334</a>'
+        },
+        {
+          text: "Lead delivery manager"
+        },
+        {
+          text: "18 Sept 2022"
+        },
+        {
+          html: leadHTML
+        }
+      ],
+      [
+          {
+            html: '<a href="1001234">1001234</a>'
+          },
+          {
+            text: "Administrative officer"
+          },
+          {
+            text: "1 Sept 2022"
+          },
+          {
+            html: panelHTML
+          }
+        ],
+        [
+          {
+            html: '<a href="">1001254</a>'
+          },
+          {
+            text: "Project planner"
+          },
+          {
+            text: "9 Sept 2022"
+          },
+          {
+            html: panelHTML
+          }
+        ]
+      ]
+    }) }}
+    {% endset %}
+
+    {% set approvalHTML %}
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Reference",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Job title",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Date started",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Responsibility",
+          classes: 'app-custom-class'
+        }
+      ],
+      rows: [
+        [
+          {
+            html: '<a href="">1001254</a>'
+          },
+          {
+            text: "Project planner"
+          },
+          {
+            text: "9 Sept 2022"
+          },
+          {
+            html: recruiterHTML
+          }
+        ]
+      ]
+    }) }}
+    {% endset %}
+
+{% set liveHTML %}
+
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Closing date",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Completed applications",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+  [
+    {
+      html: '<a href="1001334">1001334</a>'
+    },
+    {
+      text: "Lead delivery manager"
+    },
+    {
+      text: "18 Sept 2022"
+    },
+    {
+      text: "2"
+    },
+    {
+      html: recruiterHTML
+    }
+  ],
+  [
+      {
+        html: '<a href="1001234">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        text: "10"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        text: "1"
+      },
+      {
+        html: recruiterHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+{% set siftHTML %}
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Closing date",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+  [
+    {
+      html: '<a href="1001334">1001334</a>'
+    },
+    {
+      text: "Lead delivery manager"
+    },
+    {
+      text: "18 Sept 2022"
+    },
+    {
+      html: leadHTML
+    }
+  ],
+  [
+      {
+        html: '<a href="1001234">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        html: panelHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        html: panelHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+{% set interviewHTML %}
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Date sifted",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Applicants",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        text: "10"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        text: "1"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      },
+      {
+        text: "Lead delivery manager"
+      },
+      {
+        text: "18 Sept 2022"
+      },
+      {
+        text: "2"
+      },
+      {
+        html: recruiterHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+{% set scoringHTML %}
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Interview date",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Applicants",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        text: "10"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        text: "1"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      },
+      {
+        text: "Lead delivery manager"
+      },
+      {
+        text: "18 Sept 2022"
+      },
+      {
+        text: "2"
+      },
+      {
+        html: recruiterHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+{% set pecHTML %}
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Provisional offer date",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Candidates",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        text: "10"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        text: "1"
+      },
+      {
+        html: recruiterHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      },
+      {
+        text: "Lead delivery manager"
+      },
+      {
+        text: "18 Sept 2022"
+      },
+      {
+        text: "2"
+      },
+      {
+        html: panelHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+{% set onboardingHTML %}
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Reference",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Job title",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Start date",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Candidates",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Responsibility",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      },
+      {
+        text: "Administrative officer"
+      },
+      {
+        text: "1 Sept 2022"
+      },
+      {
+        text: "10"
+      },
+      {
+        html: panelHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      },
+      {
+        text: "Project planner"
+      },
+      {
+        text: "9 Sept 2022"
+      },
+      {
+        text: "1"
+      },
+      {
+        html: leadHTML
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      },
+      {
+        text: "Lead delivery manager"
+      },
+      {
+        text: "18 Sept 2022"
+      },
+      {
+        text: "2"
+      },
+      {
+        html: panelHTML
+      }
+    ]
+  ]
+}) }}
+{% endset %}
+
+    <h1 class=govuk-heading-l>All vacancies (22)</h1>
+
+    <input aria-expanded="false" aria-owns="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off" class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="input-autocomplete" placeholder="Search vacancies" type="text" role="combobox">
+<br></br>
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+      {
+        heading: {
+          text: "Draft vacancies (3)"
+        },
+        content: {
+          html: draftHTML
+        }
+      },
+      {
+        heading: {
+          text: "Approval required (1)"
+        },
+        content: {
+          html: approvalHTML
+        }
+      },
+        {
+          heading: {
+            text: "Live vacancies (3)"
+          },
+          content: {
+            html: liveHTML
+          }
+        },
+        {
+          heading: {
+            text: "Awaiting sift (3)"
+          },
+          content: {
+            html: siftHTML
+          }
+        },
+          {
+          heading: {
+            text: "Awaiting interview (3)"
+          },
+          content: {
+            html: interviewHTML
+          }
+        },
+          {
+          heading: {
+            text: "Awaiting interview scoring (3)"
+          },
+          content: {
+            html: scoringHTML
+          }
+        },
+          {
+          heading: {
+            text: "Pre-employment checking (3)"
+          },
+          content: {
+            html: pecHTML
+          }
+        },
+          {
+          heading: {
+            text: "Onboarding (3)"
+          },
+          content: {
+            html: onboardingHTML
+          }
+        }
+      ]
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

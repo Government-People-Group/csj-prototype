@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+
+{{ govukRadios({
+  idPrefix: "role",
+  name: "role",
+  fieldset: {
+    legend: {
+      text: "Do you know the job title for the role?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "If you do not know the job title, you'll be recommended job titles based on profession and function, or skills."
+  },
+  items: [
+  {
+    value: "yes",
+    text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+      }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

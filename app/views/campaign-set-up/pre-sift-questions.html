@@ -23,12 +23,16 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "about-the-role"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Advert set up</span>
     <h1 class="govuk-heading-l">Pre-qualifying questions</h1>
 
   <p>These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
@@ -41,7 +45,7 @@
     captionClasses: "govuk-table__caption--m",
     firstCellIsHeader: false,
     rows: [
-      
+
       [
         {
           text: "Do you have practical experience of creating and validating dynamic prototypes for testing?"
@@ -64,7 +68,12 @@
 <p><a href="#">Add another question</a></p>
 {{ govukButton({
   text: "Continue",
-  href: "additional-information"
+  href: "behaviours"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

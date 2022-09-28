@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Assessment methods</span>
+    {% set otherHTML %}
+    {{ govukInput({
+      label: {
+        text: "Tell us the additional assessment method"
+      },
+      id: "other",
+      name: "other"
+    }) }}
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "assessments",
+      name: "assessments",
+      fieldset: {
+        legend: {
+          text: "How will you interview?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Interview questions will be recommended when candidates are sifted."
+      },
+      items: [
+      {
+        value: "remotely",
+        text: "Remotely",
+        hint: {
+          text: "A live interview to be held via video software."
+        }
+      },
+      {
+        value: "person",
+        text: "In person",
+        hint: {
+          text: "To be held in a Government building."
+        }
+      },
+      {
+          value: "async",
+          text: "Asynchronously",
+          hint: {
+            text: "An asychronous interview is when an applicant is guided through a series of interview questions and records their answers in their own time."
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukCheckboxes({
+    idPrefix: "assessments",
+    name: "assessments",
+    fieldset: {
+      legend: {
+        text: "What will you assess at interview?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply."
+    },
+    items: [
+    {
+      value: "activity",
+      text: "Activity",
+      hint: {
+        text: "for example, a presentation."
+      }
+    },
+    {
+        value: "strengths",
+        text: "Strengths",
+        hint: {
+          text: "Quick questions to test candidate instinctual responses."
+        }
+      },
+      {
+        value: "other",
+        text: "Other",
+        conditional: {
+          html: otherHTML
+        }
+      }
+    ]
+  }) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "strengths-change"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

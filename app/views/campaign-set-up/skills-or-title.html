@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+
+<h1 class="govuk-heading-l">Tell us about the role</h1>
+
+<p>This service will generate content recommendations and suggest selection methods for your job advert.</p>
+
+{{ govukRadios({
+  idPrefix: "role",
+  name: "role",
+  fieldset: {
+    legend: {
+      text: "What do you know about the role you want to hire?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "You'll be given job title recommendations based on the information you do know about the role."
+  },
+  items: [
+    {
+      value: "profession",
+      text: "Profession and function"
+      },
+    {
+      value: "skill",
+      text: "Skills required"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

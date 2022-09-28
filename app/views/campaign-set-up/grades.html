@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "locations"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Contract information</span>
+    <h1 class="govuk-heading-l">Salary details</h1>
+
+    {{ govukInput({
+  id: "cost",
+  name: "cost",
+  label: {
+    text: "What is the minimum salary?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false,
+  value: "34,556"
+}) }}
+{{ govukCheckboxes({
+  idPrefix: "negotiable",
+  name: "negotiable",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "negotiable",
+      text: "Check the box if this is negotiable"
+    }
+  ]
+}) }}
+
+{% set otherHTML %}
+{{ govukTextarea({
+  name: "other",
+  id: "other",
+  label: {
+    text: "Tell us about the additional allowances",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  hint: {
+    text: "You may be contacted to provide more details, including approval."
+  }
+}) }}
+{% endset %}
+
+    {{ govukRadios({
+      idPrefix: "allowances",
+      name: "allowances",
+      fieldset: {
+        legend: {
+          text: "Are there additional allowances connected to this role?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+      {
+        value: "yes",
+        text: "Yes",
+        conditional: {
+          html: otherHTML
+        }
+      },
+      {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "benefits"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

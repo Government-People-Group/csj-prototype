@@ -23,6 +23,10 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
@@ -36,7 +40,7 @@
   name: "level",
   fieldset: {
     legend: {
-      text: "Select the seniority of the role",
+      text: "Select the grade of the role",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -44,38 +48,34 @@
   items: [
     {
       value: "associate",
-      text: "Associate"
+      text: "Grade AO or equivalent"
     },
     {
       value: "junior",
-      text: "Junior"
+      text: "Grade EO or equivalent"
     },
     {
       value: "mid",
-      text: "Mid-level"
+      text: "Grade HEO or equivalent"
     },
     {
       value: "senior",
-      text: "Senior"
+      text: "Grade SEO or equivalent"
     },
     {
       value: "lead",
-      text: "Lead"
+      text: "Grade G7 or equivalent"
     },
     {
       value: "head",
-      text: "Head"
-    },
-    {
-      value: "researcher",
-      text: "User researcher"
+      text: "Grade G6 or equivalent"
     }
   ]
 }) }}
 
 {{ govukButton({
   text: "Continue",
-  href: "reserves-found"
+  href: "templates"
 }) }}
 </form>
 </div>

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Assessment methods</span>
+    <form action="" method="post">
+
+      {% set otherHTML %}
+      {{ govukInput({
+        label: {
+          text: "Tell us the additional assessment method"
+        },
+        id: "other",
+        name: "other"
+      }) }}
+      {% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "assessments",
+      name: "assessments",
+      fieldset: {
+        legend: {
+          text: "What will you assess at sift?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "essential",
+          text: "Essential criteria"
+        },
+        {
+          value: "experience",
+          text: "Experience"
+        },
+        {
+          value: "technical",
+          text: "Technical skills and qualifications"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: otherHTML
+          }
+        }
+      ]
+    }) }}
+{{ govukButton({
+  text: "Continue",
+  href: "sift-experience"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+</form>
+</div>
+</div>
+{% endblock %}

@@ -23,49 +23,31 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "skills-or-title"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-l">Find a job role</h1>
+<h1 class="govuk-heading-l">Tell us about the role</h1>
 <div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
+        <label for="autocomplete-default" class="govuk-label--m">What is the job title?</label>
 
-        <div id="profession" class="autocomplete-wrapper"></div>
+        <div id="title" class="autocomplete-wrapper"></div>
       </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-{{ govukInput({
-  label: {
-    text: "What is the job title?",
-    classes: "govuk-label--m"
-  },
-  classes: "govuk-input--width-20",
-  id: "job-title",
-  name: "job-title"
-}) }}
-</div>
-<div class="csj-top-panel-button-column">
-  <div style="vertical-align: top;">
-  <div class="govuk-grid-column-one-third">
-    <form action="job-library-2">
-    {{ govukButton({
-      text: "Enter"
-    }) }}
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
+
 
 
 {{ govukButton({
   text: "Continue",
-  disabled: true
+  href: "job-library-profession-3"
 }) }}
 <p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
 <script src="/public/javascripts/accessible-autocomplete.js"></script>
 <script src="/public/javascripts/profession.js"></script>
+<script src="/public/javascripts/title.js"></script>
 {% endblock %}

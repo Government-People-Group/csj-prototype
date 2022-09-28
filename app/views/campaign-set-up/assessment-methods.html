@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "online-tests"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Assessment methods</span>
+<h1 class="govuk-heading-l">About assessment methods</h1>
+
+<p>Once a vacancy advert has closed, you will undertake the sifting stage of the recruitment process. Following the sifting stage, successful applicants are invited to attend an interview.</p>
+
+<h2 class="govuk-heading-m">Sifting</h2>
+<p>You will decide what experience, skills and behaviours you will use to sift candidates. You will also decide which methods to use such as CV, or personal statement. At this stage you can also include online tests.</p>
+
+<h2 class="govuk-heading-m">Interviews</h2>
+<p>You will decide what experience, skills and behaviours you will use to interview candidates. This could be through interview questions or additional assessment methods, such as a presentation.</p>
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "assessment-method-2/sift-or-interview"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

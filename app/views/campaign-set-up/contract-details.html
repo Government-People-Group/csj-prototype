@@ -23,104 +23,158 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "locations"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Contract information</span>
+    <h1 class="govuk-heading-l">Contract details</h1>
 
-    <h1 class="govuk-heading-l">Contract details / salary details</h1>
+    {% set ftaHTML %}
+    {{ govukInput({
+    id: "fta",
+    name: "fta",
+    classes: "govuk-!-width-one-third",
+    label: {
+    text: "How long is the contract for?"
+    }
+    }) }}
+    {{ govukInput({
+    id: "reason",
+    name: "reason",
+    classes: "govuk-!-width-full",
+    label: {
+    text: "Why is this role fixed term?"
+    }
+    }) }}
+    {% endset %}
 
-    {{ govukInput({
-      label: {
-        text: "Contract type",
-        classes: "govuk-label--m",
-        isPageHeading: false
+    {{ govukRadios({
+    id: "contract",
+    name: "contract",
+    fieldset: {
+      legend: {
+        text: "What is the contract for the role?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "apprenticeship",
+        text: "Apprenticeship"
       },
-      id: "event-name",
-      name: "event-name"
-    }) }}
-    {{ govukCheckboxes({
-      idPrefix: "negotiable",
-      name: "negotiable",
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
+      {
+        value: "assisted",
+        text: "Assisted transfer"
+      },
+      {
+        value: "fixed",
+        text: "Fixed term",
+        conditional: {
+          html: ftaHTML
         }
       },
-      items: [
-        {
-          value: "negotiable",
-          text: "Check the box if this is negotiable"
-        }
-      ]
-    }) }}
-    {{ govukInput({
-      label: {
-        text: "Working pattern",
-        classes: "govuk-label--m",
-        isPageHeading: false
+      {
+        value: "internship",
+        text: "Internship"
       },
-      id: "event-name",
-      name: "event-name"
-    }) }}
-    {{ govukCheckboxes({
-      idPrefix: "negotiable",
-      name: "negotiable",
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
+      {
+        value: "loan",
+        text: "Loan"
       },
-      items: [
-        {
-          value: "negotiable",
-          text: "Check the box if this is negotiable"
-        }
-      ]
-    }) }}
-    {{ govukInput({
-  id: "cost",
-  name: "cost",
-  label: {
-    text: "What is the minimum salary?",
-    classes: "govuk-label--m",
-    isPageHeading: false
-  },
-  prefix: {
-    text: "£"
-  },
-  classes: "govuk-input--width-5",
-  spellcheck: false,
-  value: "23,456"
-}) }}
-{{ govukCheckboxes({
-  idPrefix: "negotiable",
-  name: "negotiable",
-  classes: "govuk-checkboxes--small",
+      {
+        value: "overseas",
+        text: "Overseas"
+      },
+      {
+        value: "permanent",
+        text: "Permanent"
+      },
+      {
+        value: "temporary",
+        text: "Temporary"
+      }
+    ]
+  }) }}
+  {{ govukCheckboxes({
+  id: "working-pattern",
+  name: "working-pattern",
   fieldset: {
     legend: {
-      text: "",
+      text: "What is the working pattern for the role?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    text: "Select all that apply."
+  },
   items: [
     {
-      value: "negotiable",
-      text: "Check the box if this is negotiable"
+      value: "annualised",
+      text: "Annualised hours"
+    },
+    {
+      value: "compressed",
+      text: "Compressed hours"
+    },
+    {
+      value: "flexible working",
+      text: "Flexible working"
+    },
+    {
+      value: "fulltime",
+      text: "Full-time"
+    },
+    {
+      value: "homeworking",
+      text: "Homeworking"
+    },
+    {
+      value: "jobshare",
+      text: "Job share"
+    },
+    {
+      value: "parttime",
+      text: "Part-time"
     }
   ]
-}) }}
+  }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "negotiable",
+      name: "negotiable",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "negotiable",
+          text: "Check the box if this is negotiable"
+        }
+      ]
+    }) }}
+
+
 {{ govukButton({
   text: "Continue",
-  href: "contact-details"
+  href: "grades"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

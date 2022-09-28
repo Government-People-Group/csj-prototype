@@ -23,36 +23,88 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">Review and manage</span>
     <h1 class="govuk-heading-l">Vacancy management</h1>
-    <p>Peer review / QA before posting</p>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
-<br>
-</br>
+    {{ govukRadios({
+      idPrefix: "advert-time",
+      name: "advert-time",
+      fieldset: {
+        legend: {
+          text: "How long should the advert be live?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Most vacancies are live for 2 weeks"
+      },
+      items: [
+        {
+          value: "2",
+          text: "2 weeks",
+          checked: true
+        },
+        {
+          value: "3",
+          text: "3 weeks"
+        },
+        {
+          value: "4",
+          text: "4 weeks"
+        },
+        {
+          value: "rolling",
+          text: "Rolling recruitment",
+          hint: {
+            text: "This advert will stay live until the posts have been filled."
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukInput({
+      label: {
+        text: "Who will review the job advert?",
+        isPageHeading: false,
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-20",
+      id: "reviewer",
+      name: "reviewer"
+    }) }}
+
+{{ govukCheckboxes({
+      idPrefix: "negotiable",
+      name: "negotiable",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "approval1",
+          text: "This person needs to approve the advert"
+        }
+      ]
+    }) }}
+
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Submit"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

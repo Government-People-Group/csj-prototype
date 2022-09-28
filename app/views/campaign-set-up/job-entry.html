@@ -23,12 +23,16 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "basic-details"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-l">About the vacancy</span>
 <h1 class="govuk-heading-l">Job information</h1>
 
 {% set jobTypeHtml %}
@@ -42,46 +46,22 @@
     text: "What is the business area?",
     classes: "govuk-label--m"
   },
-  hint: {
-    text: "Business area is..."
-  },
   classes: "govuk-input--width-20",
   id: "business-area",
-  name: "business-area"
+  name: "business-area",
+  value: "Product"
 }) }}
-
 
 {{ govukInput({
   label: {
-    text: "What is the job type?",
+    text: "Which profession is this role?",
     classes: "govuk-label--m"
   },
-  hint: {
-    text: "Select all that apply"
-  },
   classes: "govuk-input--width-20",
-  id: "job-type",
-  name: "job-type"
+  id: "business-area",
+  name: "business-area",
+  value: "Digital, Data and Technology"
 }) }}
-{{govukTag({
-          text: "Analytical X",
-          classes: "govuk-tag--grey"
-        })}}
-        {{govukTag({
-          text: "Customer insight X",
-          classes: "govuk-tag--grey"
-        })}}
-        {{govukTag({
-          text: "Digital X",
-          classes: "govuk-tag--grey"
-        })}}
-
-<br></br><br></br>
-<div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label--m">Which profession is this role?</label>
-
-        <div id="profession" class="autocomplete-wrapper" value="Digital, data, and technology"></div>
-      </div>
 
       {{ govukTextarea({
       name: "more-detail",
@@ -93,12 +73,19 @@
       },
       hint: {
       text: "Explain how the role would fit in."
-      }
+      },
+      value: "this information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
+
       }) }}
-      
+
 {{ govukButton({
   text: "Continue",
-  href: "success-profiles"
+  href: "locations"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

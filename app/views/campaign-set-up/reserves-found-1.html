@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+<h1 class="govuk-heading-l">Reserve candidates found</h1>
+
+<p>There are <b>13</b> candidates in the reserve list that match the job title <b>Senior Interaction designer</b> with a location preference of <b>London</b>.
+
+{{ govukRadios({
+  idPrefix: "reserve",
+  name: "reserve",
+  fieldset: {
+    legend: {
+      text: "Would you like to review the pre-qualified candidates?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, I want to advertise this role"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

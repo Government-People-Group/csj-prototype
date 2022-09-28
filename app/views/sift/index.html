@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        GOV.UK Prototype Kit
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        <ul class="govuk-list govuk-list--bullet govuk-heading-s">
+          <li>
+            <a href="all-vacancies">Sift version 1</a>
+          </li>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/user-profile">Vacancy holder profile</a>
+            </li>
+            <li>
+              <a href="/profile-update">Update vacancy holder profile</a>
+            </li>
+            <li>
+              <a href="one-vacancy">One vacancy</a>
+            </li>
+            <li>
+              <a href="all-vacancies">All vacancies</a>
+            </li>
+            <li>
+              <a href="1001334">1001334 - Lead delivery manager job (0 sifted)</a>
+            </li>
+            <li>
+              <a href="1001334-table">View all applicants</a>
+            </li>
+
+
+            <li>
+              <a href="1001334-sifted">View sifted vacancy</a>
+            </li>
+            </ul>
+            <p><b>Scoring process</b></p>
+            <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="1001334-applicant-1">Applicant 1 full application</a>
+            </li>
+            <li>
+              <a href="cv">Applicant 2 CV only sift (v1 - side by side)</a>
+            </li>
+            <li>
+              <a href="cv-v2">Applicant 3 CV only sift (v2 - long page)</a>
+            </li>
+            <li>
+              <a href="cv-and statement">Applicant 4 CV and statement sift (v1 - side by side)</a>
+            </li>
+            <li>
+              <a href="cv-statement-v2">Applicant 5 CV and statement sift (v2 - long page)</a>
+            </li>
+            <li>
+              <a href="1001334-score-bigger-picture">Multi-applicants: Score bigger picture</a>
+            </li>
+            <li>
+              <a href="1001334-score-changing">Multi-applicants: Score Changing and improving</a>
+            </li>
+          </ul>
+          <p><b>Results process</b></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="1001334-recommended">View status recommendations</a>
+            </li>
+            <li>
+              <a href="1001334-panel-results">View panel results (lead panel member only)</a>
+            </li>
+            <li>
+              <a href="1001334-consensus-meeting">Panel consensus meeting</a>
+            </li>
+            <li>
+              <a href="1001334-interview">Invite to interview</a>
+            </li>
+            <li>
+              <a href="1001334-interview-questions">Interview questions</a>
+            </li>
+            </ul>
+          </p>
+    </div>
+  </div>
+
+{% endblock %}

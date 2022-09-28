@@ -23,41 +23,30 @@
         <a href="">Cymraeg</a>
         </li>
         </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
         {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">The following success profiles are recommended for this job role:
+<span class="govuk-caption-l">Assessment methods</span>
+    <h1 class="govuk-heading-l">The following technical skills are recommended for this job role:
     </h1>
     {% set changeHtml %}
     <a href="">Change</a>
     {% endset %}
+
     {{ govukTable({
-      caption: "Behaviours",
+      caption: "",
       captionClasses: "govuk-table__caption--m",
       firstCellIsHeader: false,
       rows: [
         [
           {
-            text: "Changing and improving"
-          },
-          {
-            html: changeHtml
-          }
-        ],
-        [
-          {
-            text: "Working together"
-          },
-          {
-            html: changeHtml
-          }
-        ],
-        [
-          {
-            text: "Communicating and influencing"
+            text: "Experience using the GOVUK prototype kit"
           },
           {
             html: changeHtml
@@ -66,27 +55,16 @@
       ]
     }) }}
 
-    {{ govukTable({
-      caption: "Technical",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      rows: [
-        [
-          {
-            text: "Not required"
-          },
-          {
-            html: changeHtml
-          }
-        ]
-      ]
-    }) }}
-
-
+<p><a href="">Add another technical skill</a></p>
 
 {{ govukButton({
   text: "Continue",
-  href: "about-the-role"
+  href: "success-profiles-experience"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
 }) }}
 <p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
 

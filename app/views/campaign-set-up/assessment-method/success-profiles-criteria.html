@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Assessment methods</span>
+<h1 class="govuk-heading-l">What is the essential criteria for the role?</h1>
+<p>They can cover licences, qualifications, membership or language. </p>
+  <p>Candidates will be informed that these will need to be evidenced at later stages.</p>
+<p>These must be:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>clear and easy to answer</li>
+  <li>essential for the role, and not desirable</li>
+  <li>used by candidates to quickly assess if their application is likely to proceed</li>
+  </ul>
+
+  {{ govukInput({
+    label: {
+      text: "Essential criteria 1"
+    },
+    id: "essential1",
+    name: "essential1",
+    value: "Experience of handling projects and priorities in an agile, fast-paced, environment"
+  }) }}
+  {{ govukInput({
+    label: {
+      text: "Essential criteria 2"
+    },
+    id: "essential2",
+    name: "essential2",
+    value: "Demonstrable and practical experience of applying user centred design and testing methodologies, including designing responsive and accessible user interfaces for a variety of different services"
+  }) }}
+  {{ govukInput({
+    label: {
+      text: "Essential criteria 3"
+    },
+    id: "essential3",
+    name: "essential3",
+    value: "Experience designing for different screen sizes and input methods (e.g. touch, mouse and keystroke)"
+  }) }}
+  {{ govukInput({
+    label: {
+      text: "Essential criteria 4"
+    },
+    id: "essential4",
+    name: "essential4",
+    value: "Experience of engaging with members of multi-disciplinary teams in the design process"
+  }) }}
+{{ govukButton({
+  text: "Continue",
+  href: "/campaign-set-up/online-tests"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

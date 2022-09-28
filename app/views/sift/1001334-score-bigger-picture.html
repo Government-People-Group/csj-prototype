@@ -1,0 +1,382 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001234</span>
+<h1 class="govuk-heading-l">Score applications</h1>
+<h2 class="govuk-heading-m">Seeing the Big Picture</h2>
+</div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+<p>Understand the strategic drivers for your area of work. Align activities to contribute to
+wider organisational priorities. Remain alert to emerging issues and trends which might
+impact your work area. Seek out and share experiences to develop knowledge of the
+team’s business area. Understand how the strategies and activities of the team create
+value and meet the diverse needs of all stakeholders.</p>
+</div>
+<div class="govuk-grid-column-three-quarters">
+  <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
+  <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
+<p>Limited positive evidence and/or mainly negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">3 - Moderate demonstration</h3>
+<p>Moderate positive evidence but some negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">4 - Acceptable demonstration</h3>
+<p>Adequate positive evidence and any negative evidence would not cause concern.</p>
+<h3 class="govuk-heading-s">5 - Good demonstration</h3>
+<p>Substantial positive evidence of the behaviour.</p>
+<h3 class="govuk-heading-s">6 - Strong demonstration</h3>
+<p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
+<h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
+<p>The evidence provided wholly exceeds expectation at this level.</p>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full answer-panel">
+      <h2 class="govuk-heading-s">Applicant 1:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+        {{ govukInput({
+        label: {
+          text: "Score",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-2",
+        id: "score",
+        name: "score"
+      }) }}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "example",
+      text: "Example"
+    },
+    {
+      value: "experience",
+      text: "Experience"
+    },
+    {
+      value: "relevance",
+      text: "Relevance to role"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukInput({
+  label: {
+    text: "Additional feedback (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+      <h2 class="govuk-heading-s">Applicant 2:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+    <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+        {{ govukInput({
+        label: {
+          text: "Score",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-2",
+        id: "score",
+        name: "score"
+      }) }}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "example",
+      text: "Example"
+    },
+    {
+      value: "experience",
+      text: "Experience"
+    },
+    {
+      value: "relevance",
+      text: "Relevance to role"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukInput({
+  label: {
+    text: "Additional feedback (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+      <h2 class="govuk-heading-s">Applicant 3:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    </div>
+    <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+        {{ govukInput({
+        label: {
+          text: "Score",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-2",
+        id: "score",
+        name: "score"
+      }) }}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "example",
+      text: "Example"
+    },
+    {
+      value: "experience",
+      text: "Experience"
+    },
+    {
+      value: "relevance",
+      text: "Relevance to role"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukInput({
+  label: {
+    text: "Additional feedback (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+      <h2 class="govuk-heading-s">Applicant 4:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+        <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+        {{ govukInput({
+        label: {
+          text: "Score",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-2",
+        id: "score",
+        name: "score"
+      }) }}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "example",
+      text: "Example"
+    },
+    {
+      value: "experience",
+      text: "Experience"
+    },
+    {
+      value: "relevance",
+      text: "Relevance to role"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukInput({
+  label: {
+    text: "Additional feedback (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+
+      <h2 class="govuk-heading-s">Applicant 5:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+        <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+        {{ govukInput({
+        label: {
+          text: "Score",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-2",
+        id: "score",
+        name: "score"
+      }) }}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "example",
+      text: "Example"
+    },
+    {
+      value: "experience",
+      text: "Experience"
+    },
+    {
+      value: "relevance",
+      text: "Relevance to role"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukInput({
+  label: {
+    text: "Additional feedback (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback"
+}) }}
+
+
+{{ govukButton({
+  text: "Submit scores",
+  href: "1001334"
+}) }}
+
+{{ govukButton({
+  text: "Next criteria",
+  href: "1001334-score-changing"
+}) }}
+
+{% endblock %}

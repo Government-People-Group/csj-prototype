@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Advert set up</span>
+    <form method="post" action="">
+
+{% call govukFieldset({
+  legend: {
+    text: "What is the essential criteria needed for this role?",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+<p>For example, comfortable around dogs. This will be visible on the advert.</p>
+{{ govukTextarea({
+  label: {
+    text: "Essential criteria 1"
+  },
+  id: "experience1",
+  name: "experience1",
+  value: "Experience of handling projects and priorities in an agile, fast paced environment"
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Essential criteria 2"
+  },
+  id: "experience2 (optional)",
+  name: "experience2",
+  value: "Demonstrable and practical experience of applying user centred design and testing methodologies, including designing responsive and accessible user interfaces for a variety of different services"
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Essential criteria 3 (optional)"
+  },
+  id: "experience3",
+  name: "experience3",
+  value: "Experience designing for different screen sizes and input methods (e.g. touch, mouse and keystroke)"
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Essential criteria 4 (optional)"
+  },
+  id: "experience4",
+  name: "experience4",
+  value: "Experience of engaging with members of multi-disciplinary teams in the design process"
+}) }}
+
+{% endcall %}
+<p><a href="">Add another experience</a></p>
+{{ govukButton({
+  text: "Continue",
+  href: "tech-criteria"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+</form>
+</div>
+</div>
+{% endblock %}

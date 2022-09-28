@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+
+{{ govukRadios({
+  idPrefix: "template",
+  name: "template",
+  fieldset: {
+    legend: {
+      text: "Would you like to use an existing template for this job vacancy?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Templates have been debiased and pre-approved."
+  },
+  items: [
+    {
+      value: "cswide",
+      text: "Yes, a civil service template"
+    },
+    {
+      value: "dept",
+      text: "Yes, a department specific template"
+    },
+    {
+      value: "copy",
+      text: "Yes, I want to copy a previous advert"
+    },
+    {
+      value: "no",
+      text: "No, I don't want to use a template"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

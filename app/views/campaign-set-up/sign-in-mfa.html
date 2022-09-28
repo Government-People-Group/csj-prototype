@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Check your email</h1>
+
+<p class="govuk-body">We’ve sent you an email with a security code.</p>
+
+{{ govukInput({
+  label: {
+    text: "Security code"
+  },
+  id: "security-code",
+  name: "security-code",
+  type: "text",
+  autocomplete: "one-time-code",
+  classes: "govuk-input--width-4",
+  inputmode: "numeric"
+}) }}
+
+<p class="govuk-body"><a href="#" class="govuk-link">Not received an email?</a></p>
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "/user-profile"
+}) }}
+<p><a href="#">Register a new account</a></p>
+<p><a href="#">Forgotten your password?</a></p>
+</div>
+</div>
+{% endblock %}
