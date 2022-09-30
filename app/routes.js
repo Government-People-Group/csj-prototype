@@ -197,5 +197,13 @@ router.get('/campaign-set-up/assessment-method-1/statement', function (req, res)
       res.redirect('cv')
 })
 
+// sift
+
+router.get('/sift/1001334', function (req, res) {
+  var basic = req.session.data['posts']
+    res.render('sift/task-list', {
+      basic: basic
+    })
+  })
 
 module.exports = router
