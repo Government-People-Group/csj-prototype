@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Online tests</h2>
+{{ govukTable({
+  caption: "Judgement skills",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Candidate"
+    },
+    {
+      text: "Score"
+    },
+    {
+      text: "Result"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Applicant 2"
+      },
+      {
+        text: "86%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">Pass</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 5"
+      },
+      {
+        text: "79%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">Pass</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 1"
+      },
+      {
+        text: "75%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">Pass</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 7"
+      },
+      {
+        text: "72%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">Pass</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 6"
+      },
+      {
+        text: "68%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">Pass</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 3"
+      },
+      {
+        text: "51%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 4"
+      },
+      {
+        text: "35%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ]
+  ]
+}) }}
+
+</div>
+</div>
+{{ govukButton({
+  text: "Return to vacancy",
+  href: "1001334"
+}) }}
+
+{% endblock %}
