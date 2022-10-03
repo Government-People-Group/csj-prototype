@@ -34,8 +34,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-
-
+<h2 class="govuk-heading-m">Essential criteria and skills</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Experience working in user-centered design</li>
+  <li>Knowledge of design principals</li>
+  <li>Experience creating GOV.UK prototypes</li>
+  <li>Qualification in web accessibility</li>
+  </ul>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h2 class="govuk-heading-m">
 Experience</h2>
 <p>
@@ -117,17 +123,50 @@ Integer luctus nunc in libero luctus facilisis. Integer maximus dapibus dui soll
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
 
-    {{ govukInput({
-    label: {
+      {{ govukSelect({
+      id: "score",
+      name: "score",
+      label: {
       text: "Score",
-      isPageHeading: false,
       classes: "govuk-label--m"
-    },
-    classes: "govuk-input--width-2",
-    id: "score",
-    name: "score"
-  }) }}
-  {% from "govuk/components/select/macro.njk" import govukSelect %}
+      },
+      items: [
+      {
+        value: "1",
+        text: "1"
+      },
+      {
+        value: "2",
+        text: "2"
+      },
+      {
+        value: "3",
+        text: "3"
+      },
+      {
+        value: "4",
+        text: "4"
+      },
+      {
+        value: "5",
+        text: "5"
+      },
+      {
+        value: "6",
+        text: "6"
+      },
+      {
+        value: "7",
+        text: "7"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
 </div>
   <div class="govuk-grid-column-two-thirds">
 {{ govukSelect({
@@ -139,12 +178,28 @@ classes: "govuk-label--m"
 },
 items: [
 {
-  value: "experience",
-  text: "Experience"
+  value: "experienceLow",
+  text: "Not enough experience"
 },
 {
-  value: "relevance",
-  text: "Relevance to role"
+  value: "experienceHigh",
+  text: "High level of experience"
+},
+{
+  value: "relevanceLow",
+  text: "Not relevant to role"
+},
+{
+  value: "relevanceHigh",
+  text: "Very relevant to role"
+},
+{
+  value: "exampleLow",
+  text: "No or poor example given"
+},
+{
+  value: "exampleHigh",
+  text: "Strong example given"
 },
 {
   value: "---",
@@ -157,7 +212,16 @@ items: [
 </div>
 {{ govukInput({
 label: {
-text: "Additional feedback (optional)"
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -168,17 +232,50 @@ name: "feedback"
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
 
-    {{ govukInput({
-    label: {
+      {{ govukSelect({
+      id: "score",
+      name: "score",
+      label: {
       text: "Score",
-      isPageHeading: false,
       classes: "govuk-label--m"
-    },
-    classes: "govuk-input--width-2",
-    id: "score",
-    name: "score"
-  }) }}
-  {% from "govuk/components/select/macro.njk" import govukSelect %}
+      },
+      items: [
+      {
+        value: "1",
+        text: "1 Not Demonstrated - No positive evidence provided"
+      },
+      {
+        value: "2",
+        text: "2 Minimal Demonstration - Limited positive evidence provided"
+      },
+      {
+        value: "3",
+        text: "3 Moderate Demonstration - Moderate positive evidence provided"
+      },
+      {
+        value: "4",
+        text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+      },
+      {
+        value: "5",
+        text: "5 Good Demonstration - Substantial positive evidence provided"
+      },
+      {
+        value: "6",
+        text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+      },
+      {
+        value: "7",
+        text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
 </div>
   <div class="govuk-grid-column-two-thirds">
 {{ govukSelect({
@@ -208,7 +305,16 @@ items: [
 </div>
 {{ govukInput({
 label: {
-text: "Additional feedback (optional)"
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -219,17 +325,50 @@ name: "feedback"
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
 
-    {{ govukInput({
-    label: {
+      {{ govukSelect({
+      id: "score",
+      name: "score",
+      label: {
       text: "Score",
-      isPageHeading: false,
       classes: "govuk-label--m"
-    },
-    classes: "govuk-input--width-2",
-    id: "score",
-    name: "score"
-  }) }}
-  {% from "govuk/components/select/macro.njk" import govukSelect %}
+      },
+      items: [
+      {
+        value: "1",
+        text: "Not Demonstrated - No positive evidence provided"
+      },
+      {
+        value: "2",
+        text: "Minimal Demonstration - Limited positive evidence provided"
+      },
+      {
+        value: "3",
+        text: "Moderate Demonstration - Moderate positive evidence provided"
+      },
+      {
+        value: "4",
+        text: "Acceptable Demonstration - Adequate positive evidence provided"
+      },
+      {
+        value: "5",
+        text: "Good Demonstration - Substantial positive evidence provided"
+      },
+      {
+        value: "6",
+        text: "Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+      },
+      {
+        value: "7",
+        text: "Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
 </div>
   <div class="govuk-grid-column-two-thirds">
 {{ govukSelect({
@@ -259,7 +398,16 @@ items: [
 </div>
 {{ govukInput({
 label: {
-text: "Additional feedback (optional)"
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -270,17 +418,50 @@ name: "feedback"
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
 
-    {{ govukInput({
-    label: {
+      {{ govukSelect({
+      id: "score",
+      name: "score",
+      label: {
       text: "Score",
-      isPageHeading: false,
       classes: "govuk-label--m"
-    },
-    classes: "govuk-input--width-2",
-    id: "score",
-    name: "score"
-  }) }}
-  {% from "govuk/components/select/macro.njk" import govukSelect %}
+      },
+      items: [
+      {
+        value: "1",
+        text: "1"
+      },
+      {
+        value: "2",
+        text: "2"
+      },
+      {
+        value: "3",
+        text: "3"
+      },
+      {
+        value: "4",
+        text: "4"
+      },
+      {
+        value: "5",
+        text: "5"
+      },
+      {
+        value: "6",
+        text: "6"
+      },
+      {
+        value: "7",
+        text: "7"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
 </div>
   <div class="govuk-grid-column-two-thirds">
 {{ govukSelect({
@@ -310,7 +491,16 @@ items: [
 </div>
 {{ govukInput({
 label: {
-text: "Additional feedback (optional)"
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
