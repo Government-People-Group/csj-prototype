@@ -39,6 +39,25 @@
   <div class="govuk-grid-column-full">
 <span class="govuk-caption-l">1001334</span>
 <h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Review scores</h2>
+{% set scoredHTML %}
+{{govukTag({
+  text: "Scored",
+  classes: "govuk-tag"
+})}}
+{% endset %}
+{% set progressHTML %}
+{{govukTag({
+  text: "In progress",
+  classes: "govuk-tag--blue"
+})}}
+{% endset %}
+{% set notscoredHTML %}
+{{govukTag({
+  text: "Not scored yet",
+  classes: "govuk-tag--grey"
+})}}
+{% endset %}
 
 {{ govukTable({
   caption: "Applications",
@@ -63,27 +82,11 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Experience 1",
+      text: "Skills",
       classes: 'app-custom-class'
     },
     {
-      text: "Experience 2",
-      classes: 'app-custom-class'
-    },
-    {
-      text: "Experience 3",
-      classes: 'app-custom-class'
-    },
-    {
-      text: "Skill 1",
-      classes: 'app-custom-class'
-    },
-    {
-      text: "Skill 2",
-      classes: 'app-custom-class'
-    },
-    {
-      text: "Total",
+      text: "Status",
       classes: 'app-custom-class'
     }
   ],
@@ -105,19 +108,7 @@
         text: "4"
       },
       {
-        text: "4"
-      },
-      {
-        text: "4"
-      },
-      {
-        text: "4"
-      },
-      {
-        text: "4"
-      },
-      {
-        text: "32"
+        html: scoredHTML
       }
     ],
     [
@@ -134,22 +125,10 @@
       text: "3"
     },
     {
-      text: "3"
+      text: "0"
     },
     {
-      text: "3"
-    },
-    {
-      text: "3"
-    },
-    {
-      text: "1"
-    },
-    {
-      text: "1"
-    },
-    {
-      text: "20"
+      html: progressHTML
     }
     ],
     [
@@ -166,22 +145,10 @@
       text: "4"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
-    },
-    {
-      text: "4"
-    },
-    {
-      text: "4"
-    },
-    {
-      text: "Not scored"
-    },
-    {
-      text: "28"
+      html: progressHTML
     }
     ],
     [
@@ -189,31 +156,19 @@
       html: "<a href''>Applicant 4</a>"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
-    },
-    {
-      text: "4"
-    },
-    {
-      text: "4"
-    },
-    {
-      text: "2"
-    },
-    {
-      text: "30"
+      html: notscoredHTML
     }
     ],
     [
@@ -221,39 +176,28 @@
       html: "<a href''>Applicant 5</a>"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "5"
+      text: "0"
     },
     {
-      text: "4"
+      text: "0"
     },
     {
-      text: "4"
-    },
-    {
-      text: "5"
-    },
-    {
-      text: "4"
-    },
-    {
-      text: "5"
-    },
-    {
-      text: "35"
+      html: notscoredHTML
     }
     ]
   ]
 }) }}
 
 {{ govukButton({
-  text: "Recommended action",
-  href: "1001334-recommended"
+  text: "Submit scores to panel",
+  href: "1001334-recommended",
+  disabled: true
 }) }}
             </div>
             </div>
