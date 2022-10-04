@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Schemes</h2>
+<h3 class="govuk-heading-s">Veteran's scheme</h3>
+<h3 class="govuk-heading-s"></h3>
+<h3 class="govuk-heading-s">Veterans scheme</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Yes"
+      },
+      value: {
+        text: "5 applicants"
+      }
+    },
+    {
+      key: {
+        text: "No"
+      },
+      value: {
+        text: "2 applicants"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "View",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+<h3 class="govuk-heading-s">Can you work in an office 2 days a week?</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Yes"
+      },
+      value: {
+        text: "6 applicants"
+      }
+    },
+    {
+      key: {
+        text: "No"
+      },
+      value: {
+        text: "1 applicants"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "View",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukButton({
+  text: "Return to vacancy",
+  href: "1001334"
+}) }}
+
+{% endblock %}
