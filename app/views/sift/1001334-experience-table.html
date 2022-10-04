@@ -36,28 +36,8 @@
   href: "javascript:history.go(-1)"
 }) }}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 <span class="govuk-caption-l">1001334</span>
 <h1 class="govuk-heading-l">Lead delivery manager</h1>
-<h2 class="govuk-heading-m">Review scores</h2>
-{% set scoredHTML %}
-{{govukTag({
-  text: "Scored",
-  classes: "govuk-tag"
-})}}
-{% endset %}
-{% set progressHTML %}
-{{govukTag({
-  text: "In progress",
-  classes: "govuk-tag--blue"
-})}}
-{% endset %}
-{% set notscoredHTML %}
-{{govukTag({
-  text: "Not scored yet",
-  classes: "govuk-tag--grey"
-})}}
-{% endset %}
 
 {{ govukTable({
   caption: "Applications",
@@ -69,24 +49,19 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Behaviour 1",
+      text: "Experience 1",
       classes: 'app-custom-class'
     },
     {
-      text: "Behaviour 2",
-      classes: 'app-custom-class',
-      style: hidden
-    },
-    {
-      text: "Behaviour 3",
+      text: "Experience 2",
       classes: 'app-custom-class'
     },
     {
-      text: "Skills",
+      text: "Experience 3",
       classes: 'app-custom-class'
     },
     {
-      text: "Status",
+      text: "Skill 1",
       classes: 'app-custom-class'
     }
   ],
@@ -106,9 +81,6 @@
       },
       {
         text: "4"
-      },
-      {
-        html: scoredHTML
       }
     ],
     [
@@ -125,10 +97,7 @@
       text: "3"
     },
     {
-      text: "0"
-    },
-    {
-      html: progressHTML
+      text: "3"
     }
     ],
     [
@@ -145,10 +114,7 @@
       text: "4"
     },
     {
-      text: "0"
-    },
-    {
-      html: progressHTML
+      text: "4"
     }
     ],
     [
@@ -156,19 +122,16 @@
       html: "<a href''>Applicant 4</a>"
     },
     {
-      text: "0"
+      text: "4"
     },
     {
-      text: "0"
+      text: "4"
     },
     {
-      text: "0"
+      text: "4"
     },
     {
-      text: "0"
-    },
-    {
-      html: notscoredHTML
+      text: "4"
     }
     ],
     [
@@ -176,19 +139,16 @@
       html: "<a href''>Applicant 5</a>"
     },
     {
-      text: "0"
+      text: "4"
     },
     {
-      text: "0"
+      text: "4"
     },
     {
-      text: "0"
+      text: "5"
     },
     {
-      text: "0"
-    },
-    {
-      html: notscoredHTML
+      text: "4"
     }
     ]
   ]
@@ -196,9 +156,10 @@
 
 {{ govukButton({
   text: "Submit scores to panel",
-  href: "1001334-recommended",
-  disabled: true
+  href: "1001334-recommended"
 }) }}
+
+<p><a href="task-list">Return to task-list</a></p>
             </div>
             </div>
 {% endblock %}

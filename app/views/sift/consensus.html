@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Consensus meeting</h2>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Arrange a meeting with the panel.</li>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="mailto:user@cabinetoffice.gov.uk">Jane Smith (Lead)</a></li>
+    <li><a href="mailto:fictionalperson@cabinetoffice.gov.uk">Smith Clark</a></li>
+    <li><a href="mailto:fictionalperson@cabinetoffice.gov.uk">Annie Pear</a></li>
+  </ul>
+    <li>Review selected candidates. These candidates have been selected either because the panel scored them differently, or the score is very close to a cut-off mark.</li>
+<li>Decide if you will interview or reject the selected candidates.</li>
+<li>Proceed to interview set up.</li>
+</ol>
+
+{{ govukButton({
+  text: "Review selected candidates",
+  href: "1001334-consensus-meeting"
+}) }}
+
+
+
+{% endblock %}
