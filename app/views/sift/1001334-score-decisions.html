@@ -47,8 +47,7 @@ others in decision making. Display confidence when making difficult decisions, e
 if they prove to be unpopular. Consult with others to ensure the potential impacts on
 end users have been considered. Present strong recommendations in a timely manner
 outlining the consideration of other options, costs, benefits and risks.</p>
-</div>
-<div class="govuk-grid-column-three-quarters">
+{% set scoreHTML %}
   <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
   <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
 <h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
@@ -63,6 +62,11 @@ outlining the consideration of other options, costs, benefits and risks.</p>
 <p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
 <h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
 <p>The evidence provided wholly exceeds expectation at this level.</p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "Help with scoring",
+  html: scoreHTML
+}) }}
   </div>
   </div>
   <div class="govuk-grid-row">
@@ -78,31 +82,31 @@ outlining the consideration of other options, costs, benefits and risks.</p>
                 items: [
                 {
                   value: "1",
-                  text: "1"
+                  text: "1 Not Demonstrated - No positive evidence provided"
                 },
                 {
                   value: "2",
-                  text: "2"
+                  text: "2 Minimal Demonstration - Limited positive evidence provided"
                 },
                 {
                   value: "3",
-                  text: "3"
+                  text: "3 Moderate Demonstration - Moderate positive evidence provided"
                 },
                 {
                   value: "4",
-                  text: "4"
+                  text: "4 Acceptable Demonstration - Adequate positive evidence provided"
                 },
                 {
                   value: "5",
-                  text: "5"
+                  text: "5 Good Demonstration - Substantial positive evidence provided"
                 },
                 {
                   value: "6",
-                  text: "6"
+                  text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
                 },
                 {
                   value: "7",
-                  text: "7"
+                  text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
                 },
                 {
                   value: "---",
@@ -195,31 +199,31 @@ outlining the consideration of other options, costs, benefits and risks.</p>
                           items: [
                           {
                             value: "1",
-                            text: "1"
+                            text: "1 Not Demonstrated - No positive evidence provided"
                           },
                           {
                             value: "2",
-                            text: "2"
+                            text: "2 Minimal Demonstration - Limited positive evidence provided"
                           },
                           {
                             value: "3",
-                            text: "3"
+                            text: "3 Moderate Demonstration - Moderate positive evidence provided"
                           },
                           {
                             value: "4",
-                            text: "4"
+                            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
                           },
                           {
                             value: "5",
-                            text: "5"
+                            text: "5 Good Demonstration - Substantial positive evidence provided"
                           },
                           {
                             value: "6",
-                            text: "6"
+                            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
                           },
                           {
                             value: "7",
-                            text: "7"
+                            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
                           },
                           {
                             value: "---",
@@ -313,31 +317,31 @@ outlining the consideration of other options, costs, benefits and risks.</p>
                           items: [
                           {
                             value: "1",
-                            text: "1"
+                            text: "1 Not Demonstrated - No positive evidence provided"
                           },
                           {
                             value: "2",
-                            text: "2"
+                            text: "2 Minimal Demonstration - Limited positive evidence provided"
                           },
                           {
                             value: "3",
-                            text: "3"
+                            text: "3 Moderate Demonstration - Moderate positive evidence provided"
                           },
                           {
                             value: "4",
-                            text: "4"
+                            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
                           },
                           {
                             value: "5",
-                            text: "5"
+                            text: "5 Good Demonstration - Substantial positive evidence provided"
                           },
                           {
                             value: "6",
-                            text: "6"
+                            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
                           },
                           {
                             value: "7",
-                            text: "7"
+                            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
                           },
                           {
                             value: "---",
@@ -430,31 +434,31 @@ outlining the consideration of other options, costs, benefits and risks.</p>
                           items: [
                           {
                             value: "1",
-                            text: "1"
+                            text: "1 Not Demonstrated - No positive evidence provided"
                           },
                           {
                             value: "2",
-                            text: "2"
+                            text: "2 Minimal Demonstration - Limited positive evidence provided"
                           },
                           {
                             value: "3",
-                            text: "3"
+                            text: "3 Moderate Demonstration - Moderate positive evidence provided"
                           },
                           {
                             value: "4",
-                            text: "4"
+                            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
                           },
                           {
                             value: "5",
-                            text: "5"
+                            text: "5 Good Demonstration - Substantial positive evidence provided"
                           },
                           {
                             value: "6",
-                            text: "6"
+                            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
                           },
                           {
                             value: "7",
-                            text: "7"
+                            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
                           },
                           {
                             value: "---",
@@ -548,31 +552,31 @@ outlining the consideration of other options, costs, benefits and risks.</p>
                           items: [
                           {
                             value: "1",
-                            text: "1"
+                            text: "1 Not Demonstrated - No positive evidence provided"
                           },
                           {
                             value: "2",
-                            text: "2"
+                            text: "2 Minimal Demonstration - Limited positive evidence provided"
                           },
                           {
                             value: "3",
-                            text: "3"
+                            text: "3 Moderate Demonstration - Moderate positive evidence provided"
                           },
                           {
                             value: "4",
-                            text: "4"
+                            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
                           },
                           {
                             value: "5",
-                            text: "5"
+                            text: "5 Good Demonstration - Substantial positive evidence provided"
                           },
                           {
                             value: "6",
-                            text: "6"
+                            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
                           },
                           {
                             value: "7",
-                            text: "7"
+                            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
                           },
                           {
                             value: "---",
