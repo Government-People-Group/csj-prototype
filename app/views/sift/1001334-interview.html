@@ -51,7 +51,7 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Essential criteria
+              Essential criteria<br> (10 minutes)
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
@@ -62,7 +62,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Technical skills
+              Technical skills<br> (5 minutes)
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
@@ -72,7 +72,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Behaviours
+              Behaviours<br> (15 minutes)
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
@@ -83,7 +83,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Strengths
+              Strengths<br> (5 minutes)
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
@@ -95,13 +95,14 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Interview activity
+              Interview activity<br> (15 minutes)
             </dt>
             <dd class="govuk-summary-list__value">
               Presentation
             </dd>
           </div>
         </dl>
+        <p>Expected interview length based on questions and presentation: <b>50 minutes</b></p>
 {% set otherHTML %}
 {{ govukInput({
   label: {
@@ -116,31 +117,23 @@
           name: "interview-length",
           fieldset: {
             legend: {
-              text: "How long should the interview last?",
+              text: "Do you want to change the length of the interview?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "45",
-              text: "45 minutes"
-            },
-            {
-              value: "60",
-              text: "1 hour",
-              checked: true
-            },
-            {
-              value: "90",
-              text: "1 hour 30 minutes"
-            },
-            {
-              value: "other",
-              text: "Other",
+              value: "yes",
+              text: "Yes",
               conditional: {
                 html: otherHTML
               }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
             }
           ]
         }) }}
