@@ -33,10 +33,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">1001334</span>
-<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h1 class="govuk-heading-l">Customer service advisor</h1>
 <h2 class="govuk-heading-m">Online tests</h2>
 {{ govukTable({
-  caption: "Judgement skills",
+  caption: "Customer service skills",
   captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: false,
   head: [
@@ -127,17 +127,119 @@
       {
         html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
       }
+    ],
+    [
+      {
+        text: "Applicant 12"
+      },
+      {
+        text: "34%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 15"
+      },
+      {
+        text: "29%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 11"
+      },
+      {
+        text: "25%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 17"
+      },
+      {
+        text: "22%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 16"
+      },
+      {
+        text: "18%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 31"
+      },
+      {
+        text: "11%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
+    ],
+    [
+      {
+        text: "Applicant 14"
+      },
+      {
+        text: "5%"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status">Fail</strong>'
+      }
     ]
   ]
 }) }}
-
+       {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
 </div>
 </div>
+<h3 class="govuk-heading-m"><a href="">Strengths skills</a></h3>
+<h3 class="govuk-heading-m"><a href="">Verbal skills</a></h3>
 <p><a href="passmark">Change pass mark</a></p>
 
 {{ govukButton({
   text: "Return to vacancy",
-  href: "1001334"
+  href: "task-list"
 }) }}
 
 
