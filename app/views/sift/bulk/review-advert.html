@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Review and manage</span>
+<h1 class="govuk-heading-l">Customer service advisor</h1>
+<h2 class="govuk-heading-m">Home Office</h2>
+<br>
+<h3 class="govuk-heading-m">The closing date is 09 September 2022</h3>
+
+<h3 class="govuk-heading-m">Job summary</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4 class="govuk-heading-s">Main duties of the job</h4>
+<ul class="govuk-list govuk-list--bullet">
+<li>Creating prototypes and concepts to communicate and test ideas with users and improving with evidence</li>
+<li>Presenting designs to a wide range of stakeholders, explaining design decisions and how user needs are being met</li>
+<li>Ensuring understanding of user centred design by working collaboratively with colleagues in both Service Design and digital delivery disciplines</li>
+<li>Being an advocate for users and understanding user needs to design simple, effective and accessible services</li>
+</ul>
+<h4 class="govuk-heading-s">Essential criteria</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Experience creating prototypes and concepts to communicate and test ideas with users and improving with evidence</li>
+  <li>Experience presenting designs to a wide range of stakeholders, explaining design decisions and how user needs are being met</li>
+  <li>An understanding of user centred design by working collaboratively with colleagues in both Service Design and digital delivery disciplines</li>
+  <li>Experience advocating for users and understanding user needs to design simple, effective and accessible services</li>
+  </ul>
+  <h3 class="govuk-heading-m">About us</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 class="govuk-heading-s">Benefits</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Learning and development tailored to your role</li>
+<li>An environment with flexible working options</li>
+<li>A culture encouraging inclusion and diversity</li>
+<li>A Civil Service pension</li>
+  </ul>
+  <h4 class="govuk-heading-s">Security</h4>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Security: Candidates will need to pass base BPSS security clearance</li>
+    </ul>
+    <h4 class="govuk-heading-s">Selection process details</h4>
+    <p>We will sift your application on:<p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>experience (CV)</li>
+      <li>behaviours</li>
+      <li>technical skills</li>
+      <li>online tests</li>
+      </ul>
+      <p>We will interview candidates on:<p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>experience</li>
+        <li>behaviours</li>
+        <li>strengths</li>
+        </ul>
+        </div>
+  <div class="govuk-grid-column-one-third csr-side-search-panel govuk-!-margin-0 govuk-!-padding-5">
+    {{ govukButton({
+      text: "Apply for this job"
+    }) }}
+
+    <p>For questions about the job, contact:</p>
+    <p>James Smith</br>
+    <a href="mailto:name@email.com">james.smith@homeoffice.gov.uk</a></p>
+    <p><b>Date posted:</b> 19 August 2022</p>
+    <p><b>Grade:</b> SEO</p>
+    <p><b>Minimum salary:</b> £34,556</p>
+    <p><b>Salary negotiable?</b> No</p>
+    <p><b>Additional allowances:</b> Yes</p>
+    <p><b>Contract:</b> Permanent</p>
+    <p><b>Working pattern:</b> Full-time, Part-time</p>
+    <p><b>Locations:</b> <ul class="govuk-list">
+    <li>General Buildings 31-33, Newport Road, CARDIFF, CF24 0AB</li>
+    <li>Priory Court, St. Johns Road, DOVER, CT17 9SH</li>
+    <li>Felixstowe Custom House, Viewpoint Road IP11 8RF</li>
+  </ul></p>
+    <p><b>Reference:</b> 1234-ABC</p>
+    </div>
+    </div>
+
+
+{{ govukButton({
+  text: "Return to task-list",
+  href: "task-list"
+}) }}
+
+
+{% endblock %}
