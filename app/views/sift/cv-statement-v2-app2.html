@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-l">Applicant 2</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-m">
+CV</h2>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<h2 class="govuk-heading-m">Education</h2>
+
+<p>School Name / Degree</p>
+<p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<br></br>
+<p>School Name / Degree</p>
+<p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<br></br>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-heading-l">Score applicant 2</h3>
+
+{% set scoreHTML %}
+  <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
+  <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
+<p>Limited positive evidence and/or mainly negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">3 - Moderate demonstration</h3>
+<p>Moderate positive evidence but some negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">4 - Acceptable demonstration</h3>
+<p>Adequate positive evidence and any negative evidence would not cause concern.</p>
+<h3 class="govuk-heading-s">5 - Good demonstration</h3>
+<p>Substantial positive evidence of the behaviour.</p>
+<h3 class="govuk-heading-s">6 - Strong demonstration</h3>
+<p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
+<h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
+<p>The evidence provided wholly exceeds expectation at this level.</p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "Help with scoring",
+  html: scoreHTML
+}) }}
+
+{{ govukInsetText({
+  text: "The candidate will see the score and feedback."
+}) }}
+
+<h3 class="govuk-heading-m">Overall CV score</h3>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukSelect({
+      id: "score",
+      name: "score",
+      label: {
+      text: "Score",
+      classes: "govuk-label--m"
+      },
+      items: [
+      {
+        value: "1",
+        text: "1"
+      },
+      {
+        value: "2",
+        text: "2"
+      },
+      {
+        value: "3",
+        text: "3"
+      },
+      {
+        value: "4",
+        text: "4"
+      },
+      {
+        value: "5",
+        text: "5"
+      },
+      {
+        value: "6",
+        text: "6"
+      },
+      {
+        value: "7",
+        text: "7"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
+</div>
+  <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+id: "reason",
+name: "reason",
+label: {
+text: "Reason",
+classes: "govuk-label--m"
+},
+items: [
+{
+  value: "experienceLow",
+  text: "Not enough experience"
+},
+{
+  value: "experienceHigh",
+  text: "High level of experience"
+},
+{
+  value: "relevanceLow",
+  text: "Not relevant to role"
+},
+{
+  value: "relevanceHigh",
+  text: "Very relevant to role"
+},
+{
+  value: "exampleLow",
+  text: "No or poor example given"
+},
+{
+  value: "exampleHigh",
+  text: "Strong example given"
+},
+{
+  value: "---",
+  text: "---",
+  selected: true
+}
+]
+}) }}
+</div>
+</div>
+{{ govukInput({
+label: {
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+</div>
+{{ govukButton({
+  text: "Next candidate",
+  href: ""
+}) }}
+<p><a href="task-list">Save and return to tasklist</a></p>
+{% endblock %}
