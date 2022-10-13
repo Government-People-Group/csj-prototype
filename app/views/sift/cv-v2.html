@@ -64,14 +64,26 @@ Company Name / Job Title</p>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
 <br></br>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <p><b>1.	Not Demonstrated</b> - No positive evidence provided</p>
-    <p><b>2.	Minimal Demonstration</b> - Limited positive evidence provided</p>
-    <p><b>3.	Moderate Demonstration</b> - Moderate positive evidence provided</p>
-    <p><b>4.	Acceptable Demonstration</b> - Adequate positive evidence provided</p>
-    <p><b>5.	Good Demonstration</b> - Substantial positive evidence provided</p>
-    <p><b>6.	Strong Demonstration</b> - Substantial, positive evidence provided including some evidence of exceeding expectations</p>
-    <p><b>7.	Outstanding Demonstration</b> - Evidence provided wholly exceeds expectation at this level</p>
-
+{% set scoreHTML %}
+  <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
+  <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
+<p>Limited positive evidence and/or mainly negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">3 - Moderate demonstration</h3>
+<p>Moderate positive evidence but some negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">4 - Acceptable demonstration</h3>
+<p>Adequate positive evidence and any negative evidence would not cause concern.</p>
+<h3 class="govuk-heading-s">5 - Good demonstration</h3>
+<p>Substantial positive evidence of the behaviour.</p>
+<h3 class="govuk-heading-s">6 - Strong demonstration</h3>
+<p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
+<h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
+<p>The evidence provided wholly exceeds expectation at this level.</p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "Help with scoring",
+  html: scoreHTML
+}) }}
 {{ govukInsetText({
   text: "The candidate will see the score and feedback."
 }) }}
