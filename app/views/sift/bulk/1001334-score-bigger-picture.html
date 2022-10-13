@@ -650,9 +650,33 @@ value and meet the diverse needs of all stakeholders.</p>
               }) }}
 
             <p><a href="task-list">Save and return to tasklist</a></p>
+            {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
+            {{ govukPagination({
+              previous: {
+                href: "#"
+              },
+              next: {
+                href: "#"
+              },
+              items: [
+                {
+                  number: 1,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
 {{ govukButton({
-  text: "Next 5 applicants",
+  text: "Next behaviour",
   href: ""
 }) }}
 
