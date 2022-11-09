@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Create a job – Civil service jobs – GOV.UK Prototype Kit
+  Sift applications – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -32,8 +32,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">1001334</span>
-    <h1 class="govuk-heading-l">Lead delivery manager</h1>
+    <h1 class="govuk-heading-l">Lead delivery manager (1001334)</h1>
+<p>You can save and return at any point to complete an action.</p>
 
     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Advert closed 23 September 2022.</h2>
     <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 15 sections.</p>
@@ -73,9 +73,16 @@
           </li>
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Score applications
+              <span class="app-task-list__section-number">2. </span> Sift applications
             </h2>
             <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="task-list-applicants" aria-describedby="list-convictions-status">
+                  View applicants (5)</a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">optional</strong>
+              </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
                       <a href="1001334-score-bigger-picture" aria-describedby="list-convictions-status">
@@ -104,20 +111,21 @@
                     </span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
                   </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="1001334-table" aria-describedby="read-declaration-status">
+                        Review and submit sifting scores
+                      </a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                  </li>
                 </ul>
                 </li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span> Results
+              <span class="app-task-list__section-number">3. </span> View and submit my scores
             </h2>
             <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="1001334-table" aria-describedby="read-declaration-status">
-                    View and submit my scores
-                  </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-              </li>
+
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="1001334-panel-results" aria-describedby="read-declaration-status">
@@ -137,7 +145,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="consensus" aria-describedby="read-declaration-status">
-                    Consensus panel meeting
+                    Arrange a consensus meeting
                   </a>
                 </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
@@ -184,7 +192,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="score-interview" aria-describedby="eligibility-status">
-                  Score
+                  Score interviews
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
@@ -192,7 +200,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="submit-interview" aria-describedby="eligibility-status">
-                  Review and submit
+                  Review and submit interview scores
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>

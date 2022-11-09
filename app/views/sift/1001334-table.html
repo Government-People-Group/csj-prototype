@@ -34,12 +34,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<span class="govuk-caption-l">1001334</span>
-<h1 class="govuk-heading-l">Lead delivery manager</h1>
-<h2 class="govuk-heading-m">Review my scores</h2>
+<h1 class="govuk-heading-l">Lead delivery manager (1001334)</h1>
+<h2 class="govuk-heading-m">Review and submit sifting scores scores</h2>
+<p>Please review ad submit the scores you've given for each applicants behaviours, CV and skills.</p>
 {% set scoredHTML %}
 {{govukTag({
-  text: "Scored",
+  text: "Completed",
   classes: "govuk-tag"
 })}}
 {% endset %}
@@ -192,7 +192,7 @@
 }) }}
 
 {{ govukButton({
-  text: "Submit my scores to panel",
+  text: "Submit scores",
   href: "1001334-panel-results",
   disabled: true
 }) }}

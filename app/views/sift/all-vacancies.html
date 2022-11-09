@@ -34,19 +34,19 @@
   <div class="govuk-grid-column-full">
 {% set leadHTML %}
     {{govukTag({
-              text: "Lead",
+              text: "Lead to complete",
               classes: "govuk-tag--blue"
             })}}
       {% endset %}
       {% set panelHTML %}
           {{govukTag({
-                    text: "Panel",
+                    text: "Panel to complete",
                     classes: "govuk-tag--grey"
                   })}}
             {% endset %}
             {% set recruiterHTML %}
                 {{govukTag({
-                          text: "Recruiter",
+                          text: "Recruiter to complete",
                           classes: "govuk-tag--yellow"
                         })}}
                   {% endset %}
@@ -73,7 +73,7 @@
           classes: 'app-custom-class'
         },
         {
-          text: "Responsibility",
+          text: "Action needed",
           classes: 'app-custom-class'
         }
       ],
@@ -124,7 +124,7 @@
     }) }}
     {% endset %}
 
-    {% set approvalHTML %}
+    {% set pendingHTML %}
 
     {{ govukTable({
       caption: "",
@@ -144,7 +144,7 @@
           classes: 'app-custom-class'
         },
         {
-          text: "Responsibility",
+          text: "Action needed",
           classes: 'app-custom-class'
         }
       ],
@@ -191,7 +191,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -270,7 +270,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -344,7 +344,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -427,7 +427,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -510,7 +510,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -593,7 +593,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Responsibility",
+      text: "Action needed",
       classes: 'app-custom-class'
     }
   ],
@@ -670,10 +670,10 @@
       },
       {
         heading: {
-          text: "Approval required (1)"
+          text: "Pending vacancies (1)"
         },
         content: {
-          html: approvalHTML
+          html: pendingHTML
         }
       },
         {

@@ -34,14 +34,16 @@
   <div class="govuk-grid-column-two-thirds">
 
 {% set trainingHTML %}
-<p><a href="">Check Civil Service Learning</a> to see if you are up to date with recruitment training.</p>
+<p>Check <a href="">Civil Service Learning</a> to see if you are up to date with recruitment training.</p>
 {% endset %}
 
 <h1 class="govuk-heading-l">Profile information</h1>
 
+<h2 class="govuk-heading-m">Personal</h2>
+
 {{ govukInput({
   label: {
-    text: "Your name"
+    text: "Full name"
   },
   id: "name",
   name: "name",
@@ -50,7 +52,7 @@
 
 {{ govukInput({
   label: {
-    text: "Your email"
+    text: "Email address"
   },
   id: "email",
   name: "email",
@@ -59,37 +61,13 @@
 
 {{ govukInput({
   label: {
-    text: "Your phone number (optional)"
+    text: "Phone number (optional)"
   },
   id: "phone",
   name: "phone",
   value: ""
 }) }}
-{{ govukTextarea({
-name: "more-detail",
-id: "more-detail",
-label: {
-text: "What does your team do?"
-},
-hint: {
-text: "This information will be visible to candidates."
-},
-value: "this information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
 
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Linked websites for your vacancy"
-  },
-  hint: {
-    text: "This could be a link to a video or department specific website. This will be visible to candidates."
-  },
-  classes: "govuk-input--width-20",
-  id: "links",
-  name: "links",
-  value: "www.linkedin.com/cabinetoffice"
-}) }}
 
 {{ govukRadios({
   classes: "govuk-radios--inline",
@@ -122,11 +100,11 @@ value: "this information is pulled from your profile. It tells the candidate abo
   name: "panel",
   fieldset: {
     legend: {
-      text: "Are you willing to be on the panel for other vacancies in your department?"
+      text: "Would you like to be on the panel for other vacancies in your department?"
     }
   },
   hint: {
-    text: "You will be asked if you're available before being added to a panel."
+    text: "Your availability will be checked before you are added to a panel."
   },
   items: [
     {
@@ -141,29 +119,32 @@ value: "this information is pulled from your profile. It tells the candidate abo
   ]
 }) }}
 
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  idPrefix: "calendar",
-  name: "calendar",
-  fieldset: {
-    legend: {
-      text: "Allow your calendar to be synced with this service?"
-    }
+<h2 class="govuk-heading-m">Team and department</h2>
+{{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+text: "What does your team do?"
+},
+hint: {
+text: "This information will be visible to candidates."
+},
+value: "this information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
+
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Website URL"
   },
   hint: {
-    text: "This will enable interview slots to be automatically geneerated."
+    text: "If you have the job application featured on a department page, you can include this. For example, www.linkedin.com/cabinetoffice"
   },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
+  classes: "govuk-input--width-20",
+  id: "links",
+  name: "links"
 }) }}
+
 
 {{ govukButton({
   text: "Save changes",

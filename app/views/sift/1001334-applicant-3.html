@@ -30,11 +30,363 @@
         {% endblock %}
 
 {% block content %}
-<h1 class="govuk-heading-l">Applicant 1</h1>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <p>Score the applicant on their CV and statement using the essential criteria and skills. Applicants will be sent overall scores and feedback.</p>
+<span class="govuk-caption-l">1001234</span>
+<h1 class="govuk-heading-l">Score applicant 3</h1>
+<p class="govuk-body-m"><a href="cv">View CV</a></p>
+<h2 class="govuk-heading-m">Seeing the Big Picture</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
 
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "score",
+          name: "score",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "reason",
+    name: "reason",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m">Changing and improving</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "score",
+          name: "score",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "reason",
+    name: "reason",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <h2 class="govuk-heading-m">Making effective decisions</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    </div>
+
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "score",
+          name: "score",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "reason",
+    name: "reason",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h2 class="govuk-heading-m">Essential criteria and skills</h2>
 <ul class="govuk-list govuk-list--bullet">
   <li>Experience working in user-centered design</li>
@@ -106,7 +458,7 @@ Integer luctus nunc in libero luctus facilisis. Integer maximus dapibus dui soll
 </p>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-<h3 class="govuk-heading-l">Score applicant 1</h3>
+<h3 class="govuk-heading-m">Score essential criteria</h3>
 
 {% set scoreHTML %}
   <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
@@ -129,11 +481,7 @@ Integer luctus nunc in libero luctus facilisis. Integer maximus dapibus dui soll
   html: scoreHTML
 }) }}
 
-{{ govukInsetText({
-  text: "The applicant will see the score and feedback."
-}) }}
-
-<h3 class="govuk-heading-m">Experience working in user-centered design</h3>
+<p>The applicant will see the score and feedback.</p>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
 
@@ -241,291 +589,15 @@ classes: "govuk-input--width-50",
 id: "feedback",
 name: "feedback"
 }) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Knowledge of design principals</h3>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
 
-      {{ govukSelect({
-      id: "score",
-      name: "score",
-      label: {
-      text: "Score",
-      classes: "govuk-label--m"
-      },
-      items: [
-      {
-        value: "1",
-        text: "1 Not Demonstrated - No positive evidence provided"
-      },
-      {
-        value: "2",
-        text: "2 Minimal Demonstration - Limited positive evidence provided"
-      },
-      {
-        value: "3",
-        text: "3 Moderate Demonstration - Moderate positive evidence provided"
-      },
-      {
-        value: "4",
-        text: "4 Acceptable Demonstration - Adequate positive evidence provided"
-      },
-      {
-        value: "5",
-        text: "5 Good Demonstration - Substantial positive evidence provided"
-      },
-      {
-        value: "6",
-        text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
-      },
-      {
-        value: "7",
-        text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
-      },
-      {
-        value: "---",
-        text: "---",
-        selected: true
-      }
-      ]
-      }) }}
-
-</div>
-  <div class="govuk-grid-column-two-thirds">
-{{ govukSelect({
-id: "reason",
-name: "reason",
-label: {
-text: "Reason",
-classes: "govuk-label--m"
-},
-items: [
-{
-  value: "experience",
-  text: "Experience"
-},
-{
-  value: "relevance",
-  text: "Relevance to role"
-},
-{
-  value: "---",
-  text: "---",
-  selected: true
-}
-]
-}) }}
-</div>
-</div>
-{{ govukInput({
-label: {
-text: "Additional feedback for applicants (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
+{{ govukButton({
+  text: "Submit scores",
+  href: "1001334"
 }) }}
 
-{{ govukInput({
-label: {
-text: "Notes for the panel, not seen by applicant (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
-}) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Experience creating GOV.UK prototypes</h3>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-
-      {{ govukSelect({
-      id: "score",
-      name: "score",
-      label: {
-      text: "Score",
-      classes: "govuk-label--m"
-      },
-      items: [
-      {
-        value: "1",
-        text: "Not Demonstrated - No positive evidence provided"
-      },
-      {
-        value: "2",
-        text: "Minimal Demonstration - Limited positive evidence provided"
-      },
-      {
-        value: "3",
-        text: "Moderate Demonstration - Moderate positive evidence provided"
-      },
-      {
-        value: "4",
-        text: "Acceptable Demonstration - Adequate positive evidence provided"
-      },
-      {
-        value: "5",
-        text: "Good Demonstration - Substantial positive evidence provided"
-      },
-      {
-        value: "6",
-        text: "Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
-      },
-      {
-        value: "7",
-        text: "Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
-      },
-      {
-        value: "---",
-        text: "---",
-        selected: true
-      }
-      ]
-      }) }}
-
-</div>
-  <div class="govuk-grid-column-two-thirds">
-{{ govukSelect({
-id: "reason",
-name: "reason",
-label: {
-text: "Reason",
-classes: "govuk-label--m"
-},
-items: [
-{
-  value: "experience",
-  text: "Experience"
-},
-{
-  value: "relevance",
-  text: "Relevance to role"
-},
-{
-  value: "---",
-  text: "---",
-  selected: true
-}
-]
-}) }}
-</div>
-</div>
-{{ govukInput({
-label: {
-text: "Additional feedback for applicants (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
-}) }}
-
-{{ govukInput({
-label: {
-text: "Notes for the panel, not seen by applicant (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
-}) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-heading-m">Qualification in web accessibility</h3>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-
-      {{ govukSelect({
-      id: "score",
-      name: "score",
-      label: {
-      text: "Score",
-      classes: "govuk-label--m"
-      },
-      items: [
-      {
-        value: "1",
-        text: "1"
-      },
-      {
-        value: "2",
-        text: "2"
-      },
-      {
-        value: "3",
-        text: "3"
-      },
-      {
-        value: "4",
-        text: "4"
-      },
-      {
-        value: "5",
-        text: "5"
-      },
-      {
-        value: "6",
-        text: "6"
-      },
-      {
-        value: "7",
-        text: "7"
-      },
-      {
-        value: "---",
-        text: "---",
-        selected: true
-      }
-      ]
-      }) }}
-
-</div>
-  <div class="govuk-grid-column-two-thirds">
-{{ govukSelect({
-id: "reason",
-name: "reason",
-label: {
-text: "Reason",
-classes: "govuk-label--m"
-},
-items: [
-{
-  value: "experience",
-  text: "Experience"
-},
-{
-  value: "relevance",
-  text: "Relevance to role"
-},
-{
-  value: "---",
-  text: "---",
-  selected: true
-}
-]
-}) }}
-</div>
-</div>
-{{ govukInput({
-label: {
-text: "Additional feedback for applicants (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
-}) }}
-
-{{ govukInput({
-label: {
-text: "Notes for the panel, not seen by applicant (optional)"
-},
-classes: "govuk-input--width-50",
-id: "feedback",
-name: "feedback"
-}) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</div>
-</div>
 {{ govukButton({
   text: "Next applicant",
-  href: "cv-statement-v2-app2"
+  href: "1001334-applicant-4"
 }) }}
-<p><a href="task-list">Save and return to tasklist</a></p>
+
 {% endblock %}
